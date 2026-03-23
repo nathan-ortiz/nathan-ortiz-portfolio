@@ -28,7 +28,7 @@ export const About = () => {
           {/* Photo: top-aligned with text block, not vertically centered */}
           <div className={`md:w-[280px] shrink-0 self-start transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`} style={{ transitionDelay: "250ms" }}>
             <div className="border border-border bg-bg-card shadow-[rgba(255,255,255,0.04)_4px_4px_0px_0px] overflow-hidden">
-              <img src="/images/pokemon_medal.png" alt="Nathan Ortiz with Pokemon VGC World Championship medal" className="w-full aspect-[4/5] object-cover" loading="lazy" />
+              <img src="/images/pokemon_medal.jpg" alt="Nathan Ortiz with Pokemon VGC World Championship medal" className="w-full aspect-[4/5] object-cover" loading="lazy" />
             </div>
           </div>
         </div>

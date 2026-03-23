@@ -11,7 +11,7 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    image: "/images/pebbly_portfolio.png", name: "Pebbly", tagline: "Autonomous AI employee that lives in your messages",
+    image: "/images/pebbly_portfolio.jpg", name: "Pebbly", tagline: "Autonomous AI employee that lives in your messages",
     category: "Native AI Assistant", accentColor: "#4ADE80", bgColor: "#f5f5f4", objectFit: "cover", href: "https://getpebbly.com", live: true,
     description: "Pebbly is an autonomous personal AI assistant that reads your emails, calendar, and conversations and does real work for you.",
     tech: ["React", "TypeScript", "Node.js", "SQLite", "Docker", "Stripe", "WebSocket"],
@@ -22,7 +22,7 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "/images/flashcardwidget_portfolio.png", name: "Flashcard Widget", tagline: "The first AI-powered flashcard iOS widget app",
+    image: "/images/flashcardwidget_portfolio.jpg", name: "Flashcard Widget", tagline: "The first AI-powered flashcard iOS widget app",
     category: "iOS App", accentColor: "#FB7185", bgColor: "#2a2a2e", objectFit: "contain", href: "https://flashcardwidget.com",
     description: "The first iOS app to put spaced-repetition flashcards on home and lock screen widgets.",
     tech: ["Swift", "SwiftUI", "WidgetKit", "Core Data", "Firebase"],
@@ -44,7 +44,7 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "/images/hirect_portfolio.png", name: "Hirect (now Hirey)", tagline: "$29M+ funded AI hiring startup",
+    image: "/images/hirect_portfolio.jpg", name: "Hirect (now Hirey)", tagline: "$29M+ funded AI hiring startup",
     category: "Operations & Growth", accentColor: "#FB7185", bgColor: "#f5f5f4", objectFit: "cover", href: "https://hirey.com",
     description: "Joined this venture-backed AI hiring startup's founding team after the CEO noticed independent work.",
     tech: ["SEO", "Google Ads", "Content Strategy", "Team Leadership"],
@@ -55,7 +55,7 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "/images/jobsearchsensei_portfolio.png", name: "Job Search Sensei", tagline: "AI-powered job search platform",
+    image: "/images/jobsearchsensei_portfolio.jpg", name: "Job Search Sensei", tagline: "AI-powered job search platform",
     category: "Product & Service", accentColor: "#4ADE80", bgColor: "#172033", objectFit: "contain", href: "https://jobsearchsensei.com",
     description: "AI platform that tailors resumes, optimizes LinkedIn profiles, and auto-applies to jobs for students.",
     tech: ["AI/ML", "Web Platform", "Resume Optimization", "LinkedIn API"],
