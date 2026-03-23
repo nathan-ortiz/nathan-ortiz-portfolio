@@ -144,7 +144,7 @@ function ProjectCard({ project, isVisible, delay, onDetails }: { project: Projec
           </div>
           <div className="aspect-[16/10] flex items-center justify-center overflow-hidden" style={{ backgroundColor: project.bgColor }}>
             {project.video ? (
-              <video src={project.video} autoPlay loop muted playsInline className="w-full h-full object-cover" loading="lazy" />
+              <video src={project.video} autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover" />
             ) : (
               <img src={project.image} alt={project.name} loading="lazy"
                 className={`w-full h-full ${project.objectFit === "contain" ? "object-contain p-1" : "object-cover"}`} />

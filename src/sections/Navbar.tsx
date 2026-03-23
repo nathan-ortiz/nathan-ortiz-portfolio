@@ -14,7 +14,7 @@ export const Navbar = () => {
   const [indicatorStyle, setIndicatorStyle] = useState({ transform: "translateX(0px)", width: 0 });
   const pillRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const isNavigating = useRef(false);
-  const navTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const navTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   // Use offsetLeft/offsetWidth — stable, no scroll dependency, no layout thrashing
   const updateIndicator = useCallback((sectionId: string) => {
