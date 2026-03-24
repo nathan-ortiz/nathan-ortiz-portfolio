@@ -43,7 +43,7 @@ export const Hero = () => {
       </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-16 pt-[160px] pb-[120px] md:pt-[210px] md:pb-[160px] flex flex-col justify-center">
-        <h1 className="font-serif text-[44px] leading-[52px] md:text-[80px] md:leading-[84px]">
+        <h1 className="font-serif text-[clamp(30px,9vw,44px)] leading-[clamp(38px,11vw,52px)] md:text-[clamp(46px,6.5vw,80px)] md:leading-[clamp(52px,7.5vw,84px)]">
           {headline.split("").map((char, i) => {
             const isName = i >= 11; // "Nathan Ortiz." starts at index 11
             return (
@@ -65,7 +65,7 @@ export const Hero = () => {
 
         {/* Subtitle: simple, clean opacity fade */}
         <p
-          className="font-serif text-[22px] leading-[30px] md:text-[30px] md:leading-[40px] text-text/80 mt-5 md:mt-7 transition-opacity duration-700 ease-out"
+          className="font-serif text-[clamp(18px,5.5vw,22px)] leading-[clamp(26px,7.5vw,30px)] md:text-[clamp(24px,3.2vw,30px)] md:leading-[clamp(34px,4.2vw,40px)] text-text/80 mt-5 md:mt-7 transition-opacity duration-700 ease-out"
           style={{ opacity: subtitleVisible ? 1 : 0 }}
         >
           Founder. Student. Engineer.

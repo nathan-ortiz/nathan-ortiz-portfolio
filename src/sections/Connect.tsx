@@ -20,7 +20,7 @@ export const Connect = () => {
           <SectionLabel color="rose" text="CONNECT" />
         </div>
         <div className={`mt-12 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`} style={{ transitionDelay: "100ms" }}>
-          <h2 className="font-serif text-[38px] leading-[44px] md:text-[60px] md:leading-[64px] text-text">Let's build something.</h2>
+          <h2 className="font-serif text-[38px] leading-[44px] md:text-[clamp(42px,6vw,60px)] md:leading-[clamp(48px,6.8vw,64px)] text-text">Let's build something.</h2>
         </div>
         <div className={`mt-10 flex flex-wrap gap-4 md:gap-5 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`} style={{ transitionDelay: "250ms" }}>
           {LINKS.map((link) => (

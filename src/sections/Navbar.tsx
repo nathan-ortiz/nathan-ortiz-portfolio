@@ -121,8 +121,7 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      <div className="md:hidden flex items-center justify-between w-full px-5 h-full">
-        <span className="font-serif text-lg tracking-tight text-text">NO</span>
+      <div className="md:hidden relative z-50 flex items-center justify-end w-full px-5 h-full">
         <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu" className="flex flex-col gap-[5px] p-2">
           <span className={`block h-[1.5px] w-5 bg-text transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
           <span className={`block h-[1.5px] w-5 bg-text transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
@@ -132,10 +131,6 @@ export const Navbar = () => {
 
       <div className={`md:hidden fixed inset-0 z-40 bg-bg/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 transition-all duration-400
         ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
-        <button onClick={() => setMenuOpen(false)} aria-label="Close" className="absolute top-8 right-6 p-2">
-          <span className="block h-[1.5px] w-5 bg-text rotate-45 absolute" />
-          <span className="block h-[1.5px] w-5 bg-text -rotate-45 absolute" />
-        </button>
         {NAV_ITEMS.map((item, i) => (
           <button key={item.label} onClick={() => navigate(item.href)}
             className={`text-2xl font-serif tracking-wide transition-all duration-300

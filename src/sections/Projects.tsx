@@ -85,12 +85,12 @@ export const Projects = () => {
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <SectionLabel color="green" text="PROJECTS" />
-        <div ref={topRow.ref} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7 mt-10">
+        <div ref={topRow.ref} className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-7 mt-10">
           {PROJECTS.slice(0, 2).map((p, i) => (
             <ProjectCard key={p.name} project={p} isVisible={topRow.isVisible} delay={i * 140} onDetails={() => openModal(p)} />
           ))}
         </div>
-        <div ref={bottomRow.ref} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7 mt-10 md:mt-14">
+        <div ref={bottomRow.ref} className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-7 mt-10 md:mt-14">
           {PROJECTS.slice(2).map((p, i) => (
             <ProjectCard key={p.name} project={p} isVisible={bottomRow.isVisible} delay={i * 140} onDetails={() => openModal(p)} />
           ))}
