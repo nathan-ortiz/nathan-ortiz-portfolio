@@ -76,12 +76,15 @@ body {
   z-index: 1;
 }
 
-/* ── Mobile/tablet: statement section edge fades + uniform overlay for seamless section transitions ── */
+/* ── Mobile/tablet: crop image edges to remove built-in vignette, simpler overlay ── */
 @media (max-width: 1023px) {
+  .tavus-art-bg {
+    inset: -12% -12% -18% -12%;
+  }
   .tavus-art-bg::after {
     background:
-      linear-gradient(180deg, #1a1826 0%, transparent 15%, transparent 65%, #1a1826 100%),
-      linear-gradient(180deg, rgba(20,18,24,0.6), rgba(20,18,24,0.6));
+      linear-gradient(180deg, #1a1826 0%, transparent 10%, transparent 88%, #1a1826 100%),
+      linear-gradient(180deg, rgba(20,18,24,0.55), rgba(20,18,24,0.55));
   }
 }
 

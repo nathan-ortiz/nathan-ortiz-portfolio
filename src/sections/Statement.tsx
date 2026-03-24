@@ -2,7 +2,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { RotatingWord } from "@/components/RotatingWord";
 
 const TAVUS_ART = "https://c.animaapp.com/mmzovjzw9c0SXp/assets/68f0e0628f97ea257bd5dd30_art.avif";
-const ROTATING_WORDS = ["consumer products", "what doesn't exist yet", "things people use daily", "for people who don't code", "at midnight", "what's missing", "the future"];
+const ROTATING_WORDS = ["consumer products", "what doesn't exist yet", "things people use daily", "for people who don't code", "what's missing", "the future"];
 
 export const Statement = () => {
   const { ref, isVisible } = useScrollReveal<HTMLElement>({ threshold: 0.1 });
