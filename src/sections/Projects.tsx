@@ -22,7 +22,7 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "/images/flashcardwidget_portfolio.jpg", name: "Flashcard Widget", displayName: "Flashcard Widget: Study Helper", tagline: "The first AI-powered flashcard iOS widget app",
+    image: "/images/flashcardwidget_portfolio.jpg", name: "Flashcard Widget", tagline: "The first AI-powered flashcard iOS widget app",
     category: "iOS App", accentColor: "#FB7185", bgColor: "#2a2a2e", objectFit: "contain", href: "https://flashcardwidget.com",
     description: "The first iOS app to put spaced-repetition flashcards on home and lock screen widgets.",
     tech: ["Swift", "SwiftUI", "WidgetKit", "Core Data", "Firebase"],

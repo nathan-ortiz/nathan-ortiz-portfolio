@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-type Props = { words: string[]; interval?: number };
+type Props = { words: string[]; interval?: number; suffix?: string };
 
-export const RotatingWord = ({ words, interval = 3000 }: Props) => {
+export const RotatingWord = ({ words, interval = 3000, suffix }: Props) => {
   const [index, setIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -26,7 +26,7 @@ export const RotatingWord = ({ words, interval = 3000 }: Props) => {
         filter: isAnimating ? "blur(2px)" : "none",
       }}
     >
-      <em className="italic text-accent-amber">{words[index]}</em>
+      <em className="italic text-accent-amber">{words[index]}</em>{suffix}
     </span>
   );
 };

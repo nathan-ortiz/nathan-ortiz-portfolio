@@ -18,7 +18,7 @@ export const Statement = () => {
       <div className="relative z-10 max-w-5xl mx-auto text-left md:text-center">
         <h2 className={`font-serif text-[clamp(30px,8.5vw,36px)] leading-[clamp(42px,11vw,48px)] md:text-[clamp(52px,7.5vw,76px)] md:leading-[clamp(64px,9vw,92px)] min-h-[3lh] grid content-center text-white transition-all duration-1000 ease-out
           ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          Building <RotatingWord words={ROTATING_WORDS} interval={2800} />.
+          Building <RotatingWord words={ROTATING_WORDS} interval={2800} suffix="." />
         </h2>
       </div>
     </section>

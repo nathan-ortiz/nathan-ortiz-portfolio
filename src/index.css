@@ -80,8 +80,8 @@ body {
 @media (max-width: 1023px) {
   .tavus-art-bg::after {
     background:
-      linear-gradient(180deg, #1a1826 0%, transparent 18%, transparent 82%, #1a1826 100%),
-      linear-gradient(180deg, rgba(20,18,24,0.55), rgba(20,18,24,0.55));
+      linear-gradient(180deg, #1a1826 0%, transparent 15%, transparent 65%, #1a1826 100%),
+      linear-gradient(180deg, rgba(20,18,24,0.6), rgba(20,18,24,0.6));
   }
 }
 

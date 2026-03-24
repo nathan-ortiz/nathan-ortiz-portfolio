@@ -68,7 +68,7 @@ export const Hero = () => {
           className="font-serif text-[clamp(18px,5.5vw,22px)] leading-[clamp(26px,7.5vw,30px)] md:text-[clamp(24px,3.2vw,30px)] md:leading-[clamp(34px,4.2vw,40px)] text-text/80 mt-5 md:mt-7 transition-opacity duration-700 ease-out"
           style={{ opacity: subtitleVisible ? 1 : 0 }}
         >
-          Founder. Student. Engineer.
+          Builder. Founder. Student.
         </p>
       </div>
     </section>
