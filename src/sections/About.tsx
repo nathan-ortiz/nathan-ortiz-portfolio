@@ -5,8 +5,10 @@ export const About = () => {
   const { ref, isVisible } = useScrollReveal<HTMLElement>({ threshold: 0.1 });
   return (
     <section id="about" ref={ref} className="relative bg-bg-warm px-6 md:px-16 pt-[100px] md:pt-[140px] pb-[60px] md:pb-[80px] scroll-mt-[100px] overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] pointer-events-none opacity-[0.08]" style={{ background: "radial-gradient(circle at 80% 20%, #FBBF24, transparent 65%)" }} />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] pointer-events-none opacity-[0.06]" style={{ background: "radial-gradient(circle at 25% 75%, #FBBF24, transparent 65%)" }} />
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-10%] right-[-10%] w-[80%] h-[60%] opacity-[0.08] md:opacity-[0.08]" style={{ background: "radial-gradient(ellipse at 70% 35%, #FBBF24, transparent 70%)" }} />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[70%] h-[50%] opacity-[0.07] md:opacity-[0.06]" style={{ background: "radial-gradient(ellipse at 30% 70%, #FBBF24, transparent 70%)" }} />
+      </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className={`transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
