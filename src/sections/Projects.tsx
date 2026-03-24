@@ -4,7 +4,7 @@ import { SectionLabel } from "@/components/SectionLabel";
 import { ProjectModal, type ProjectData } from "@/components/ProjectModal";
 
 type Project = {
-  image?: string; video?: string; name: string; tagline: string; category: string;
+  image?: string; video?: string; name: string; displayName?: string; tagline: string; category: string;
   accentColor: string; bgColor: string; objectFit: "cover" | "contain";
   href?: string; description: string; bullets: string[]; tech: string[]; live?: boolean;
 };
@@ -22,7 +22,7 @@ const PROJECTS: Project[] = [
     ],
   },
   {
-    image: "/images/flashcardwidget_portfolio.jpg", name: "Flashcard Widget", tagline: "The first AI-powered flashcard iOS widget app",
+    image: "/images/flashcardwidget_portfolio.jpg", name: "Flashcard Widget", displayName: "Flashcard Widget: Study Helper", tagline: "The first AI-powered flashcard iOS widget app",
     category: "iOS App", accentColor: "#FB7185", bgColor: "#2a2a2e", objectFit: "contain", href: "https://flashcardwidget.com",
     description: "The first iOS app to put spaced-repetition flashcards on home and lock screen widgets.",
     tech: ["Swift", "SwiftUI", "WidgetKit", "Core Data", "Firebase"],
@@ -156,12 +156,12 @@ function ProjectCard({ project, isVisible, delay, onDetails }: { project: Projec
         <div className="flex items-center gap-2">
           {project.href ? (
             <a href={project.href} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}
-              className="font-serif text-[19px] md:text-[21px] text-text font-medium hover:text-accent-green transition-colors inline-flex items-center gap-1.5">
-              {project.name}
+              className="font-serif text-[clamp(16px,4.8vw,19px)] md:text-[21px] text-text font-medium hover:text-accent-green transition-colors inline-flex items-center gap-1.5">
+              {project.displayName || project.name}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-40"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
             </a>
           ) : (
-            <span className="font-serif text-[19px] md:text-[21px] text-text font-medium">{project.name}</span>
+            <span className="font-serif text-[clamp(16px,4.8vw,19px)] md:text-[21px] text-text font-medium">{project.displayName || project.name}</span>
           )}
         </div>
         <p className="font-body text-[13px] md:text-[14px] text-text-muted mt-1">{project.tagline}</p>
