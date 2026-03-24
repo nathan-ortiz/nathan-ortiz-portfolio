@@ -56,7 +56,7 @@ const PROJECTS: Project[] = [
   },
   {
     image: "/images/jobsearchsensei_portfolio.jpg", name: "Job Search Sensei", tagline: "AI-powered job search platform",
-    category: "Product & Service", accentColor: "#4ADE80", bgColor: "#172033", objectFit: "contain", href: "https://jobsearchsensei.com",
+    category: "Product & Service", accentColor: "#4ADE80", bgColor: "#161e2a", objectFit: "contain", href: "https://jobsearchsensei.com",
     description: "AI platform that tailors resumes, optimizes LinkedIn profiles, and auto-applies to jobs for students.",
     tech: ["AI/ML", "Web Platform", "Resume Optimization", "LinkedIn API"],
     bullets: [

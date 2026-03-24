@@ -6,8 +6,8 @@ export const About = () => {
   return (
     <section id="about" ref={ref} className="relative bg-bg-warm px-6 md:px-16 pt-[100px] md:pt-[140px] pb-[60px] md:pb-[80px] scroll-mt-[100px] overflow-hidden">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] right-[-10%] w-[80%] h-[60%] opacity-[0.08] md:opacity-[0.08]" style={{ background: "radial-gradient(ellipse at 70% 35%, #FBBF24, transparent 70%)" }} />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[70%] h-[50%] opacity-[0.07] md:opacity-[0.06]" style={{ background: "radial-gradient(ellipse at 30% 70%, #FBBF24, transparent 70%)" }} />
+        <div className="absolute top-[-10%] right-[-10%] w-[80%] h-[60%] opacity-[0.08]" style={{ background: "radial-gradient(ellipse at 70% 35%, #FBBF24, transparent 70%)" }} />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[70%] h-[50%] opacity-[0.07]" style={{ background: "radial-gradient(ellipse at 30% 70%, #FBBF24, transparent 70%)" }} />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">

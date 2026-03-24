@@ -8,7 +8,7 @@ export const Statement = () => {
   const { ref, isVisible } = useScrollReveal<HTMLElement>({ threshold: 0.1 });
 
   return (
-    <section ref={ref} className="relative bg-bg-raised overflow-hidden py-[160px] md:py-[220px] px-6 md:px-16">
+    <section ref={ref} className="relative bg-bg-raised overflow-hidden py-[100px] md:py-[220px] px-6 md:px-16">
       <div className="tavus-art-bg">
         <img src={TAVUS_ART} alt="" aria-hidden="true" className="-scale-x-100" loading="lazy" />
       </div>
