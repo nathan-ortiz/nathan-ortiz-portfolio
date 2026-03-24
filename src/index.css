@@ -76,6 +76,18 @@ body {
   z-index: 1;
 }
 
+/* ── Mobile/tablet: lighter bottom vignette to show more dithered art ── */
+@media (max-width: 1023px) {
+  .hero-art-bg::after {
+    background:
+      linear-gradient(90deg, rgba(20,18,24,0.82) 0%, rgba(20,18,24,0.5) 55%, rgba(20,18,24,0.25) 100%),
+      linear-gradient(180deg, rgba(20,18,24,0.3) 0%, transparent 30%, transparent 70%, rgba(20,18,24,0.35) 100%);
+  }
+  .tavus-art-bg::after {
+    background: linear-gradient(180deg, rgba(20,18,24,0.82) 0%, rgba(20,18,24,0.65) 50%, rgba(20,18,24,0.4) 100%);
+  }
+}
+
 /* (hero animations now handled by React components) */
 
 /* ── Live pulse ── */
