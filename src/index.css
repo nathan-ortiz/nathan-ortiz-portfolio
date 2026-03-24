@@ -76,15 +76,12 @@ body {
   z-index: 1;
 }
 
-/* ── Mobile/tablet: high-contrast overlay — art as subtle texture, text pops, smooth edge transitions ── */
+/* ── Mobile/tablet: statement section edge fades + uniform overlay for seamless section transitions ── */
 @media (max-width: 1023px) {
-  .hero-art-bg::after {
-    background:
-      linear-gradient(90deg, rgba(20,18,24,0.82) 0%, rgba(20,18,24,0.5) 55%, rgba(20,18,24,0.25) 100%),
-      linear-gradient(180deg, rgba(20,18,24,0.3) 0%, transparent 25%, transparent 55%, rgba(20,18,24,0.1) 75%, rgba(20,18,24,0.3) 100%);
-  }
   .tavus-art-bg::after {
-    background: linear-gradient(180deg, rgba(20,18,24,0.82) 0%, rgba(20,18,24,0.6) 25%, rgba(20,18,24,0.55) 45%, rgba(20,18,24,0.55) 55%, rgba(20,18,24,0.6) 75%, rgba(20,18,24,0.82) 100%);
+    background:
+      linear-gradient(180deg, #1a1826 0%, transparent 18%, transparent 82%, #1a1826 100%),
+      linear-gradient(180deg, rgba(20,18,24,0.55), rgba(20,18,24,0.55));
   }
 }
 

@@ -16,7 +16,7 @@ export const Statement = () => {
       <div className="absolute top-0 left-0 w-[600px] h-[600px] pointer-events-none opacity-[0.07]" style={{ background: "radial-gradient(circle at 20% 30%, #FBBF24, transparent 65%)" }} />
 
       <div className="relative z-10 max-w-5xl mx-auto text-left md:text-center">
-        <h2 className={`font-serif text-[clamp(30px,8.5vw,36px)] leading-[clamp(42px,11vw,48px)] md:text-[clamp(52px,7.5vw,76px)] md:leading-[clamp(64px,9vw,92px)] min-h-[3lh] text-white transition-all duration-1000 ease-out
+        <h2 className={`font-serif text-[clamp(30px,8.5vw,36px)] leading-[clamp(42px,11vw,48px)] md:text-[clamp(52px,7.5vw,76px)] md:leading-[clamp(64px,9vw,92px)] min-h-[3lh] grid content-center text-white transition-all duration-1000 ease-out
           ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           Building <RotatingWord words={ROTATING_WORDS} interval={2800} />.
         </h2>

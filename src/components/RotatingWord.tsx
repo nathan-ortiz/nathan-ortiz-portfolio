@@ -19,7 +19,7 @@ export const RotatingWord = ({ words, interval = 3000 }: Props) => {
 
   return (
     <span
-      className="inline-block transition-[opacity,transform,filter] duration-400 ease-in-out"
+      className="inline-block ml-[-8px] pl-[8px] transition-[opacity,transform,filter] duration-400 ease-in-out"
       style={{
         opacity: isAnimating ? 0 : 1,
         transform: isAnimating ? "translateY(8px)" : "none",
