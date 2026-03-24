@@ -38,7 +38,7 @@ function StatItem({ value, suffix, label, displayAs, vertical }: { value: number
   if (vertical) {
     return (
       <div ref={ref as React.RefObject<HTMLDivElement>} className="flex flex-col items-center text-center">
-        <span className="font-serif text-[20px] text-text leading-none tabular-nums">{display}{suffix}</span>
+        <span className="font-serif text-[20px] text-accent-amber leading-none tabular-nums">{display}{suffix}</span>
         <span className="font-label text-[8px] tracking-[0.7px] uppercase text-text-secondary mt-1.5">{label}</span>
       </div>
     );
@@ -46,7 +46,7 @@ function StatItem({ value, suffix, label, displayAs, vertical }: { value: number
 
   return (
     <div ref={ref as React.RefObject<HTMLDivElement>} className="flex items-baseline gap-2.5 shrink-0">
-      <span className="font-serif text-[18px] md:text-[20px] text-text leading-none tabular-nums">{display}{suffix}</span>
+      <span className="font-serif text-[18px] md:text-[20px] text-accent-amber leading-none tabular-nums">{display}{suffix}</span>
       <span className="font-label text-[8px] md:text-[9px] tracking-[0.7px] uppercase text-text-secondary whitespace-nowrap">{label}</span>
     </div>
   );

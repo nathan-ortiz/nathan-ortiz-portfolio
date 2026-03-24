@@ -65,7 +65,7 @@ export const Hero = () => {
 
         {/* Subtitle: simple, clean opacity fade */}
         <p
-          className="font-serif text-[22px] leading-[30px] md:text-[30px] md:leading-[40px] text-accent-amber mt-5 md:mt-7 transition-opacity duration-700 ease-out"
+          className="font-serif text-[22px] leading-[30px] md:text-[30px] md:leading-[40px] text-text/80 mt-5 md:mt-7 transition-opacity duration-700 ease-out"
           style={{ opacity: subtitleVisible ? 1 : 0 }}
         >
           Founder. Student. Engineer.
