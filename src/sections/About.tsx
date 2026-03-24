@@ -22,7 +22,7 @@ export const About = () => {
               I created a new product category on the App Store, architected multi-model AI routing across 9 models, and led operations at a $29M+ venture-backed startup, managing a 10-person creative team and tripling user growth.
             </p>
             <p className={`font-body text-[17px] md:text-[18px] leading-[29px] md:leading-[31px] text-text-secondary transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`} style={{ transitionDelay: "200ms" }}>
-              20+ years of piano and composition. Two-time VGC World Championship competitor. Transferring to a T5 CS program Fall 2026.
+              20+ years of piano and composition. Two-time VGC World Championship competitor. Transferring to a T10 CS program Fall 2026.
             </p>
           </div>
           {/* Photo: top-aligned with text block, not vertically centered */}
