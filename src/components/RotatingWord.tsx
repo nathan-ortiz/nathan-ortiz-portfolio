@@ -19,11 +19,11 @@ export const RotatingWord = ({ words, interval = 3000 }: Props) => {
 
   return (
     <span
-      className="inline-block pl-[4px] transition-all duration-400 ease-in-out"
+      className="inline-block transition-[opacity,transform,filter] duration-400 ease-in-out"
       style={{
         opacity: isAnimating ? 0 : 1,
-        transform: isAnimating ? "translateY(8px)" : "translateY(0)",
-        filter: isAnimating ? "blur(2px)" : "blur(0)",
+        transform: isAnimating ? "translateY(8px)" : "none",
+        filter: isAnimating ? "blur(2px)" : "none",
       }}
     >
       <em className="italic text-accent-amber">{words[index]}</em>
