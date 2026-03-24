@@ -16,7 +16,7 @@ export const About = () => {
         <div className="mt-12 flex flex-col md:flex-row gap-10 md:gap-24">
           <div className="max-w-2xl space-y-7 flex-1">
             <p className={`font-body text-[17px] md:text-[18px] leading-[29px] md:leading-[31px] text-text-secondary transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`} style={{ transitionDelay: "100ms" }}>
-              I build consumer AI systems and consumer products.
+              I build AI systems and consumer products.
             </p>
             <p className={`font-body text-[17px] md:text-[18px] leading-[29px] md:leading-[31px] text-text-secondary transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`} style={{ transitionDelay: "150ms" }}>
               I created a new product category on the App Store, architected multi-model AI routing across 9 models, and led operations at a $29M+ venture-backed startup, managing a 10-person creative team and tripling user growth.
