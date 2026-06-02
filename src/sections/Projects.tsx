@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { SectionLabel } from "@/components/SectionLabel";
 import { ProjectModal, type ProjectData } from "@/components/ProjectModal";
@@ -103,6 +103,12 @@ export const Projects = () => {
 
 function ProjectCard({ project, isVisible, delay, onDetails }: { project: Project; isVisible: boolean; delay: number; onDetails: () => void }) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    // Belt-and-suspenders: some mobile browsers (iOS Safari especially) need
+    // an explicit play() call even with autoplay+muted+playsInline set.
+    videoRef.current?.play().catch(() => {});
+  }, []);
   const handleMouseMove = (e: React.MouseEvent) => {
     const el = cardRef.current;
     if (!el) return;
@@ -144,7 +150,7 @@ function ProjectCard({ project, isVisible, delay, onDetails }: { project: Projec
           </div>
           <div className="aspect-[16/10] flex items-center justify-center overflow-hidden" style={{ backgroundColor: project.bgColor }}>
             {project.video ? (
-              <video src={project.video} autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover" />
+              <video ref={videoRef} src={project.video} autoPlay loop muted playsInline preload="auto" disablePictureInPicture controls={false} className="w-full h-full object-cover" />
             ) : (
               <img src={project.image} alt={project.name} loading="lazy"
                 className={`w-full h-full ${project.objectFit === "contain" ? "object-contain p-1" : "object-cover"}`} />
