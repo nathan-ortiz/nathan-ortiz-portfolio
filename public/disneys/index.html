@@ -26,6 +26,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@500;600;700&display=swap" />
 
+<!-- Vercel Web Analytics (free Hobby tier, no cookies, no PII) -->
+<script defer src="/_vercel/insights/script.js"></script>
+
 <style>
   :root {
     --paper:       #FBF7EE;
@@ -1110,6 +1113,26 @@
     <p style="margin:0">This page is shared by link with Disney's Boat Rentals and is not publicly indexed.</p>
   </div>
 </footer>
+
+<!-- Buzz Nathan's phone on first open (server-side relay to ntfy.sh) -->
+<script>
+(function(){
+  try {
+    // Skip preview mode for Nathan's own checks
+    if (location.search.indexOf('preview=1') !== -1) return;
+    // Once per session — reloads don't double-buzz
+    if (sessionStorage.getItem('disneys-buzzed')) return;
+    sessionStorage.setItem('disneys-buzzed', '1');
+    // Fire-and-forget. sendBeacon survives navigation; fetch with keepalive is the fallback.
+    var blob = new Blob(['open'], { type: 'text/plain' });
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon('/api/buzz', blob);
+    } else {
+      fetch('/api/buzz', { method: 'POST', body: 'open', keepalive: true }).catch(function(){});
+    }
+  } catch (e) {}
+})();
+</script>
 
 <!-- Conditions widget logic -->
 <script>
