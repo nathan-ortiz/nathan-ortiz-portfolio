@@ -823,12 +823,33 @@
   }
   .cta__email a { font-weight: 600; color: var(--navy); }
 
+  .signoff-block {
+    margin-top: 40px;
+    padding-top: 36px;
+    border-top: 1px solid var(--rule-soft);
+    text-align: center;
+  }
+  .signoff__photo {
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 14%;
+    display: block;
+    margin: 0 auto 18px;
+    box-shadow:
+      0 0 0 1px var(--rule),
+      0 0 0 5px var(--paper),
+      0 0 0 6px var(--rule-soft),
+      0 12px 24px -14px rgba(12, 60, 120, 0.32);
+  }
   .signoff {
-    margin-top: 28px;
+    margin: 0;
     font-family: 'Fraunces', serif;
     font-size: 16.5px;
     line-height: 1.55;
     color: var(--ink);
+    text-align: center;
   }
   .signoff__name {
     font-family: 'Archivo Black', sans-serif;
@@ -1017,7 +1038,7 @@
   <section class="section">
     <div class="wrap">
       <p class="section__label">02 &nbsp;·&nbsp; An optional add-on</p>
-      <h2 class="section__title">A small live conditions panel.</h2>
+      <h2 class="section__title">A small live lake conditions panel.</h2>
       <p class="section__lede">An idea you can take or leave. A simple readout of Clear Lake conditions, right on the rentals page, refreshed automatically. It answers the question every customer has before they commit: what's it going to be like out there?</p>
 
       <div class="widget-frame">
@@ -1105,7 +1126,7 @@
 
       <p>What matters more to me is that it's fair to both of us, and that you feel like this is a valuable trade for you over hiring an expensive agency.</p>
 
-      <p>I'll also do the first few fixes up front, before you owe me anything, so there's no risk on your end. You see the work, and then we agree on what's fair.</p>
+      <p>I'll even do the first few fixes up front, before you owe me anything, so there's no risk on your end.</p>
     </div>
   </section>
 
@@ -1126,11 +1147,14 @@
           <span class="cta__btn-text"><span class="cta__btn-action">Text</span><span>(909) 219-2861</span></span>
         </a>
       </div>
-      <p class="cta__email">Or send a note to <a href="mailto:hello@nathanortiz.com">hello@nathanortiz.com</a>.</p>
+      <p class="cta__email">Or email <a href="mailto:hello@nathanortiz.com">hello@nathanortiz.com</a>.</p>
 
-      <p class="signoff">Thanks for reading, and for running a great local business!<br />
-        <span class="signoff__name">- Nathan</span>
-      </p>
+      <div class="signoff-block">
+        <img class="signoff__photo" src="/disneys/assets/nathan_ortiz.jpg" alt="Nathan Ortiz" loading="lazy" />
+        <p class="signoff">Thanks for reading, and for running a great local business!<br />
+          <span class="signoff__name">- Nathan</span>
+        </p>
+      </div>
     </div>
   </section>
 
