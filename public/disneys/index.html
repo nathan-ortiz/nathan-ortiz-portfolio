@@ -8,7 +8,7 @@
 <meta name="description" content="A short proposal for Disney's Boat Rentals on Clear Lake. Fixing a few things on the website that are costing bookings this summer. From Nathan Ortiz." />
 <title>A proposal for Disney's Boat Rentals</title>
 
-<link rel="icon" type="image/webp" href="assets/logo.webp" />
+<link rel="icon" type="image/webp" href="/disneys/assets/logo.webp" />
 
 <meta property="og:type" content="article" />
 <meta property="og:title" content="A proposal for Disney's Boat Rentals" />
@@ -117,7 +117,7 @@
     width: 28px; height: 28px;
     flex: 0 0 28px;
     display: inline-block;
-    background: url('assets/logo.webp') center/contain no-repeat;
+    background: url('/disneys/assets/logo.webp') center/contain no-repeat;
   }
   .topbar__label { color: var(--navy); }
   .topbar__date { margin-left: auto; color: var(--ink-soft); }
@@ -270,15 +270,17 @@
     margin: 0 0 18px;
     color: var(--ink);
   }
-  .issue__cost {
-    display: inline-block;
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--hot);
-    margin-bottom: 18px;
+  .issue__aside {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    margin: 0 0 18px;
+    padding: 0 0 0 14px;
+    border-left: 2px solid var(--rule);
   }
   .issue__screenshot {
     margin: 0;
@@ -296,118 +298,216 @@
     border-radius: 3px;
   }
 
-  /* Conditions widget */
+  /* Conditions widget, rendered in Disney's own brand (white, Archivo Black, bold navy)
+     so it reads as a working preview of what the rentals page could look like. */
+  .widget-frame {
+    margin: 8px 0 6px;
+  }
+  .widget-frame__caption {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+  }
   .widget {
-    background: var(--paper-2);
-    border: 1px solid var(--rule);
-    border-radius: 8px;
-    padding: 22px;
-    margin: 8px 0 12px;
+    background: #ffffff;
+    border: 1px solid #DDE3EC;
+    border-radius: 6px;
+    padding: 0;
     position: relative;
     overflow: hidden;
-  }
-  .widget::before {
-    content: "";
-    position: absolute;
-    left: 0; right: 0; top: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--navy), var(--lake-deep), var(--lake));
+    box-shadow: 0 1px 0 rgba(12, 60, 120, 0.04), 0 16px 36px -22px rgba(12, 60, 120, 0.32);
   }
   .widget__head {
+    background: var(--navy);
+    color: #fff;
+    padding: 14px 20px;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
-    margin-bottom: 16px;
     gap: 12px;
     flex-wrap: wrap;
   }
   .widget__title {
     font-family: 'Archivo Black', sans-serif;
-    color: var(--navy);
+    color: #fff;
     font-size: 14px;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
+    line-height: 1.2;
   }
   .widget__loc {
     font-family: 'Inter', sans-serif;
     font-size: 11px;
     font-weight: 600;
-    color: var(--ink-soft);
-    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.78);
+    letter-spacing: 0.12em;
     text-transform: uppercase;
   }
+  .widget__body { padding: 20px; }
   .widget__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px 18px;
+    gap: 16px;
   }
-  @media (min-width: 600px) {
+  @media (min-width: 560px) {
     .widget__grid { grid-template-columns: repeat(4, 1fr); }
   }
-  .stat {
-    border-top: 1px solid var(--rule);
-    padding-top: 12px;
-  }
+  .stat { display: block; }
   .stat__label {
     font-family: 'Inter', sans-serif;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--ink-soft);
+    color: #6B7480;
     margin: 0 0 6px;
   }
   .stat__value {
     font-family: 'Archivo Black', sans-serif;
-    font-size: clamp(1.45rem, 5.5vw, 1.8rem);
+    font-size: 28px;
     color: var(--navy);
     line-height: 1;
   }
+  .stat__value--small {
+    font-size: 17px;
+    line-height: 1.2;
+    letter-spacing: 0.005em;
+  }
   .stat__unit {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 500;
-    font-size: 0.7em;
-    color: var(--ink-muted);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.5em;
+    color: #6B7480;
     margin-left: 4px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
   .stat__hint {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: var(--ink-muted);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #6B7480;
     margin-top: 4px;
+    letter-spacing: 0.02em;
   }
+
+  /* Best-window block, the headline "actionable" piece */
+  .best {
+    margin-top: 22px;
+    padding: 16px 18px;
+    background: #F4F8FD;
+    border: 1px solid #DDE7F2;
+    border-radius: 5px;
+  }
+  .best__label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin: 0 0 6px;
+  }
+  .best__time {
+    font-family: 'Archivo Black', sans-serif;
+    color: var(--navy);
+    font-size: 22px;
+    line-height: 1.1;
+    margin: 0 0 4px;
+  }
+  .best__detail {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #4A5260;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* Wind sparkline */
+  .spark {
+    margin-top: 18px;
+  }
+  .spark__label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #6B7480;
+    margin: 0 0 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .spark__bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 44px;
+    padding: 4px 0;
+    border-bottom: 1px solid #E6EAF0;
+  }
+  .spark__bar {
+    flex: 1;
+    background: #C9D5E5;
+    border-radius: 1px 1px 0 0;
+    min-height: 2px;
+    position: relative;
+  }
+  .spark__bar--best {
+    background: var(--navy);
+  }
+  .spark__hours {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #8A8FA0;
+    margin-top: 6px;
+  }
+
+  .widget__cta {
+    display: block;
+    margin: 18px 0 0;
+    padding: 14px 18px;
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 140ms ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .widget__cta:hover { background: var(--navy-deep); color: #fff; }
+
   .widget__foot {
     font-family: 'Inter', sans-serif;
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--ink-soft);
-    margin: 18px 0 0;
+    color: #8A8FA0;
+    margin: 16px 0 0;
     text-align: left;
   }
-  .widget__call {
-    margin: 16px 0 0;
-    padding: 14px 16px;
-    background: rgba(12, 60, 120, 0.06);
-    border-left: 3px solid var(--navy);
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 14.5px;
-    line-height: 1.5;
-    color: var(--navy-deep);
-    border-radius: 0 4px 4px 0;
-  }
+
   .widget__loading, .widget__error {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    color: var(--ink-muted);
-    padding: 20px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #6B7480;
+    padding: 28px 20px;
     text-align: center;
   }
-  .widget__error { color: var(--ink-soft); }
+  .widget__error { color: #8A8FA0; }
 
   /* Pricing demo */
   .pricing-before {
@@ -793,7 +893,7 @@
       <p>Rather than asking for money, I'm willing to trade the work for time on the water.</p>
 
       <figure class="photo-anchor">
-        <img src="assets/brandon_connor.jpg" alt="Brandon and Connor Disney standing in front of the new Disney's Boat Rentals building on Lakeshore Boulevard." loading="lazy" />
+        <img src="/disneys/assets/brandon_connor.jpg" alt="Brandon and Connor Disney standing in front of the new Disney's Boat Rentals building on Lakeshore Boulevard." loading="lazy" />
         <figcaption>The new 2200 Lakeshore Blvd location.</figcaption>
       </figure>
     </div>
@@ -811,9 +911,9 @@
         <span class="issue__num">Problem 01</span>
         <h3 class="issue__title">The pricing table falls apart on a phone.</h3>
         <p class="issue__text">Open the site on a phone, or inside an in-app browser like ChatGPT, Claude, or Instagram, and the rental pricing table runs off the screen and overlaps the page header. It's nearly unreadable. Most people planning a lake day are on their phone, and a growing share of younger customers like myself now open businesses from inside an app rather than Safari or Chrome.</p>
-        <span class="issue__cost">Lost booking: silent drop-off at the pricing step.</span>
+        <p class="issue__aside">Most people don't try to scroll horizontally to read a pricing table. They give up and check the next option.</p>
         <figure class="issue__screenshot">
-          <img src="assets/pricing_table_falls_apart_in-app_browser.jpg" alt="iPhone screenshot of the disneysboatrentals.com pricing table running off the right side of the screen, opened inside an in-app browser. Annotated by hand." loading="lazy" />
+          <img src="/disneys/assets/pricing_table_falls_apart_in-app_browser.jpg" alt="iPhone screenshot of the disneysboatrentals.com pricing table running off the right side of the screen, opened inside an in-app browser. Annotated by hand." loading="lazy" />
         </figure>
       </article>
 
@@ -822,9 +922,9 @@
         <span class="issue__num">Problem 02</span>
         <h3 class="issue__title">I had to call to find out what a tube and wakeboard cost.</h3>
         <p class="issue__text">The add-on pricing isn't visible on the main page or any of the main FareHarbor rental pages. I had to pick up the phone and ask. Most people won't, and those bookings quietly leave.</p>
-        <span class="issue__cost">Lost booking: the "how much for a tube?" call that never happens.</span>
+        <p class="issue__aside">If a customer can see the add-on price, they add it. If they can't, most won't pick up the phone to ask.</p>
         <figure class="issue__screenshot">
-          <img src="assets/boat_selection_formatting_unreadable.jpg" alt="iPhone screenshot of the boat selection page with text cramped into a narrow left column. Annotated 'Formatting' with a red arrow." loading="lazy" />
+          <img src="/disneys/assets/boat_selection_formatting_unreadable.jpg" alt="iPhone screenshot of the boat selection page with text cramped into a narrow left column. Annotated 'Formatting' with a red arrow." loading="lazy" />
         </figure>
       </article>
 
@@ -833,13 +933,13 @@
         <span class="issue__num">Problem 03</span>
         <h3 class="issue__title">Sections are cut off and spacing is broken.</h3>
         <p class="issue__text">Reviews get clipped mid-sentence. Headers crowd the images. The gallery has large empty gaps. None of this is catastrophic on its own. Together they undercut the 4.8 star reputation right at the moment a customer is deciding whether to trust you with a ski boat.</p>
-        <span class="issue__cost">Lost booking: trust friction at the decision moment.</span>
+        <p class="issue__aside">These details matter most exactly when a customer is about to commit. Right now they're working against you.</p>
         <div style="display:grid;gap:14px;grid-template-columns:1fr 1fr;max-width:520px;">
           <figure class="issue__screenshot" style="max-width:none;">
-            <img src="assets/google_reviews_element_clipped.jpg" alt="iPhone screenshot of a Google reviews card with text clipped mid-sentence." loading="lazy" />
+            <img src="/disneys/assets/google_reviews_element_clipped.jpg" alt="iPhone screenshot of a Google reviews card with text clipped mid-sentence." loading="lazy" />
           </figure>
           <figure class="issue__screenshot" style="max-width:none;">
-            <img src="assets/header_crowds_image_not_enough_spacing.jpg" alt="iPhone screenshot of the 'Our Gallery' heading crowding a gallery photo with no spacing." loading="lazy" />
+            <img src="/disneys/assets/header_crowds_image_not_enough_spacing.jpg" alt="iPhone screenshot of the 'Our Gallery' heading crowding a gallery photo with no spacing." loading="lazy" />
           </figure>
         </div>
       </article>
@@ -849,13 +949,13 @@
         <span class="issue__num">Problem 04</span>
         <h3 class="issue__title">You're nearly invisible in AI search for "things to do."</h3>
         <p class="issue__text">More and more people are discovering local businesses through AI search now, not Google. I tested how the latest models answer travel questions. For <em>best boat rentals on Clear Lake</em>, you come up on top. You've won that. But for <em>things to do in Lakeport</em>, the question someone asks before they've decided to rent a boat, you're only mentioned some of the time, or not at all, compared to other specific companies. That's the fastest-growing way millennials and Gen Z plan trips. Right now it's sending them elsewhere.</p>
-        <span class="issue__cost">Lost booking: the visitor who never knew you existed.</span>
+        <p class="issue__aside">When the trip planning happens inside ChatGPT or Claude, the businesses that get named are the ones who win the day.</p>
         <div style="display:grid;gap:14px;grid-template-columns:1fr 1fr;max-width:520px;">
           <figure class="issue__screenshot" style="max-width:none;">
-            <img src="assets/ai_discovery_1.jpg" alt="Screenshot of Claude Sonnet 4.6 answering 'Things to do in Lakeport?' Names Library Park, Mt. Konocti, Park Place Restaurant. Disney's Boat Rentals is not mentioned." loading="lazy" />
+            <img src="/disneys/assets/ai_discovery_1.jpg" alt="Screenshot of Claude Sonnet 4.6 answering 'Things to do in Lakeport?' Names Library Park, Mt. Konocti, Park Place Restaurant. Disney's Boat Rentals is not mentioned." loading="lazy" />
           </figure>
           <figure class="issue__screenshot" style="max-width:none;">
-            <img src="assets/ai_discovery_2.jpg" alt="Continuation of the same Claude response, suggesting 'Jet ski / pontoon rentals via Clearlake Boat Rentals or Clearlake Powersport Rentals.' A competitor was named instead of Disney's." loading="lazy" />
+            <img src="/disneys/assets/ai_discovery_2.jpg" alt="Continuation of the same Claude response, suggesting 'Jet ski / pontoon rentals via Clearlake Boat Rentals or Clearlake Powersport Rentals.' A competitor was named instead of Disney's." loading="lazy" />
           </figure>
         </div>
         <p style="font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--ink-muted);margin:12px 0 0;">Claude's "Things to do in Lakeport?" answer this week. Library Park, Mt. Konocti, and a competitor's boat rental show up. Disney's does not.</p>
@@ -872,16 +972,23 @@
       <h2 class="section__title">Right now on Clear Lake.</h2>
       <p class="section__lede">This is one of the small additions I have in mind for the rentals page. Live conditions, updated automatically. It gives people a reason to land on your page and to book the right boat at the right time.</p>
 
-      <div class="widget" id="conditions" aria-live="polite">
-        <div class="widget__head">
-          <span class="widget__title">Clear Lake conditions</span>
-          <span class="widget__loc">Lakeport, CA</span>
+      <div class="widget-frame">
+        <p class="widget-frame__caption">Mockup, rendered in your existing brand</p>
+        <div class="widget" id="conditions" aria-live="polite">
+          <div class="widget__head">
+            <span class="widget__title">Clear Lake Conditions</span>
+            <span class="widget__loc">Lakeport, CA</span>
+          </div>
+          <div class="widget__body">
+            <div id="conditions-body">
+              <div class="widget__loading">Reading the lake&hellip;</div>
+            </div>
+            <p class="widget__foot" id="conditions-foot">Source: National Weather Service</p>
+          </div>
         </div>
-        <div class="widget__loading" id="conditions-body">Reading the lake&hellip;</div>
-        <p class="widget__foot" id="conditions-foot">Source: National Weather Service</p>
       </div>
 
-      <p class="pricing-note">If the weather service is down, the widget falls back to a clean last-known reading rather than a broken box. It's a small touch. It's also the kind of thing that signals you take the site seriously.</p>
+      <p class="pricing-note">A few notes on the demo above. The wind sparkline highlights the calmest 3-hour window in the next 12 hours, the visible piece of data that gives someone planning a wakeboarding trip a real reason to book a specific time. The widget falls back to the last good reading if the weather service is briefly unreachable, never a broken box. And it lives in your existing brand, not mine.</p>
     </div>
   </section>
 
@@ -894,7 +1001,7 @@
 
       <div class="pricing-before">
         <p class="pricing-before__label">Before &nbsp;·&nbsp; today on a phone</p>
-        <img src="assets/pricing_table_falls_apart_in-app_browser.jpg" alt="iPhone screenshot of the current pricing table running off the screen." loading="lazy" />
+        <img src="/disneys/assets/pricing_table_falls_apart_in-app_browser.jpg" alt="iPhone screenshot of the current pricing table running off the screen." loading="lazy" />
       </div>
 
       <p class="pricing-after__label">After &nbsp;·&nbsp; same data, made readable</p>
@@ -1120,7 +1227,7 @@
   try {
     // Skip preview mode for Nathan's own checks
     if (location.search.indexOf('preview=1') !== -1) return;
-    // Once per session — reloads don't double-buzz
+    // Once per session. Reloads don't double-buzz
     if (sessionStorage.getItem('disneys-buzzed')) return;
     sessionStorage.setItem('disneys-buzzed', '1');
     // Fire-and-forget. sendBeacon survives navigation; fetch with keepalive is the fallback.
@@ -1143,7 +1250,7 @@
   // 2) GET forecastHourly endpoint
   // We cache 10 minutes in localStorage, and use a graceful fallback.
 
-  const CACHE_KEY = 'disneys-conditions-v1';
+  const CACHE_KEY = 'disneys-conditions-v2';
   const CACHE_TTL_MS = 10 * 60 * 1000;
   const LAT = 39.0436;
   const LON = -122.9158;
@@ -1189,20 +1296,30 @@
     if (!periods.length) throw new Error('no-periods');
 
     const now = periods[0];
+    // Pull the next 12 hours for the sparkline + best-window calc
+    const next12 = periods.slice(0, 12).map(p => ({
+      startTime: p.startTime,
+      tempF: p.temperature,
+      windHigh: parseWindRange(p.windSpeed).high,
+      windLow: parseWindRange(p.windSpeed).low,
+      windDir: p.windDirection,
+      shortForecast: p.shortForecast,
+      isDaytime: p.isDaytime,
+    }));
+
     return {
       tempF: now.temperature,
       shortForecast: now.shortForecast,
       isDaytime: now.isDaytime,
-      windSpeed: now.windSpeed,        // e.g. "5 to 10 mph"
+      windSpeed: now.windSpeed,
       windDirection: now.windDirection,
       precip: (now.probabilityOfPrecipitation && now.probabilityOfPrecipitation.value) || 0,
-      icon: now.icon,
-      time: now.startTime
+      time: now.startTime,
+      next12,
     };
   }
 
   function parseWindRange(s) {
-    // "5 mph" or "5 to 10 mph"
     if (!s) return { low: null, high: null };
     const m = String(s).match(/(\d+)(?:\s*to\s*(\d+))?/i);
     if (!m) return { low: null, high: null };
@@ -1211,19 +1328,66 @@
     return { low: Math.min(a, b), high: Math.max(a, b) };
   }
 
-  function windCall(highMph) {
-    if (highMph == null) return null;
-    if (highMph <= 6) return "Morning glass. Best window for wakeboarding and tubing.";
-    if (highMph <= 12) return "Light chop. Comfortable for tubing, ski conditions are fair.";
-    if (highMph <= 18) return "Breezy. Pontoon cruising is fine, expect chop for wake sports.";
-    return "Choppy. Better afternoon for a pontoon or fishing boat than a ski boat.";
+  function findBestWindow(next12) {
+    // Look at rolling 3-hour windows, return the one with the lowest average wind.
+    // Returns { startIdx, endIdx, avg, label }.
+    if (!next12 || next12.length < 3) return null;
+    let best = null;
+    for (let i = 0; i <= next12.length - 3; i++) {
+      const a = next12[i].windHigh, b = next12[i+1].windHigh, c = next12[i+2].windHigh;
+      if (a == null || b == null || c == null) continue;
+      const avg = (a + b + c) / 3;
+      if (!best || avg < best.avg) {
+        best = { startIdx: i, endIdx: i + 2, avg };
+      }
+    }
+    if (!best) return null;
+    const startStr = formatHour(next12[best.startIdx].startTime);
+    // The window covers 3 hours starting at startIdx, so it ends at startIdx + 3
+    const endTime = new Date(new Date(next12[best.endIdx].startTime).getTime() + 60 * 60 * 1000);
+    const endStr = formatHour(endTime.toISOString());
+    return { ...best, startStr, endStr };
+  }
+
+  function formatHour(iso) {
+    const d = new Date(iso);
+    return d.toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, timeZone: 'America/Los_Angeles' })
+            .replace(/\s+/g, ' ');
+  }
+
+  function buildSparkline(next12, best) {
+    if (!next12 || !next12.length) return '';
+    const max = Math.max(8, ...next12.map(p => p.windHigh || 0));
+    const bars = next12.map((p, i) => {
+      const h = p.windHigh != null ? Math.max(2, (p.windHigh / max) * 100) : 2;
+      const inBest = best && i >= best.startIdx && i <= best.endIdx;
+      return `<span class="spark__bar ${inBest ? 'spark__bar--best' : ''}" style="height:${h}%" title="${formatHour(p.startTime)}: ${p.windHigh || 0} mph"></span>`;
+    }).join('');
+    const first = formatHour(next12[0].startTime);
+    const last = formatHour(next12[next12.length - 1].startTime);
+    return `
+      <div class="spark">
+        <div class="spark__label"><span>Wind, next 12 hours</span><span>Lower is better</span></div>
+        <div class="spark__bars">${bars}</div>
+        <div class="spark__hours"><span>${first}</span><span>${last}</span></div>
+      </div>
+    `;
   }
 
   function render(c) {
     const w = parseWindRange(c.windSpeed);
-    const wDisplay = w.low && w.high && w.low !== w.high
-      ? `${w.low}<span class="stat__unit"> to ${w.high} mph</span>`
-      : (w.low != null ? `${w.low}<span class="stat__unit"> mph</span>` : `${c.windSpeed || '…'}`);
+    const wDisplay = w.low != null && w.high != null && w.low !== w.high
+      ? `${w.low}<span class="stat__unit">to ${w.high} mph</span>`
+      : (w.low != null ? `${w.low}<span class="stat__unit">mph</span>` : `${c.windSpeed || '…'}`);
+
+    const best = findBestWindow(c.next12);
+    const bestBlock = best
+      ? `<div class="best">
+           <p class="best__label">Best window today</p>
+           <p class="best__time">${best.startStr} to ${best.endStr}</p>
+           <p class="best__detail">Average wind around ${best.avg.toFixed(0)} mph, the calmest 3-hour stretch in the next 12 hours. Best for tubing and wakeboarding.</p>
+         </div>`
+      : '';
 
     body.innerHTML = `
       <div class="widget__grid">
@@ -1238,14 +1402,16 @@
         </div>
         <div class="stat">
           <p class="stat__label">Sky</p>
-          <p class="stat__value" style="font-size:1.05rem;line-height:1.2;">${c.shortForecast || '…'}</p>
+          <p class="stat__value stat__value--small">${c.shortForecast || '…'}</p>
         </div>
         <div class="stat">
           <p class="stat__label">Rain chance</p>
           <p class="stat__value">${c.precip != null ? c.precip : 0}<span class="stat__unit">%</span></p>
         </div>
       </div>
-      ${windCall(w.high) ? `<p class="widget__call">${windCall(w.high)}</p>` : ''}
+      ${bestBlock}
+      ${buildSparkline(c.next12, best)}
+      <a class="widget__cta" href="https://disneysboatrentals.com/rentals/" target="_blank" rel="noopener">Book your best window</a>
     `;
 
     const updated = new Date(c.time || Date.now());
