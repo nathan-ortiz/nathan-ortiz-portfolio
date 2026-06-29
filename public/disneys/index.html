@@ -92,35 +92,54 @@
 
   main, header.topbar, footer { position: relative; z-index: 1; }
 
-  /* Topbar */
+  /* Topbar masthead */
   .topbar {
     border-bottom: 1px solid var(--rule);
-    background: rgba(251, 247, 238, 0.85);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    background: rgba(251, 247, 238, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
   .topbar__inner {
     max-width: var(--measure-wide);
     margin: 0 auto;
-    padding: 14px var(--pad);
+    padding: 20px var(--pad);
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 18px;
     font-family: 'Inter', system-ui, sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
     color: var(--ink-muted);
   }
   .topbar__logo {
-    width: 28px; height: 28px;
-    flex: 0 0 28px;
+    width: 56px; height: 56px;
+    flex: 0 0 56px;
     display: inline-block;
     background: url('/disneys/assets/logo.webp') center/contain no-repeat;
   }
-  .topbar__label { color: var(--navy); }
-  .topbar__date { margin-left: auto; color: var(--ink-soft); }
+  .topbar__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .topbar__label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  .topbar__date {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    line-height: 1.2;
+  }
+  @media (min-width: 600px) {
+    .topbar__logo { width: 64px; height: 64px; flex-basis: 64px; }
+  }
 
   /* Container */
   .wrap {
@@ -739,42 +758,70 @@
 
   /* Trade + CTA */
   .cta {
-    margin: 26px 0 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    margin: 28px 0 6px;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 12px;
+  }
+  @media (min-width: 520px) {
+    .cta { grid-template-columns: 1fr 1fr; }
   }
   .cta__btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     background: var(--navy);
     color: #fff;
     font-family: 'Archivo Black', sans-serif;
-    font-size: 15px;
-    letter-spacing: 0.05em;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     text-decoration: none;
-    padding: 18px 22px;
+    padding: 18px 20px;
     border-radius: 6px;
-    transition: background-color 140ms ease, transform 140ms ease;
+    transition: background-color 140ms ease, transform 140ms ease, box-shadow 140ms ease;
     -webkit-tap-highlight-color: transparent;
+    box-shadow: 0 1px 0 rgba(12, 60, 120, 0.04), 0 10px 22px -14px rgba(12, 60, 120, 0.36);
   }
-  .cta__btn:hover { background: var(--navy-deep); color: #fff; }
+  .cta__btn:hover { background: var(--navy-deep); color: #fff; box-shadow: 0 1px 0 rgba(12, 60, 120, 0.04), 0 14px 28px -14px rgba(12, 60, 120, 0.5); }
   .cta__btn:active { transform: translateY(1px); }
-  .cta__alt {
+  .cta__btn--alt {
+    background: transparent;
+    color: var(--navy);
+    border: 1.5px solid var(--navy);
+    box-shadow: none;
+  }
+  .cta__btn--alt:hover { background: var(--navy); color: #fff; }
+  .cta__btn .ico {
+    width: 18px; height: 18px;
+    display: inline-block;
+    flex: 0 0 18px;
+  }
+  .cta__btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.1;
+  }
+  .cta__btn-action {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    opacity: 0.75;
+    margin-bottom: 2px;
+  }
+  .cta__btn--alt .cta__btn-action { opacity: 0.85; }
+  .cta__email {
+    margin: 14px 0 0;
     text-align: center;
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 16px;
-    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    letter-spacing: 0.01em;
   }
-  @media (min-width: 520px) {
-    .cta { flex-direction: row; }
-    .cta__btn { flex: 1; }
-    .cta__alt { align-self: center; }
-  }
+  .cta__email a { font-weight: 600; color: var(--navy); }
 
   .signoff {
     margin-top: 28px;
@@ -859,12 +906,14 @@
 </head>
 <body>
 
-<!-- Topbar -->
+<!-- Topbar masthead -->
 <header class="topbar" aria-label="Document header">
   <div class="topbar__inner">
     <span class="topbar__logo" aria-hidden="true"></span>
-    <span class="topbar__label">For Brandon &amp; Connor Disney</span>
-    <span class="topbar__date">Summer 2026</span>
+    <div class="topbar__text">
+      <span class="topbar__label">For Brandon &amp; Connor Disney</span>
+      <span class="topbar__date">A proposal &nbsp;·&nbsp; Summer 2026</span>
+    </div>
   </div>
 </header>
 
@@ -893,8 +942,7 @@
       <p>Rather than asking for money, I'm willing to trade the work for time on the water.</p>
 
       <figure class="photo-anchor">
-        <img src="/disneys/assets/brandon_connor.jpg" alt="Brandon and Connor Disney standing in front of the new Disney's Boat Rentals building on Lakeshore Boulevard." loading="lazy" />
-        <figcaption>The new 2200 Lakeshore Blvd location.</figcaption>
+        <img src="/disneys/assets/brandon_connor.jpg" alt="Brandon and Connor Disney in front of the new Disney's Boat Rentals building on Lakeshore Boulevard." loading="lazy" />
       </figure>
     </div>
   </section>
@@ -904,7 +952,7 @@
     <div class="wrap">
       <p class="section__label">01 &nbsp;·&nbsp; What I ran into</p>
       <h2 class="section__title">Four problems, each costing bookings.</h2>
-      <p class="section__lede">I went through the booking flow the way a customer would, on my phone, this week. Here's what I hit.</p>
+      <p class="section__lede">Earlier this summer I started looking at Clear Lake rentals for me and a few friends. These are the things that came up when I tried to read your site and book on my phone.</p>
 
       <!-- 1 -->
       <article class="issue">
@@ -932,7 +980,7 @@
       <article class="issue">
         <span class="issue__num">Problem 03</span>
         <h3 class="issue__title">Sections are cut off and spacing is broken.</h3>
-        <p class="issue__text">Reviews get clipped mid-sentence. Headers crowd the images. The gallery has large empty gaps. None of this is catastrophic on its own. Together they undercut the 4.8 star reputation right at the moment a customer is deciding whether to trust you with a ski boat.</p>
+        <p class="issue__text">Reviews get clipped mid-sentence. Headers crowd the images. The gallery has large empty gaps.</p>
         <p class="issue__aside">These details matter most exactly when a customer is about to commit. Right now they're working against you.</p>
         <div style="display:grid;gap:14px;grid-template-columns:1fr 1fr;max-width:520px;">
           <figure class="issue__screenshot" style="max-width:none;">
@@ -968,9 +1016,9 @@
   <!-- LIVE WIDGET -->
   <section class="section">
     <div class="wrap">
-      <p class="section__label">02 &nbsp;·&nbsp; A live example</p>
-      <h2 class="section__title">Right now on Clear Lake.</h2>
-      <p class="section__lede">This is one of the small additions I have in mind for the rentals page. Live conditions, updated automatically. It gives people a reason to land on your page and to book the right boat at the right time.</p>
+      <p class="section__label">02 &nbsp;·&nbsp; An optional add-on</p>
+      <h2 class="section__title">A small live conditions panel.</h2>
+      <p class="section__lede">An idea you can take or leave. A simple readout of Clear Lake conditions, right on the rentals page, refreshed automatically. It answers the question every customer has before they commit: what's it going to be like out there?</p>
 
       <div class="widget-frame">
         <p class="widget-frame__caption">Mockup, rendered in your existing brand</p>
@@ -988,146 +1036,17 @@
         </div>
       </div>
 
-      <p class="pricing-note">A few notes on the demo above. The wind sparkline highlights the calmest 3-hour window in the next 12 hours, the visible piece of data that gives someone planning a wakeboarding trip a real reason to book a specific time. The widget falls back to the last good reading if the weather service is briefly unreachable, never a broken box. And it lives in your existing brand, not mine.</p>
+      <p class="pricing-note">Fishing trips care about glassy water. Families care about temperature and rain. Wake sports care about wind. A single small panel answers all of them and shows the calmest stretch of the day, so a customer on the fence books today instead of leaving to check the weather and forgetting to come back. If the weather service is briefly unreachable, the widget falls back to the last good reading rather than a broken box.</p>
     </div>
   </section>
 
-  <!-- PRICING DEMO -->
-  <section class="section">
-    <div class="wrap">
-      <p class="section__label">03 &nbsp;·&nbsp; What a fix looks like</p>
-      <h2 class="section__title">The pricing table, made readable.</h2>
-      <p class="section__lede">All of this information is already on your site. It's just hidden inside a popup that breaks on mobile. Here's the same data, rendered cleanly. This is what customers, Google, and AI assistants would see instead.</p>
-
-      <div class="pricing-before">
-        <p class="pricing-before__label">Before &nbsp;·&nbsp; today on a phone</p>
-        <img src="/disneys/assets/pricing_table_falls_apart_in-app_browser.jpg" alt="iPhone screenshot of the current pricing table running off the screen." loading="lazy" />
-      </div>
-
-      <p class="pricing-after__label">After &nbsp;·&nbsp; same data, made readable</p>
-
-      <!-- Mobile cards -->
-      <div class="pricing">
-        <article class="price-card price-card-mobile">
-          <div class="price-card__top">
-            <span class="price-card__name">Pontoon · Deluxe 24</span>
-            <span class="price-card__from">from $275</span>
-          </div>
-          <p class="price-card__specs">24 ft · 115 hp · up to 10 people</p>
-          <div class="price-row"><span class="price-row__dur">1 hour</span><span class="price-row__amt">$275</span></div>
-          <div class="price-row"><span class="price-row__dur">2 hours</span><span class="price-row__amt">$335</span></div>
-          <div class="price-row"><span class="price-row__dur">4 hours</span><span class="price-row__amt">$455</span></div>
-          <div class="price-row"><span class="price-row__dur">6 hours</span><span class="price-row__amt">$575</span></div>
-          <div class="price-row"><span class="price-row__dur">8 hours</span><span class="price-row__amt">$695</span></div>
-        </article>
-        <article class="price-card price-card-mobile">
-          <div class="price-card__top">
-            <span class="price-card__name">Pontoon · LX 20</span>
-            <span class="price-card__from">from $255</span>
-          </div>
-          <p class="price-card__specs">20 ft · 90 hp · up to 6 people</p>
-          <div class="price-row"><span class="price-row__dur">1 hour</span><span class="price-row__amt">$255</span></div>
-          <div class="price-row"><span class="price-row__dur">2 hours</span><span class="price-row__amt">$315</span></div>
-          <div class="price-row"><span class="price-row__dur">4 hours</span><span class="price-row__amt">$435</span></div>
-          <div class="price-row"><span class="price-row__dur">6 hours</span><span class="price-row__amt">$555</span></div>
-          <div class="price-row"><span class="price-row__dur">8 hours</span><span class="price-row__amt">$675</span></div>
-        </article>
-        <article class="price-card price-card-mobile">
-          <div class="price-card__top">
-            <span class="price-card__name">Ski Boat · SVX 211</span>
-            <span class="price-card__from">from $365</span>
-          </div>
-          <p class="price-card__specs">21 ft · 200 hp · up to 10 people</p>
-          <div class="price-row"><span class="price-row__dur">1 hour</span><span class="price-row__amt">$365</span></div>
-          <div class="price-row"><span class="price-row__dur">2 hours</span><span class="price-row__amt">$425</span></div>
-          <div class="price-row"><span class="price-row__dur">4 hours</span><span class="price-row__amt">$545</span></div>
-          <div class="price-row"><span class="price-row__dur">6 hours</span><span class="price-row__amt">$665</span></div>
-          <div class="price-row"><span class="price-row__dur">8 hours</span><span class="price-row__amt">$785</span></div>
-        </article>
-        <article class="price-card price-card-mobile">
-          <div class="price-card__top">
-            <span class="price-card__name">Ski Boat · SVX 191</span>
-            <span class="price-card__from">from $295</span>
-          </div>
-          <p class="price-card__specs">19 ft · 150 hp · up to 8 people</p>
-          <div class="price-row"><span class="price-row__dur">1 hour</span><span class="price-row__amt">$295</span></div>
-          <div class="price-row"><span class="price-row__dur">2 hours</span><span class="price-row__amt">$355</span></div>
-          <div class="price-row"><span class="price-row__dur">4 hours</span><span class="price-row__amt">$475</span></div>
-          <div class="price-row"><span class="price-row__dur">6 hours</span><span class="price-row__amt">$595</span></div>
-          <div class="price-row"><span class="price-row__dur">8 hours</span><span class="price-row__amt">$715</span></div>
-        </article>
-        <article class="price-card price-card-mobile">
-          <div class="price-card__top">
-            <span class="price-card__name">Ski Boat · Tahoe 185</span>
-            <span class="price-card__from">from $260</span>
-          </div>
-          <p class="price-card__specs">18 ft · 115 hp · up to 6 people</p>
-          <div class="price-row"><span class="price-row__dur">1 hour</span><span class="price-row__amt">$260</span></div>
-          <div class="price-row"><span class="price-row__dur">2 hours</span><span class="price-row__amt">$320</span></div>
-          <div class="price-row"><span class="price-row__dur">4 hours</span><span class="price-row__amt">$440</span></div>
-          <div class="price-row"><span class="price-row__dur">6 hours</span><span class="price-row__amt">$560</span></div>
-          <div class="price-row"><span class="price-row__dur">8 hours</span><span class="price-row__amt">$680</span></div>
-        </article>
-        <article class="price-card price-card-mobile">
-          <div class="price-card__top">
-            <span class="price-card__name">Fishing Boat</span>
-            <span class="price-card__from">from $195</span>
-          </div>
-          <p class="price-card__specs">17 ft · trolling and 90 hp · up to 4 people</p>
-          <div class="price-row"><span class="price-row__dur">1 hour</span><span class="price-row__amt">$195</span></div>
-          <div class="price-row"><span class="price-row__dur">2 hours</span><span class="price-row__amt">$245</span></div>
-          <div class="price-row"><span class="price-row__dur">4 hours</span><span class="price-row__amt">$345</span></div>
-          <div class="price-row"><span class="price-row__dur">6 hours</span><span class="price-row__amt">$445</span></div>
-          <div class="price-row"><span class="price-row__dur">8 hours</span><span class="price-row__amt">$545</span></div>
-        </article>
-      </div>
-
-      <!-- Tablet+ table -->
-      <div class="price-table-wrap">
-        <table class="price-table" aria-label="Hourly boat rental pricing">
-          <thead>
-            <tr>
-              <th>Boat</th>
-              <th>1 hr</th>
-              <th>2 hr</th>
-              <th>4 hr</th>
-              <th>6 hr</th>
-              <th>8 hr</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Pontoon · Deluxe 24 <span style="color:var(--ink-soft);font-weight:400">(10p, 115 hp)</span></td><td>$275</td><td>$335</td><td>$455</td><td>$575</td><td>$695</td></tr>
-            <tr><td>Pontoon · LX 20 <span style="color:var(--ink-soft);font-weight:400">(6p, 90 hp)</span></td><td>$255</td><td>$315</td><td>$435</td><td>$555</td><td>$675</td></tr>
-            <tr><td>Ski Boat · SVX 211 <span style="color:var(--ink-soft);font-weight:400">(10p, 200 hp)</span></td><td>$365</td><td>$425</td><td>$545</td><td>$665</td><td>$785</td></tr>
-            <tr><td>Ski Boat · SVX 191 <span style="color:var(--ink-soft);font-weight:400">(8p, 150 hp)</span></td><td>$295</td><td>$355</td><td>$475</td><td>$595</td><td>$715</td></tr>
-            <tr><td>Ski Boat · Tahoe 185 <span style="color:var(--ink-soft);font-weight:400">(6p, 115 hp)</span></td><td>$260</td><td>$320</td><td>$440</td><td>$560</td><td>$680</td></tr>
-            <tr><td>Fishing Boat <span style="color:var(--ink-soft);font-weight:400">(4p, 90 hp)</span></td><td>$195</td><td>$245</td><td>$345</td><td>$445</td><td>$545</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="addons">
-        <p class="addons__title">Add-ons (per rental)</p>
-        <ul>
-          <li><span>1 to 2 person tube</span><span>$48</span></li>
-          <li><span>Wakeboard</span><span>$37</span></li>
-          <li><span>Kneeboard</span><span>$37</span></li>
-          <li><span>Kids water skis</span><span>$37</span></li>
-          <li><span>Floating mat</span><span>$37</span></li>
-          <li><span>Bring your dog</span><span>$20 per pet</span></li>
-        </ul>
-      </div>
-
-      <p class="pricing-note">Same numbers that are on your site today, in a layout that doesn't break.</p>
-    </div>
-  </section>
 
   <!-- THE PLAN -->
   <section class="section">
     <div class="wrap wrap--wide">
-      <p class="section__label">04 &nbsp;·&nbsp; What I'll do</p>
-      <h2 class="section__title">Eight fixes, and what each one earns you.</h2>
-      <p class="section__lede">Every one of these is a permanent change. We fix it once, and it keeps working for you, every season, for every future customer.</p>
+      <p class="section__label">03 &nbsp;·&nbsp; What I'll do</p>
+      <h2 class="section__title">Seven fixes, and what each one earns you.</h2>
+      <p class="section__lede">Every one of these is a permanent change. We do it once, and it keeps working for you, every season, for every future customer.</p>
 
       <ol class="fix-list">
         <li class="fix">
@@ -1155,10 +1074,6 @@
           <div class="fix__why">Faster pages keep more visitors and rank better.</div>
         </li>
         <li class="fix">
-          <div class="fix__do">A live Clear Lake conditions widget, like the one above.</div>
-          <div class="fix__why">Gives people a reason to land on your page and book the right boat at the right time.</div>
-        </li>
-        <li class="fix">
           <div class="fix__do">Conversion tracking on the booking flow.</div>
           <div class="fix__why">So we can both see, in real numbers, how many bookings these changes drive.</div>
         </li>
@@ -1169,7 +1084,7 @@
   <!-- ROI -->
   <section class="section">
     <div class="wrap">
-      <p class="section__label">05 &nbsp;·&nbsp; What this is worth</p>
+      <p class="section__label">04 &nbsp;·&nbsp; What this is worth</p>
       <h2 class="section__title">Doing the math, using your own numbers.</h2>
 
       <p>A single 4-hour ski boat rental on your site is $545. A pontoon day runs into the four figures with add-ons. If these fixes bring in even one or two extra rentals, they've already paid for themselves, many times over.</p>
@@ -1183,7 +1098,7 @@
   <!-- THE TRADE -->
   <section class="section">
     <div class="wrap">
-      <p class="section__label">06 &nbsp;·&nbsp; The trade</p>
+      <p class="section__label">05 &nbsp;·&nbsp; The trade</p>
       <h2 class="section__title">What I'm asking for.</h2>
 
       <p>I'd love to trade this for time on the water. A comped day on the lake with wakeboarding and tubing included, for me and a few friends, and ideally a couple more sessions across the season. I'm flexible on the exact shape of it.</p>
@@ -1197,17 +1112,24 @@
   <!-- NEXT STEP -->
   <section class="section">
     <div class="wrap">
-      <p class="section__label">07 &nbsp;·&nbsp; The easy next step</p>
+      <p class="section__label">06 &nbsp;·&nbsp; The easy next step</p>
       <h2 class="section__title">Ten minutes is all I'd need.</h2>
       <p>If this sounds like it's worth ten minutes of your time, I'll walk you through everything by phone or video, whichever is easiest.</p>
 
       <div class="cta">
-        <a class="cta__btn" href="tel:+19092192861">Call or text (909) 219-2861</a>
-        <span class="cta__alt">or <a href="mailto:hello@nathanortiz.com">hello@nathanortiz.com</a></span>
+        <a class="cta__btn" href="tel:+19092192861" aria-label="Call (909) 219-2861">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.97.37 1.92.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.89.33 1.84.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="cta__btn-text"><span class="cta__btn-action">Call</span><span>(909) 219-2861</span></span>
+        </a>
+        <a class="cta__btn cta__btn--alt" href="sms:+19092192861" aria-label="Text (909) 219-2861">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span class="cta__btn-text"><span class="cta__btn-action">Text</span><span>(909) 219-2861</span></span>
+        </a>
       </div>
+      <p class="cta__email">Or send a note to <a href="mailto:hello@nathanortiz.com">hello@nathanortiz.com</a>.</p>
 
-      <p class="signoff">Thanks for reading, and for running a great local business.<br />
-        <span class="signoff__name">Nathan</span>
+      <p class="signoff">Thanks for reading, and for running a great local business!<br />
+        <span class="signoff__name">- Nathan</span>
       </p>
     </div>
   </section>
@@ -1216,7 +1138,7 @@
 
 <footer class="footer">
   <div class="footer__inner">
-    <p>Nathan Ortiz. Software developer in Ukiah, CA. Headed to Columbia for CS this fall. <a href="https://nathanortiz.com">nathanortiz.com</a></p>
+    <p>Nathan Ortiz. Software developer in Ukiah, CA. Headed to Columbia University in NYC for computer science this fall. <a href="https://nathanortiz.com">nathanortiz.com</a></p>
     <p style="margin:0">This page is shared by link with Disney's Boat Rentals and is not publicly indexed.</p>
   </div>
 </footer>
@@ -1250,7 +1172,7 @@
   // 2) GET forecastHourly endpoint
   // We cache 10 minutes in localStorage, and use a graceful fallback.
 
-  const CACHE_KEY = 'disneys-conditions-v2';
+  const CACHE_KEY = 'disneys-conditions-v3';
   const CACHE_TTL_MS = 10 * 60 * 1000;
   const LAT = 39.0436;
   const LON = -122.9158;
@@ -1367,7 +1289,7 @@
     const last = formatHour(next12[next12.length - 1].startTime);
     return `
       <div class="spark">
-        <div class="spark__label"><span>Wind, next 12 hours</span><span>Lower is better</span></div>
+        <div class="spark__label"><span>Wind by hour, next 12 hours</span><span>Calmest stretch shaded</span></div>
         <div class="spark__bars">${bars}</div>
         <div class="spark__hours"><span>${first}</span><span>${last}</span></div>
       </div>
@@ -1383,9 +1305,9 @@
     const best = findBestWindow(c.next12);
     const bestBlock = best
       ? `<div class="best">
-           <p class="best__label">Best window today</p>
+           <p class="best__label">Best stretch today</p>
            <p class="best__time">${best.startStr} to ${best.endStr}</p>
-           <p class="best__detail">Average wind around ${best.avg.toFixed(0)} mph, the calmest 3-hour stretch in the next 12 hours. Best for tubing and wakeboarding.</p>
+           <p class="best__detail">Average wind around ${best.avg.toFixed(0)} mph. The calmest 3-hour window in the next 12 hours, ideal for fishing, family outings, and wake sports alike.</p>
          </div>`
       : '';
 
@@ -1398,7 +1320,6 @@
         <div class="stat">
           <p class="stat__label">Wind</p>
           <p class="stat__value">${wDisplay}</p>
-          <p class="stat__hint">${c.windDirection ? 'From the ' + c.windDirection : ''}</p>
         </div>
         <div class="stat">
           <p class="stat__label">Sky</p>
@@ -1411,7 +1332,6 @@
       </div>
       ${bestBlock}
       ${buildSparkline(c.next12, best)}
-      <a class="widget__cta" href="https://disneysboatrentals.com/rentals/" target="_blank" rel="noopener">Book your best window</a>
     `;
 
     const updated = new Date(c.time || Date.now());
