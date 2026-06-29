@@ -1,0 +1,1262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0c3c78" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="A short proposal for Disney's Boat Rentals on Clear Lake. Fixing a few things on the website that are costing bookings this summer. From Nathan Ortiz." />
+<title>A proposal for Disney's Boat Rentals</title>
+
+<link rel="icon" type="image/webp" href="assets/logo.webp" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="A proposal for Disney's Boat Rentals" />
+<meta property="og:description" content="Fixing a few things on your website that are costing you bookings this summer. From Nathan Ortiz." />
+<meta property="og:image" content="assets/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://nathanortiz.com/disneys" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="A proposal for Disney's Boat Rentals" />
+<meta name="twitter:description" content="Fixing a few things on your website that are costing you bookings this summer. From Nathan Ortiz." />
+<meta name="twitter:image" content="assets/og-image.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@500;600;700&display=swap" />
+
+<style>
+  :root {
+    --paper:       #FBF7EE;
+    --paper-2:     #F4EBD6;
+    --paper-3:     #ECE2C7;
+    --ink:         #1A1814;
+    --ink-muted:   #5B544A;
+    --ink-soft:    #8A8273;
+    --navy:        #0c3c78;
+    --navy-deep:   #082a55;
+    --lake:        #54c0e4;
+    --lake-deep:   #3c84cc;
+    --rule:        #D9CFB6;
+    --rule-soft:   #E8DFC9;
+    --hot:         #B0241A;
+
+    --measure: 38rem;
+    --measure-wide: 56rem;
+
+    --pad: clamp(1.25rem, 5vw, 2rem);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; overflow-x: hidden; }
+
+  html {
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--paper);
+    min-height: 100svh;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(1200px 600px at 10% 0%, rgba(84, 192, 228, 0.06), transparent 60%),
+      radial-gradient(900px 500px at 90% 10%, rgba(12, 60, 120, 0.04), transparent 65%);
+    background-attachment: fixed;
+  }
+
+  /* Subtle paper grain via a stacked noise SVG */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.05 0 0 0 0 0.03 0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  main, header.topbar, footer { position: relative; z-index: 1; }
+
+  /* Topbar */
+  .topbar {
+    border-bottom: 1px solid var(--rule);
+    background: rgba(251, 247, 238, 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .topbar__inner {
+    max-width: var(--measure-wide);
+    margin: 0 auto;
+    padding: 14px var(--pad);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .topbar__logo {
+    width: 28px; height: 28px;
+    flex: 0 0 28px;
+    display: inline-block;
+    background: url('assets/logo.webp') center/contain no-repeat;
+  }
+  .topbar__label { color: var(--navy); }
+  .topbar__date { margin-left: auto; color: var(--ink-soft); }
+
+  /* Container */
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+  }
+  .wrap--wide {
+    max-width: var(--measure-wide);
+  }
+
+  /* Typography */
+  h1, h2, h3, h4 {
+    font-family: 'Archivo Black', 'Inter', sans-serif;
+    color: var(--navy);
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    line-height: 1.04;
+    margin: 0;
+  }
+  h2 { font-size: clamp(1.55rem, 5.2vw, 2.3rem); letter-spacing: -0.01em; line-height: 1.08; }
+  h3 { font-size: clamp(1.1rem, 4.2vw, 1.3rem); letter-spacing: -0.005em; line-height: 1.18; }
+  p { margin: 0 0 1em; }
+
+  a { color: var(--navy); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--navy-deep); }
+
+  em, .italic { font-style: italic; font-family: 'Fraunces', serif; }
+
+  /* Hero */
+  .hero {
+    padding: clamp(56px, 12vw, 96px) 0 clamp(36px, 8vw, 64px);
+    position: relative;
+  }
+  .hero__inner {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+  }
+  .hero__kicker {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+  }
+  .hero__title {
+    font-size: clamp(2.1rem, 9.2vw, 4.4rem);
+    line-height: 0.96;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .hero__sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.15rem, 4.4vw, 1.55rem);
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 0 0 22px;
+    max-width: 32ch;
+  }
+  .hero__meta {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .hero__meta .dot { color: var(--lake-deep); margin: 0 8px; }
+
+  /* Section base */
+  .section {
+    padding: clamp(36px, 9vw, 64px) 0;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .section__label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--lake-deep);
+    margin: 0 0 14px;
+  }
+  .section__title {
+    margin: 0 0 18px;
+  }
+  .section__lede {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(1.05rem, 4vw, 1.2rem);
+    line-height: 1.45;
+    color: var(--ink);
+    margin: 0 0 28px;
+  }
+
+  /* Intro photo anchor */
+  .photo-anchor {
+    margin: 32px 0 0;
+  }
+  .photo-anchor img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 var(--rule), 0 12px 28px -16px rgba(12, 60, 120, 0.28);
+  }
+  .photo-anchor figcaption {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  /* Issue card */
+  .issue {
+    margin: 28px 0 36px;
+    padding-bottom: 28px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .issue:last-of-type { border-bottom: 0; padding-bottom: 0; }
+  .issue__num {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--lake-deep);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .issue__title {
+    color: var(--navy);
+    margin: 0 0 10px;
+  }
+  .issue__text {
+    margin: 0 0 18px;
+    color: var(--ink);
+  }
+  .issue__cost {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--hot);
+    margin-bottom: 18px;
+  }
+  .issue__screenshot {
+    margin: 0;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    box-shadow: 0 12px 28px -18px rgba(12, 60, 120, 0.25);
+    max-width: 380px;
+  }
+  .issue__screenshot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+  }
+
+  /* Conditions widget */
+  .widget {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 22px;
+    margin: 8px 0 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .widget::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--navy), var(--lake-deep), var(--lake));
+  }
+  .widget__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .widget__title {
+    font-family: 'Archivo Black', sans-serif;
+    color: var(--navy);
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .widget__loc {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .widget__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 18px;
+  }
+  @media (min-width: 600px) {
+    .widget__grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .stat {
+    border-top: 1px solid var(--rule);
+    padding-top: 12px;
+  }
+  .stat__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 6px;
+  }
+  .stat__value {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(1.45rem, 5.5vw, 1.8rem);
+    color: var(--navy);
+    line-height: 1;
+  }
+  .stat__unit {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 0.7em;
+    color: var(--ink-muted);
+    margin-left: 4px;
+  }
+  .stat__hint {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+  .widget__foot {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 18px 0 0;
+    text-align: left;
+  }
+  .widget__call {
+    margin: 16px 0 0;
+    padding: 14px 16px;
+    background: rgba(12, 60, 120, 0.06);
+    border-left: 3px solid var(--navy);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--navy-deep);
+    border-radius: 0 4px 4px 0;
+  }
+  .widget__loading, .widget__error {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--ink-muted);
+    padding: 20px 0;
+    text-align: center;
+  }
+  .widget__error { color: var(--ink-soft); }
+
+  /* Pricing demo */
+  .pricing-before {
+    margin: 0 0 28px;
+  }
+  .pricing-before__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--hot);
+    margin-bottom: 8px;
+  }
+  .pricing-before img {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid var(--rule);
+    padding: 6px;
+    background: #fff;
+  }
+
+  .pricing-after__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  /* Mobile pricing: cards */
+  .pricing {
+    display: grid;
+    gap: 14px;
+  }
+  .price-card {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 14px 14px;
+  }
+  .price-card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .price-card__name {
+    font-family: 'Archivo Black', sans-serif;
+    color: var(--navy);
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .price-card__from {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-muted);
+  }
+  .price-card__specs {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.03em;
+    margin: 0 0 12px;
+  }
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 8px 0;
+    border-top: 1px dashed var(--rule);
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    color: var(--ink);
+  }
+  .price-row__dur { font-weight: 500; color: var(--ink-muted); }
+  .price-row__amt { font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; }
+
+  /* Tablet+: real table */
+  @media (min-width: 720px) {
+    .pricing { display: block; }
+    .price-card { background: transparent; border: 0; padding: 0; }
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      background: var(--paper-2);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .price-table thead th {
+      background: var(--navy);
+      color: var(--paper);
+      font-family: 'Archivo Black', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: right;
+      padding: 12px 14px;
+    }
+    .price-table thead th:first-child { text-align: left; }
+    .price-table tbody td {
+      padding: 12px 14px;
+      border-top: 1px solid var(--rule);
+      text-align: right;
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .price-table tbody td:first-child {
+      text-align: left;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .price-table tbody tr:nth-child(odd) td { background: rgba(255,255,255,0.4); }
+    .price-card-mobile { display: none; }
+  }
+  @media (max-width: 719.98px) {
+    .price-table-wrap { display: none; }
+  }
+
+  /* Add-ons strip */
+  .addons {
+    margin-top: 22px;
+    padding: 16px 18px;
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+  }
+  .addons__title {
+    font-family: 'Archivo Black', sans-serif;
+    color: var(--navy);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+  .addons ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px 18px;
+  }
+  @media (min-width: 520px) {
+    .addons ul { grid-template-columns: repeat(2, 1fr); }
+  }
+  .addons li {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    padding: 3px 0;
+  }
+  .addons li span:last-child {
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .pricing-note {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    margin: 16px 0 0;
+  }
+
+  /* Plan / fix list */
+  .fix-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: fix;
+  }
+  .fix {
+    counter-increment: fix;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    gap: 8px;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+  }
+  .fix:last-child { border-bottom: 0; }
+  .fix::before {
+    content: counter(fix, decimal-leading-zero);
+    font-family: 'Archivo Black', sans-serif;
+    color: var(--lake-deep);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    padding-top: 2px;
+    min-width: 32px;
+  }
+  .fix__body { display: contents; }
+  .fix__do {
+    grid-column: 2;
+    font-family: 'Archivo Black', sans-serif;
+    color: var(--navy);
+    font-size: 15px;
+    line-height: 1.3;
+    letter-spacing: 0.005em;
+  }
+  .fix__why {
+    grid-column: 2;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--ink-muted);
+    font-size: 15.5px;
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+  @media (min-width: 640px) {
+    .fix { grid-template-columns: 48px 1fr 1.2fr; column-gap: 22px; }
+    .fix__do { grid-column: 2; }
+    .fix__why { grid-column: 3; margin-top: 0; padding-top: 1px; }
+  }
+
+  /* Trade + CTA */
+  .cta {
+    margin: 26px 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .cta__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    padding: 18px 22px;
+    border-radius: 6px;
+    transition: background-color 140ms ease, transform 140ms ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .cta__btn:hover { background: var(--navy-deep); color: #fff; }
+  .cta__btn:active { transform: translateY(1px); }
+  .cta__alt {
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  @media (min-width: 520px) {
+    .cta { flex-direction: row; }
+    .cta__btn { flex: 1; }
+    .cta__alt { align-self: center; }
+  }
+
+  .signoff {
+    margin-top: 28px;
+    font-family: 'Fraunces', serif;
+    font-size: 16.5px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .signoff__name {
+    font-family: 'Archivo Black', sans-serif;
+    color: var(--navy);
+    font-size: 22px;
+    letter-spacing: 0.005em;
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  /* Pull-quote */
+  .pull {
+    margin: 18px 0;
+    padding: 16px 0 16px 18px;
+    border-left: 3px solid var(--lake-deep);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.05rem, 4vw, 1.18rem);
+    line-height: 1.45;
+    color: var(--navy-deep);
+  }
+
+  /* AI discovery placeholder block */
+  .ai-test {
+    margin: 18px 0 8px;
+    padding: 18px;
+    background: var(--paper-2);
+    border: 1px dashed var(--rule);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink-muted);
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+
+  /* Footer */
+  .footer {
+    border-top: 1px solid var(--rule);
+    padding: 28px var(--pad) 40px;
+    margin-top: 24px;
+    background: rgba(244, 235, 214, 0.4);
+  }
+  .footer__inner {
+    max-width: var(--measure);
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+  }
+  .footer__inner a { color: var(--navy); }
+
+  /* Misc */
+  .badge-1983 {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--lake-deep);
+    padding: 3px 8px;
+    border: 1px solid var(--lake-deep);
+    border-radius: 999px;
+    text-transform: uppercase;
+    background: rgba(84, 192, 228, 0.08);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<header class="topbar" aria-label="Document header">
+  <div class="topbar__inner">
+    <span class="topbar__logo" aria-hidden="true"></span>
+    <span class="topbar__label">For Brandon &amp; Connor Disney</span>
+    <span class="topbar__date">Summer 2026</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__inner">
+      <p class="hero__kicker">A proposal for</p>
+      <h1 class="hero__title">Disney's<br />Boat Rentals</h1>
+      <p class="hero__sub">Fixing a few things on your website that are costing you bookings this summer.</p>
+      <p class="hero__meta">A short read <span class="dot">·</span> About 6 minutes</p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="wrap">
+      <p class="section__label">The summary</p>
+      <h2 class="section__title">Your business is in great shape. Your website hasn't caught up.</h2>
+
+      <p>Hi Brandon and Connor. The new Lakeshore Boulevard location looks fantastic, your Google profile is up to date, and 4.8 stars from 245 reviews is a great reputation. The website is the one thing that hasn't caught up.</p>
+
+      <p>As a customer trying to book this summer, I ran into several issues. This page shows you exactly what's wrong, what I'll do about it, and what it's worth to you.</p>
+
+      <p>Rather than asking for money, I'm willing to trade the work for time on the water.</p>
+
+      <figure class="photo-anchor">
+        <img src="assets/brandon_connor.jpg" alt="Brandon and Connor Disney standing in front of the new Disney's Boat Rentals building on Lakeshore Boulevard." loading="lazy" />
+        <figcaption>The new 2200 Lakeshore Blvd location.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- PROBLEMS -->
+  <section class="section">
+    <div class="wrap">
+      <p class="section__label">01 &nbsp;·&nbsp; What I ran into</p>
+      <h2 class="section__title">Four problems, each costing bookings.</h2>
+      <p class="section__lede">I went through the booking flow the way a customer would, on my phone, this week. Here's what I hit.</p>
+
+      <!-- 1 -->
+      <article class="issue">
+        <span class="issue__num">Problem 01</span>
+        <h3 class="issue__title">The pricing table falls apart on a phone.</h3>
+        <p class="issue__text">Open the site on a phone, or inside an in-app browser like ChatGPT, Claude, or Instagram, and the rental pricing table runs off the screen and overlaps the page header. It's nearly unreadable. Most people planning a lake day are on their phone, and a growing share of younger customers like myself now open businesses from inside an app rather than Safari or Chrome.</p>
+        <span class="issue__cost">Lost booking: silent drop-off at the pricing step.</span>
+        <figure class="issue__screenshot">
+          <img src="assets/pricing_table_falls_apart_in-app_browser.jpg" alt="iPhone screenshot of the disneysboatrentals.com pricing table running off the right side of the screen, opened inside an in-app browser. Annotated by hand." loading="lazy" />
+        </figure>
+      </article>
+
+      <!-- 2 -->
+      <article class="issue">
+        <span class="issue__num">Problem 02</span>
+        <h3 class="issue__title">I had to call to find out what a tube and wakeboard cost.</h3>
+        <p class="issue__text">The add-on pricing isn't visible on the main page or any of the main FareHarbor rental pages. I had to pick up the phone and ask. Most people won't, and those bookings quietly leave.</p>
+        <span class="issue__cost">Lost booking: the "how much for a tube?" call that never happens.</span>
+        <figure class="issue__screenshot">
+          <img src="assets/boat_selection_formatting_unreadable.jpg" alt="iPhone screenshot of the boat selection page with text cramped into a narrow left column. Annotated 'Formatting' with a red arrow." loading="lazy" />
+        </figure>
+      </article>
+
+      <!-- 3 -->
+      <article class="issue">
+        <span class="issue__num">Problem 03</span>
+        <h3 class="issue__title">Sections are cut off and spacing is broken.</h3>
+        <p class="issue__text">Reviews get clipped mid-sentence. Headers crowd the images. The gallery has large empty gaps. None of this is catastrophic on its own. Together they undercut the 4.8 star reputation right at the moment a customer is deciding whether to trust you with a ski boat.</p>
+        <span class="issue__cost">Lost booking: trust friction at the decision moment.</span>
+        <div style="display:grid;gap:14px;grid-template-columns:1fr 1fr;max-width:520px;">
+          <figure class="issue__screenshot" style="max-width:none;">
+            <img src="assets/google_reviews_element_clipped.jpg" alt="iPhone screenshot of a Google reviews card with text clipped mid-sentence." loading="lazy" />
+          </figure>
+          <figure class="issue__screenshot" style="max-width:none;">
+            <img src="assets/header_crowds_image_not_enough_spacing.jpg" alt="iPhone screenshot of the 'Our Gallery' heading crowding a gallery photo with no spacing." loading="lazy" />
+          </figure>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="issue">
+        <span class="issue__num">Problem 04</span>
+        <h3 class="issue__title">You're nearly invisible in AI search for "things to do."</h3>
+        <p class="issue__text">More and more people are discovering local businesses through AI search now, not Google. I tested how the latest models answer travel questions. For <em>best boat rentals on Clear Lake</em>, you come up on top. You've won that. But for <em>things to do in Lakeport</em>, the question someone asks before they've decided to rent a boat, you're only mentioned some of the time, or not at all, compared to other specific companies. That's the fastest-growing way millennials and Gen Z plan trips. Right now it's sending them elsewhere.</p>
+        <span class="issue__cost">Lost booking: the visitor who never knew you existed.</span>
+        <div style="display:grid;gap:14px;grid-template-columns:1fr 1fr;max-width:520px;">
+          <figure class="issue__screenshot" style="max-width:none;">
+            <img src="assets/ai_discovery_1.jpg" alt="Screenshot of Claude Sonnet 4.6 answering 'Things to do in Lakeport?' Names Library Park, Mt. Konocti, Park Place Restaurant. Disney's Boat Rentals is not mentioned." loading="lazy" />
+          </figure>
+          <figure class="issue__screenshot" style="max-width:none;">
+            <img src="assets/ai_discovery_2.jpg" alt="Continuation of the same Claude response, suggesting 'Jet ski / pontoon rentals via Clearlake Boat Rentals or Clearlake Powersport Rentals.' A competitor was named instead of Disney's." loading="lazy" />
+          </figure>
+        </div>
+        <p style="font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--ink-muted);margin:12px 0 0;">Claude's "Things to do in Lakeport?" answer this week. Library Park, Mt. Konocti, and a competitor's boat rental show up. Disney's does not.</p>
+      </article>
+
+      <p class="pull">None of this is a knock on the business. It's a website that was built once and left alone while the business grew up around it. That's normal. It's also very fixable.</p>
+    </div>
+  </section>
+
+  <!-- LIVE WIDGET -->
+  <section class="section">
+    <div class="wrap">
+      <p class="section__label">02 &nbsp;·&nbsp; A live example</p>
+      <h2 class="section__title">Right now on Clear Lake.</h2>
+      <p class="section__lede">This is one of the small additions I have in mind for the rentals page. Live conditions, updated automatically. It gives people a reason to land on your page and to book the right boat at the right time.</p>
+
+      <div class="widget" id="conditions" aria-live="polite">
+        <div class="widget__head">
+          <span class="widget__title">Clear Lake conditions</span>
+          <span class="widget__loc">Lakeport, CA</span>
+        </div>
+        <div class="widget__loading" id="conditions-body">Reading the lake&hellip;</div>
+        <p class="widget__foot" id="conditions-foot">Source: National Weather Service</p>
+      </div>
+
+      <p class="pricing-note">If the weather service is down, the widget falls back to a clean last-known reading rather than a broken box. It's a small touch. It's also the kind of thing that signals you take the site seriously.</p>
+    </div>
+  </section>
+
+  <!-- PRICING DEMO -->
+  <section class="section">
+    <div class="wrap">
+      <p class="section__label">03 &nbsp;·&nbsp; What a fix looks like</p>
+      <h2 class="section__title">The pricing table, made readable.</h2>
+      <p class="section__lede">All of this information is already on your site. It's just hidden inside a popup that breaks on mobile. Here's the same data, rendered cleanly. This is what customers, Google, and AI assistants would see instead.</p>
+
+      <div class="pricing-before">
+        <p class="pricing-before__label">Before &nbsp;·&nbsp; today on a phone</p>
+        <img src="assets/pricing_table_falls_apart_in-app_browser.jpg" alt="iPhone screenshot of the current pricing table running off the screen." loading="lazy" />
+      </div>
+
+      <p class="pricing-after__label">After &nbsp;·&nbsp; same data, made readable</p>
+
+      <!-- Mobile cards -->
+      <div class="pricing">
+        <article class="price-card price-card-mobile">
+          <div class="price-card__top">
+            <span class="price-card__name">Pontoon · Deluxe 24</span>
+            <span class="price-card__from">from $275</span>
+          </div>
+          <p class="price-card__specs">24 ft · 115 hp · up to 10 people</p>
+          <div class="price-row"><span class="price-row__dur">1 hour</span><span class="price-row__amt">$275</span></div>
+          <div class="price-row"><span class="price-row__dur">2 hours</span><span class="price-row__amt">$335</span></div>
+          <div class="price-row"><span class="price-row__dur">4 hours</span><span class="price-row__amt">$455</span></div>
+          <div class="price-row"><span class="price-row__dur">6 hours</span><span class="price-row__amt">$575</span></div>
+          <div class="price-row"><span class="price-row__dur">8 hours</span><span class="price-row__amt">$695</span></div>
+        </article>
+        <article class="price-card price-card-mobile">
+          <div class="price-card__top">
+            <span class="price-card__name">Pontoon · LX 20</span>
+            <span class="price-card__from">from $255</span>
+          </div>
+          <p class="price-card__specs">20 ft · 90 hp · up to 6 people</p>
+          <div class="price-row"><span class="price-row__dur">1 hour</span><span class="price-row__amt">$255</span></div>
+          <div class="price-row"><span class="price-row__dur">2 hours</span><span class="price-row__amt">$315</span></div>
+          <div class="price-row"><span class="price-row__dur">4 hours</span><span class="price-row__amt">$435</span></div>
+          <div class="price-row"><span class="price-row__dur">6 hours</span><span class="price-row__amt">$555</span></div>
+          <div class="price-row"><span class="price-row__dur">8 hours</span><span class="price-row__amt">$675</span></div>
+        </article>
+        <article class="price-card price-card-mobile">
+          <div class="price-card__top">
+            <span class="price-card__name">Ski Boat · SVX 211</span>
+            <span class="price-card__from">from $365</span>
+          </div>
+          <p class="price-card__specs">21 ft · 200 hp · up to 10 people</p>
+          <div class="price-row"><span class="price-row__dur">1 hour</span><span class="price-row__amt">$365</span></div>
+          <div class="price-row"><span class="price-row__dur">2 hours</span><span class="price-row__amt">$425</span></div>
+          <div class="price-row"><span class="price-row__dur">4 hours</span><span class="price-row__amt">$545</span></div>
+          <div class="price-row"><span class="price-row__dur">6 hours</span><span class="price-row__amt">$665</span></div>
+          <div class="price-row"><span class="price-row__dur">8 hours</span><span class="price-row__amt">$785</span></div>
+        </article>
+        <article class="price-card price-card-mobile">
+          <div class="price-card__top">
+            <span class="price-card__name">Ski Boat · SVX 191</span>
+            <span class="price-card__from">from $295</span>
+          </div>
+          <p class="price-card__specs">19 ft · 150 hp · up to 8 people</p>
+          <div class="price-row"><span class="price-row__dur">1 hour</span><span class="price-row__amt">$295</span></div>
+          <div class="price-row"><span class="price-row__dur">2 hours</span><span class="price-row__amt">$355</span></div>
+          <div class="price-row"><span class="price-row__dur">4 hours</span><span class="price-row__amt">$475</span></div>
+          <div class="price-row"><span class="price-row__dur">6 hours</span><span class="price-row__amt">$595</span></div>
+          <div class="price-row"><span class="price-row__dur">8 hours</span><span class="price-row__amt">$715</span></div>
+        </article>
+        <article class="price-card price-card-mobile">
+          <div class="price-card__top">
+            <span class="price-card__name">Ski Boat · Tahoe 185</span>
+            <span class="price-card__from">from $260</span>
+          </div>
+          <p class="price-card__specs">18 ft · 115 hp · up to 6 people</p>
+          <div class="price-row"><span class="price-row__dur">1 hour</span><span class="price-row__amt">$260</span></div>
+          <div class="price-row"><span class="price-row__dur">2 hours</span><span class="price-row__amt">$320</span></div>
+          <div class="price-row"><span class="price-row__dur">4 hours</span><span class="price-row__amt">$440</span></div>
+          <div class="price-row"><span class="price-row__dur">6 hours</span><span class="price-row__amt">$560</span></div>
+          <div class="price-row"><span class="price-row__dur">8 hours</span><span class="price-row__amt">$680</span></div>
+        </article>
+        <article class="price-card price-card-mobile">
+          <div class="price-card__top">
+            <span class="price-card__name">Fishing Boat</span>
+            <span class="price-card__from">from $195</span>
+          </div>
+          <p class="price-card__specs">17 ft · trolling and 90 hp · up to 4 people</p>
+          <div class="price-row"><span class="price-row__dur">1 hour</span><span class="price-row__amt">$195</span></div>
+          <div class="price-row"><span class="price-row__dur">2 hours</span><span class="price-row__amt">$245</span></div>
+          <div class="price-row"><span class="price-row__dur">4 hours</span><span class="price-row__amt">$345</span></div>
+          <div class="price-row"><span class="price-row__dur">6 hours</span><span class="price-row__amt">$445</span></div>
+          <div class="price-row"><span class="price-row__dur">8 hours</span><span class="price-row__amt">$545</span></div>
+        </article>
+      </div>
+
+      <!-- Tablet+ table -->
+      <div class="price-table-wrap">
+        <table class="price-table" aria-label="Hourly boat rental pricing">
+          <thead>
+            <tr>
+              <th>Boat</th>
+              <th>1 hr</th>
+              <th>2 hr</th>
+              <th>4 hr</th>
+              <th>6 hr</th>
+              <th>8 hr</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Pontoon · Deluxe 24 <span style="color:var(--ink-soft);font-weight:400">(10p, 115 hp)</span></td><td>$275</td><td>$335</td><td>$455</td><td>$575</td><td>$695</td></tr>
+            <tr><td>Pontoon · LX 20 <span style="color:var(--ink-soft);font-weight:400">(6p, 90 hp)</span></td><td>$255</td><td>$315</td><td>$435</td><td>$555</td><td>$675</td></tr>
+            <tr><td>Ski Boat · SVX 211 <span style="color:var(--ink-soft);font-weight:400">(10p, 200 hp)</span></td><td>$365</td><td>$425</td><td>$545</td><td>$665</td><td>$785</td></tr>
+            <tr><td>Ski Boat · SVX 191 <span style="color:var(--ink-soft);font-weight:400">(8p, 150 hp)</span></td><td>$295</td><td>$355</td><td>$475</td><td>$595</td><td>$715</td></tr>
+            <tr><td>Ski Boat · Tahoe 185 <span style="color:var(--ink-soft);font-weight:400">(6p, 115 hp)</span></td><td>$260</td><td>$320</td><td>$440</td><td>$560</td><td>$680</td></tr>
+            <tr><td>Fishing Boat <span style="color:var(--ink-soft);font-weight:400">(4p, 90 hp)</span></td><td>$195</td><td>$245</td><td>$345</td><td>$445</td><td>$545</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="addons">
+        <p class="addons__title">Add-ons (per rental)</p>
+        <ul>
+          <li><span>1 to 2 person tube</span><span>$48</span></li>
+          <li><span>Wakeboard</span><span>$37</span></li>
+          <li><span>Kneeboard</span><span>$37</span></li>
+          <li><span>Kids water skis</span><span>$37</span></li>
+          <li><span>Floating mat</span><span>$37</span></li>
+          <li><span>Bring your dog</span><span>$20 per pet</span></li>
+        </ul>
+      </div>
+
+      <p class="pricing-note">Same numbers that are on your site today, in a layout that doesn't break.</p>
+    </div>
+  </section>
+
+  <!-- THE PLAN -->
+  <section class="section">
+    <div class="wrap wrap--wide">
+      <p class="section__label">04 &nbsp;·&nbsp; What I'll do</p>
+      <h2 class="section__title">Eight fixes, and what each one earns you.</h2>
+      <p class="section__lede">Every one of these is a permanent change. We fix it once, and it keeps working for you, every season, for every future customer.</p>
+
+      <ol class="fix-list">
+        <li class="fix">
+          <div class="fix__do">Fix the pricing display so it renders cleanly on every screen and in-app browser.</div>
+          <div class="fix__why">Customers can actually read your prices and book on their phone, where most of them are.</div>
+        </li>
+        <li class="fix">
+          <div class="fix__do">Surface tube, wakeboard, and rental pricing as plain readable text.</div>
+          <div class="fix__why">Kills the "how much is a tube?" phone calls and the silent drop-offs.</div>
+        </li>
+        <li class="fix">
+          <div class="fix__do">Fix spacing, cut-off sections, and display errors.</div>
+          <div class="fix__why">The site finally looks as trustworthy as your reviews say you are.</div>
+        </li>
+        <li class="fix">
+          <div class="fix__do">Add structured data so Google and AI assistants can read your prices and fleet.</div>
+          <div class="fix__why">You show up in search results and AI answers with real info, not a blank.</div>
+        </li>
+        <li class="fix">
+          <div class="fix__do">Expand the FAQ from the questions people are actually asking on Reddit, Google, and elsewhere.</div>
+          <div class="fix__why">Answers the hesitations that stop a booking, before anyone has to call.</div>
+        </li>
+        <li class="fix">
+          <div class="fix__do">Speed and load-time pass on every page.</div>
+          <div class="fix__why">Faster pages keep more visitors and rank better.</div>
+        </li>
+        <li class="fix">
+          <div class="fix__do">A live Clear Lake conditions widget, like the one above.</div>
+          <div class="fix__why">Gives people a reason to land on your page and book the right boat at the right time.</div>
+        </li>
+        <li class="fix">
+          <div class="fix__do">Conversion tracking on the booking flow.</div>
+          <div class="fix__why">So we can both see, in real numbers, how many bookings these changes drive.</div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ROI -->
+  <section class="section">
+    <div class="wrap">
+      <p class="section__label">05 &nbsp;·&nbsp; What this is worth</p>
+      <h2 class="section__title">Doing the math, using your own numbers.</h2>
+
+      <p>A single 4-hour ski boat rental on your site is $545. A pontoon day runs into the four figures with add-ons. If these fixes bring in even one or two extra rentals, they've already paid for themselves, many times over.</p>
+
+      <p>It won't just be one or two extra rentals. A site that's readable on phones, shows its prices, and turns up in AI search doesn't help you a single time. It helps you with every customer who finds you, every weekend, every season from now on.</p>
+
+      <p class="pull">The right time to fix a leaking funnel is right now, when we're in the middle of your highest-revenue months.</p>
+    </div>
+  </section>
+
+  <!-- THE TRADE -->
+  <section class="section">
+    <div class="wrap">
+      <p class="section__label">06 &nbsp;·&nbsp; The trade</p>
+      <h2 class="section__title">What I'm asking for.</h2>
+
+      <p>I'd love to trade this for time on the water. A comped day on the lake with wakeboarding and tubing included, for me and a few friends, and ideally a couple more sessions across the season. I'm flexible on the exact shape of it.</p>
+
+      <p>What matters more to me is that it's fair to both of us, and that you feel like this is a valuable trade for you over hiring an expensive agency.</p>
+
+      <p>I'll also do the first few fixes up front, before you owe me anything, so there's no risk on your end. You see the work, and then we agree on what's fair.</p>
+    </div>
+  </section>
+
+  <!-- NEXT STEP -->
+  <section class="section">
+    <div class="wrap">
+      <p class="section__label">07 &nbsp;·&nbsp; The easy next step</p>
+      <h2 class="section__title">Ten minutes is all I'd need.</h2>
+      <p>If this sounds like it's worth ten minutes of your time, I'll walk you through everything by phone or video, whichever is easiest.</p>
+
+      <div class="cta">
+        <a class="cta__btn" href="tel:+19092192861">Call or text (909) 219-2861</a>
+        <span class="cta__alt">or <a href="mailto:hello@nathanortiz.com">hello@nathanortiz.com</a></span>
+      </div>
+
+      <p class="signoff">Thanks for reading, and for running a great local business.<br />
+        <span class="signoff__name">Nathan</span>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <p>Nathan Ortiz. Software developer in Ukiah, CA. Headed to Columbia for CS this fall. <a href="https://nathanortiz.com">nathanortiz.com</a></p>
+    <p style="margin:0">This page is shared by link with Disney's Boat Rentals and is not publicly indexed.</p>
+  </div>
+</footer>
+
+<!-- Conditions widget logic -->
+<script>
+(function(){
+  // Lakeport coordinates: 39.06, -122.92
+  // NOAA NWS API: api.weather.gov
+  // 1) GET /points/{lat,lon}  -> returns gridpoint endpoints
+  // 2) GET forecastHourly endpoint
+  // We cache 10 minutes in localStorage, and use a graceful fallback.
+
+  const CACHE_KEY = 'disneys-conditions-v1';
+  const CACHE_TTL_MS = 10 * 60 * 1000;
+  const LAT = 39.0436;
+  const LON = -122.9158;
+
+  const body = document.getElementById('conditions-body');
+  const foot = document.getElementById('conditions-foot');
+
+  function readCache() {
+    try {
+      const raw = localStorage.getItem(CACHE_KEY);
+      if (!raw) return null;
+      const obj = JSON.parse(raw);
+      if (!obj || !obj.at || !obj.data) return null;
+      if (Date.now() - obj.at > CACHE_TTL_MS) return null;
+      return obj;
+    } catch (e) { return null; }
+  }
+  function writeCache(data) {
+    try { localStorage.setItem(CACHE_KEY, JSON.stringify({ at: Date.now(), data })); } catch (e) {}
+  }
+  function readStaleCache() {
+    try {
+      const raw = localStorage.getItem(CACHE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+  }
+
+  async function fetchConditions() {
+    // 1) Points lookup
+    const pointsRes = await fetch(`https://api.weather.gov/points/${LAT.toFixed(4)},${LON.toFixed(4)}`, {
+      headers: { 'Accept': 'application/geo+json' }
+    });
+    if (!pointsRes.ok) throw new Error('points-' + pointsRes.status);
+    const points = await pointsRes.json();
+    const hourlyUrl = points.properties && points.properties.forecastHourly;
+    if (!hourlyUrl) throw new Error('no-hourly-url');
+
+    // 2) Hourly forecast
+    const fcRes = await fetch(hourlyUrl, { headers: { 'Accept': 'application/geo+json' } });
+    if (!fcRes.ok) throw new Error('forecast-' + fcRes.status);
+    const fc = await fcRes.json();
+    const periods = (fc.properties && fc.properties.periods) || [];
+    if (!periods.length) throw new Error('no-periods');
+
+    const now = periods[0];
+    return {
+      tempF: now.temperature,
+      shortForecast: now.shortForecast,
+      isDaytime: now.isDaytime,
+      windSpeed: now.windSpeed,        // e.g. "5 to 10 mph"
+      windDirection: now.windDirection,
+      precip: (now.probabilityOfPrecipitation && now.probabilityOfPrecipitation.value) || 0,
+      icon: now.icon,
+      time: now.startTime
+    };
+  }
+
+  function parseWindRange(s) {
+    // "5 mph" or "5 to 10 mph"
+    if (!s) return { low: null, high: null };
+    const m = String(s).match(/(\d+)(?:\s*to\s*(\d+))?/i);
+    if (!m) return { low: null, high: null };
+    const a = parseInt(m[1], 10);
+    const b = m[2] ? parseInt(m[2], 10) : a;
+    return { low: Math.min(a, b), high: Math.max(a, b) };
+  }
+
+  function windCall(highMph) {
+    if (highMph == null) return null;
+    if (highMph <= 6) return "Morning glass. Best window for wakeboarding and tubing.";
+    if (highMph <= 12) return "Light chop. Comfortable for tubing, ski conditions are fair.";
+    if (highMph <= 18) return "Breezy. Pontoon cruising is fine, expect chop for wake sports.";
+    return "Choppy. Better afternoon for a pontoon or fishing boat than a ski boat.";
+  }
+
+  function render(c) {
+    const w = parseWindRange(c.windSpeed);
+    const wDisplay = w.low && w.high && w.low !== w.high
+      ? `${w.low}<span class="stat__unit"> to ${w.high} mph</span>`
+      : (w.low != null ? `${w.low}<span class="stat__unit"> mph</span>` : `${c.windSpeed || '…'}`);
+
+    body.innerHTML = `
+      <div class="widget__grid">
+        <div class="stat">
+          <p class="stat__label">Air temp</p>
+          <p class="stat__value">${c.tempF != null ? c.tempF : '…'}<span class="stat__unit">°F</span></p>
+        </div>
+        <div class="stat">
+          <p class="stat__label">Wind</p>
+          <p class="stat__value">${wDisplay}</p>
+          <p class="stat__hint">${c.windDirection ? 'From the ' + c.windDirection : ''}</p>
+        </div>
+        <div class="stat">
+          <p class="stat__label">Sky</p>
+          <p class="stat__value" style="font-size:1.05rem;line-height:1.2;">${c.shortForecast || '…'}</p>
+        </div>
+        <div class="stat">
+          <p class="stat__label">Rain chance</p>
+          <p class="stat__value">${c.precip != null ? c.precip : 0}<span class="stat__unit">%</span></p>
+        </div>
+      </div>
+      ${windCall(w.high) ? `<p class="widget__call">${windCall(w.high)}</p>` : ''}
+    `;
+
+    const updated = new Date(c.time || Date.now());
+    const opts = { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
+    foot.textContent = `Source: National Weather Service · Updated ${updated.toLocaleString('en-US', opts)}`;
+  }
+
+  function renderFallback() {
+    body.innerHTML = `
+      <p class="widget__error">Live data is briefly unavailable. Call (707) 263-0969 for current lake conditions, or check back in a few minutes.</p>
+    `;
+    foot.textContent = `Source: National Weather Service`;
+  }
+
+  async function init() {
+    const cached = readCache();
+    if (cached) { render(cached.data); return; }
+    try {
+      const data = await fetchConditions();
+      writeCache(data);
+      render(data);
+    } catch (e) {
+      const stale = readStaleCache();
+      if (stale && stale.data) {
+        render(stale.data);
+        foot.textContent = foot.textContent + ' (cached)';
+      } else {
+        renderFallback();
+      }
+    }
+  }
+  init();
+})();
+</script>
+
+</body>
+</html>
