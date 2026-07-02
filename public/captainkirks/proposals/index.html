@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Meet the Captains — Captain Kirk's San Francisco Sailing</title>
-<meta name="description" content="Every captain at Captain Kirk's holds a Coast Guard license — from a Stanford-trained founder who crossed the Pacific, to a solo Hawaii-to-SF sailor, to a Moore 24 national champion.">
+<title>Proposals on the Bay — Captain Kirk's San Francisco Sailing</title>
+<meta name="description" content="Plan a private proposal sail on San Francisco Bay. No crowd, no strangers — just the two of you, a discreet crew, and the Golden Gate as a backdrop.">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#143C4E">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Meet the Captains — Captain Kirk's San Francisco Sailing">
-<meta property="og:description" content="Licensed, salted, and named in the reviews — meet the crew that's logged more than 200,000 ocean miles together.">
-<meta property="og:image" content="https://nathanortiz.com/captainkirks/assets/og-image.jpg">
-<meta property="og:url" content="https://nathanortiz.com/captainkirks/captains/">
+<meta property="og:title" content="She can't see it coming. The crew can.">
+<meta property="og:description" content="A private boat is one of the last proposal spots with no crowd and no strangers in the shot. Plan it with Sue — she keeps the secret.">
+<meta property="og:image" content="https://nathanortiz.com/captainkirks/assets/deck-bridge.jpg">
+<meta property="og:url" content="https://nathanortiz.com/captainkirks/proposals/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://nathanortiz.com/captainkirks/assets/og-image.jpg">
+<meta name="twitter:image" content="https://nathanortiz.com/captainkirks/assets/deck-bridge.jpg">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23143C4E'/%3E%3Cpath d='M17 4 L17 22 L28 22 Z' fill='%23E4B95E'/%3E%3Cpath d='M15 8 L15 22 L6 22 Z' fill='%23FDFDFB'/%3E%3Cpath d='M4 25 Q16 29 28 25 L27 27 Q16 30 5 27 Z' fill='%23FDFDFB'/%3E%3C/svg%3E">
 
@@ -22,20 +22,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..650;1,9..144,400..650&family=Inter:wght@400..750&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/captainkirks/styles.css">
-<style>
-  /* monogram treatment for captains without a verified photo — matches .captain img dimensions exactly */
-  .captain__mono {
-    width: 104px; height: 104px; border-radius: 50%;
-    background: var(--navy-deep);
-    color: var(--brass-soft);
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--serif); font-weight: 560; font-size: 1.7rem;
-    letter-spacing: 0.02em;
-  }
-  @media (max-width: 480px) {
-    .captain__mono { width: 72px; height: 72px; font-size: 1.3rem; }
-  }
-</style>
 
 <script type="application/ld+json">
 {
@@ -58,12 +44,18 @@
   },
   "geo": { "@type": "GeoCoordinates", "latitude": 37.8622, "longitude": -122.4909 },
   "areaServed": "San Francisco Bay",
-  "priceRange": "$159–$650",
+  "priceRange": "$159–$1,200",
   "sameAs": [
     "https://www.yelp.com/biz/captain-kirks-san-francisco-sailing-sausalito-2",
     "https://www.tripadvisor.com/Attraction_Review-g33062-d3893086-Reviews-Captain_Kirk_s_San_Francisco_Sailing_Tours-Sausalito_Marin_County_California.html",
     "https://www.instagram.com/captainkirksailing/",
     "https://www.facebook.com/sanfranciscosailing/"
+  ],
+  "makesOffer": [
+    { "@type": "Offer", "name": "Ticketed 2-hour sail", "price": "159", "priceCurrency": "USD", "description": "Per person, up to 16 guests, from Sausalito. Snacks and soft drinks included." },
+    { "@type": "Offer", "name": "Private charter — Mahalo (up to 6 guests)", "price": "175", "priceCurrency": "USD", "description": "From $175/hr on weekdays, 3-hour minimum. Whole boat, just your group." },
+    { "@type": "Offer", "name": "Private charter — Bay Wolf or Osprey (up to 20 guests)", "price": "250", "priceCurrency": "USD", "description": "From $250/hr on weekdays, 3-hour minimum. Whole boat, just your group." },
+    { "@type": "Offer", "name": "Memorial sail", "price": "495", "priceCurrency": "USD", "description": "Flat-rate licensed ash scattering, starting at $495 for 1–6 guests on Mahalo." }
   ]
 }
 </script>
@@ -89,7 +81,7 @@
       <a href="/captainkirks/experiences/">Experiences</a>
       <a href="/captainkirks/pricing/">Pricing</a>
       <a href="/captainkirks/fleet/">The Fleet</a>
-      <a href="/captainkirks/captains/" aria-current="page">Captains</a>
+      <a href="/captainkirks/captains/">Captains</a>
       <a href="/captainkirks/team-building/">Team Building</a>
       <a href="/captainkirks/faq/">FAQ</a>
       <a href="/captainkirks/contact/">Contact</a>
@@ -100,116 +92,82 @@
 
 <main>
 
-  <!-- ============ INTRO ============ -->
+  <!-- ============ OPEN ============ -->
   <section class="section">
     <div class="wrap">
-      <p class="eyebrow">The crew</p>
-      <h1>Licensed. Salted. Named in the reviews.</h1>
-      <p class="lede">Every captain here holds a Coast Guard license, and most carry six figures of ocean miles. Guests mention them by name in reviews — over and over.</p>
-      <p class="serif-aside">Between them, our crew has logged more than 200,000 ocean miles together.</p>
+      <p class="eyebrow">Proposals</p>
+      <h1>She can't see it coming. The crew can.</h1>
+      <p class="lede">A private boat is one of the only proposal spots left with no crowd, no strangers, and no chance of someone walking through the shot. Just the two of you, a discreet crew, and the Golden Gate behind you.</p>
+      <img src="/captainkirks/assets/deck-bridge.jpg" alt="View from a sailboat's bow toward the Golden Gate Bridge, with a life ring and coiled line at the rail" loading="lazy" style="border-radius:var(--radius); box-shadow:var(--shadow); width:100%; max-height:460px; object-fit:cover; margin-top:1.5rem;">
     </div>
   </section>
 
-  <!-- ============ CAPTAINS ============ -->
+  <!-- ============ HOW IT USUALLY GOES ============ -->
   <section class="section section--alt">
     <div class="wrap">
-
-      <div class="captain">
-        <img src="/captainkirks/assets/capt-kirk.jpg" alt="Captain Kirk Miller laughing on deck in a sun hat and red life vest">
-        <div>
-          <h3>Kirk Miller</h3>
-          <p class="captain__creds">100-ton USCG Master · Sailing 40+ years</p>
-          <p>Kirk is the founder. He spent twenty years as a civil engineer — with a master's in the field from Stanford — before he left the office for the water full time and started the company in 2002. He'd already spent about twenty years teaching at Bay Area sailing schools by then, and he's an ASA-certified instructor, so if you actually want to learn to sail, he's the one to ask.</p>
-          <p>His own logbook includes the 3,000-mile crossing from the Galapagos to French Polynesia — 22 days at sea — and an 8-month, 5,000-mile expedition down the Pacific coast and into the Sea of Cortez.</p>
-        </div>
-      </div>
-
-      <div class="captain">
-        <img src="/captainkirks/assets/capt-mark.jpg" alt="Captain Mark Pomianowski smiling in sunglasses aboard a sailboat on San Francisco Bay">
-        <div>
-          <h3>Mark Steven Pomianowski</h3>
-          <p class="captain__creds">100-ton Master since 1983 · Sailing 40+ years</p>
-          <p>Mark grew up in an East Coast sailing family, and his first job on the water was as a commercial fisherman off Georges Banks. He came up through Chapmans School of Seamanship in '82, then delivered a 115-foot motor yacht across the Atlantic to Gibraltar and stayed on as first officer touring the Mediterranean. He spent years teaching and running charters around Martinique, St. Lucia, and the Yucatán before he found his way to the Bay.</p>
-          <p>He's also a licensed acupuncturist. With us since 2012.</p>
-        </div>
-      </div>
-
-      <div class="captain">
-        <img src="/captainkirks/assets/capt-efe.jpg" alt="Captain Efe Akmen at the helm of a sailboat at sunset">
-        <div>
-          <h3>Efe Akmen</h3>
-          <p class="captain__creds">100-ton Master · Sailing 25+ years</p>
-          <p>Efe started sailing in Turkey at age ten. He still races — J/111s and J/105s on the Bay — when he's not out on a charter. With us since 2014.</p>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="wrap quote">
-      <span class="stars" aria-label="Five stars">★★★★★</span>
-      <blockquote>"Rowan was an outstanding skipper — knowledgeable, personable, and clearly passionate about sailing."</blockquote>
-      <cite>Tripadvisor review</cite>
-    </div>
-
-    <div class="wrap">
-
-      <div class="captain">
-        <img src="/captainkirks/assets/capt-rod.jpg" alt="Captain Rod Mayer smiling aboard a sailboat in foul-weather gear">
-        <div>
-          <h3>Rod Mayer</h3>
-          <p class="captain__creds">100-ton Master · 31 years, 3,021 days on the water, 62,000 nautical miles</p>
-          <p>In August 2021, Rod sailed solo from Hawaii to San Francisco — 2,885 miles in 20 days.</p>
-        </div>
-      </div>
-
-      <div class="captain">
-        <img src="/captainkirks/assets/capt-ruby.jpg" alt="Captain Ruby smiling in a beanie and yellow foul-weather jacket aboard a sailboat">
-        <div>
-          <h3>Ruby</h3>
-          <p class="captain__creds">100-ton Master</p>
-          <p>Ruby taught youth sailing at Inverness Yacht Club for seven years before she joined us. With us since 2019.</p>
-        </div>
-      </div>
-
-      <div class="captain">
-        <img src="/captainkirks/assets/capt-fiona.jpg" alt="Captain Fiona smiling in a cap and life jacket aboard a sailboat">
-        <div>
-          <h3>Fiona</h3>
-          <p class="captain__creds">100-ton Master</p>
-          <p>Fiona grew up sailing Tomales Bay and now runs our West Coast deliveries. With us since 2019.</p>
-        </div>
-      </div>
-
-      <div class="captain">
-        <img src="/captainkirks/assets/capt-rowan.jpg" alt="Captain Rowan Fennell aboard with the Golden Gate Bridge in fog behind him">
-        <div>
-          <h3>Rowan Fennell</h3>
-          <p class="captain__creds">50-ton USCG Master + US Sailing keelboat instructor · 40+ years on SF Bay</p>
-          <p>Rowan studied environmental science at UC Berkeley and is a Moore 24 National Champion. From 2017 to 2020, Rowan sailed a 46-foot sailboat from Seattle to Panama.</p>
-        </div>
-      </div>
-
+      <p class="eyebrow">How it usually goes</p>
+      <h2>Plan it with Sue. She keeps the secret.</h2>
+      <ul style="max-width:var(--measure); padding-left:1.2rem; color:var(--ink-soft);">
+        <li style="margin-bottom:0.6rem;">Call Sue directly. She's helped stage this more times than she can count, and the plan stays between the two of you.</li>
+        <li style="margin-bottom:0.6rem;">The crew knows the moment is coming. They stay out of frame and let it happen.</li>
+        <li style="margin-bottom:0.6rem;">Most couples pick one of three spots: under the Golden Gate, off Sausalito at golden hour, or in the lee of Angel Island, where the water goes calm.</li>
+        <li>Bring your own champagne, no corkage fee. A photographer counts as a guest.</li>
+      </ul>
     </div>
   </section>
 
-  <!-- ============ AND SUE ============ -->
-  <section class="section--alt" style="padding:1.5rem 0 4rem">
+  <!-- ============ THE BOAT ============ -->
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">The boat</p>
+        <h2>Mahalo. Built for two.</h2>
+        <p>Mahalo is 35 feet, six guests max — small enough that it never stops feeling private. A weekday evening runs $175 an hour with a three-hour minimum, which puts the whole boat at about what you'd pay for a nice dinner for four. Weekends are $200 an hour.</p>
+        <p><a class="card__link" href="/captainkirks/pricing/">See full pricing</a></p>
+      </div>
+      <img class="split__img" src="/captainkirks/assets/mahalo-skyline.jpg" alt="Mahalo, a Freedom 35 with a freestanding mast, sailing past Alcatraz with the San Francisco skyline behind" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ============ ONE TRUE STORY ============ -->
+  <section class="section section--alt">
     <div class="wrap">
-      <p class="eyebrow">And Sue</p>
-      <p>She runs the office, answers <a href="tel:+16509300740">(650) 930-0740</a>, and reviewers describe her, accurately, as wonderful.</p>
+      <p class="eyebrow">From the Captain's Log</p>
+      <h2>Some days the Bay gives you everything.</h2>
+      <p>In December 2019, a couple came aboard a year to the day after he'd proposed on a bike ride through the Marin Headlands. They sailed past the Golden Gate and tried the howl that gives you echoes under the span — it takes volume and timing to catch. Pelicans dove off the bow the whole way back to Sausalito.</p>
+      <p class="note"><a href="/captainkirks/log/">Read the full entry in the Captain's Log</a></p>
+    </div>
+  </section>
+
+  <!-- ============ PRACTICAL NOTES ============ -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">The details, handled</p>
+      <ul style="max-width:var(--measure); padding-left:1.2rem; color:var(--ink-soft);">
+        <li style="margin-bottom:0.6rem;">Sunset timing is handled for you — we cast off about two and a half hours before, so the light hits on schedule.</li>
+        <li style="margin-bottom:0.6rem;">Seasick-prone partner? Tell Sue. She'll pick the calm route and the right boat for the day.</li>
+        <li>Rain means a free reschedule. No lost deposit, no lost surprise.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ QUOTE ============ -->
+  <section class="section section--alt">
+    <div class="wrap quote">
+      <blockquote>"A chance at the helm during a magnificent sunset! How can you not love that?"</blockquote>
+      <cite>Marie G.</cite>
     </div>
   </section>
 
   <!-- ============ CTA ============ -->
   <section class="section section--navy on-navy cta-band">
     <div class="wrap">
-      <p class="eyebrow">The water's waiting</p>
-      <h2>Come sail with one of them.</h2>
+      <p class="eyebrow">When you're ready</p>
+      <h2>Some questions deserve a better backdrop.</h2>
       <div class="cta-band__actions">
         <a class="btn btn--brass btn--lg" href="https://fareharbor.com/embeds/book/sfbaysail/?full-items=yes">Book online</a>
-        <a class="btn btn--ghost btn--lg" href="/captainkirks/pricing/">See pricing</a>
       </div>
-      <p class="cta-band__phone">Questions? Call Sue at <a href="tel:+16509300740" style="color:var(--brass-soft)">(650) 930-0740</a> or write <a href="mailto:info@sfbaysail.com" style="color:var(--brass-soft)">info@sfbaysail.com</a></p>
+      <p class="cta-band__phone">Or call Sue at <a href="tel:+16509300740" style="color:var(--brass-soft)">(650) 930-0740</a> — she keeps secrets professionally.</p>
     </div>
   </section>
 
