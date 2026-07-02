@@ -231,7 +231,9 @@ p { margin: 0 0 1em; max-width: var(--measure); }
 .section--navy .quote .stars { color: var(--brass-soft); }
 
 /* ---------- pricing tables (responsive: table → stacked rows on mobile) ---------- */
-.price-table { width: 100%; border-collapse: collapse; font-size: 0.98rem; background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
+.price-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.98rem; background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
+.price-table thead th:first-child { border-top-left-radius: calc(var(--radius) - 1px); }
+.price-table thead th:last-child { border-top-right-radius: calc(var(--radius) - 1px); }
 .price-table caption { caption-side: top; text-align: left; font-family: var(--serif); font-size: 1.3rem; font-weight: 580; padding: 0 0 0.75rem; color: var(--ink); }
 .price-table th, .price-table td { padding: 0.85rem 1.1rem; text-align: left; border-bottom: 1px solid var(--rule); }
 .price-table thead th { background: var(--navy-deep); color: var(--fog); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; }
@@ -240,6 +242,7 @@ p { margin: 0 0 1em; max-width: var(--measure); }
 @media (max-width: 640px) {
   .price-table thead { display: none; }
   .price-table, .price-table caption, .price-table tbody, .price-table tr, .price-table td { display: block; width: 100%; }
+  .price-table caption { padding: 1.1rem 1.1rem 0.5rem; font-size: 1.2rem; }
   .price-table tr { border-bottom: 2px solid var(--rule); padding: 0.6rem 0; }
   .price-table td { border: 0; padding: 0.35rem 1.1rem; }
   .price-table td::before { content: attr(data-label); display: block; font-size: 0.72rem; font-weight: 650; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
