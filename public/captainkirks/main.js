@@ -49,18 +49,16 @@
     return d.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: "America/Los_Angeles" });
   }
 
-  function render(wind, temp, sky, cached) {
+  function render(wind, temp, sky) {
     var sunset = sunsetToday();
     var parts = [];
     if (wind) parts.push('<span class="conditions__item">Wind <strong>' + wind + "</strong></span>");
     if (temp) parts.push('<span class="conditions__item"><strong>' + temp + "</strong>" + (sky ? ", " + sky.toLowerCase() : "") + "</span>");
     if (sunset) {
       var castOff = new Date(sunset.getTime() - 2.5 * 3600 * 1000);
-      parts.push('<span class="conditions__item">Tonight’s sunset <strong>' + fmtTime(sunset) + "</strong> · sunset sails cast off around <strong>" + fmtTime(castOff) + "</strong></span>");
+      parts.push('<span class="conditions__item">Sunset <strong>' + fmtTime(sunset) + "</strong>, sunset sails cast off <strong>" + fmtTime(castOff) + "</strong></span>");
     }
-    strip.innerHTML = parts.join(" ");
-    var foot = document.getElementById("conditions-foot");
-    if (foot) foot.textContent = cached ? "conditions cached · NOAA" : "live from NOAA · mid-span, Golden Gate";
+    strip.innerHTML = parts.join('<span class="conditions__sep" aria-hidden="true">·</span>');
   }
 
   function fallback() {
@@ -73,7 +71,7 @@
   function load() {
     try {
       var c = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
-      if (c && Date.now() - c.at < TTL) { render(c.wind, c.temp, c.sky, true); return; }
+      if (c && Date.now() - c.at < TTL) { render(c.wind, c.temp, c.sky); return; }
     } catch (e) { /* ignore */ }
 
     fetch("https://api.weather.gov/points/" + LAT + "," + LON)
@@ -87,12 +85,12 @@
         var temp = h.temperature + "°" + (h.temperatureUnit || "F");
         var sky = h.shortForecast || "";
         try { localStorage.setItem(CACHE_KEY, JSON.stringify({ at: Date.now(), wind: wind, temp: temp, sky: sky })); } catch (e) { /* ignore */ }
-        render(wind, temp, sky, false);
+        render(wind, temp, sky);
       })
       .catch(function () {
         try {
           var c = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
-          if (c) { render(c.wind, c.temp, c.sky, true); return; }
+          if (c) { render(c.wind, c.temp, c.sky); return; }
         } catch (e) { /* ignore */ }
         fallback();
       });
