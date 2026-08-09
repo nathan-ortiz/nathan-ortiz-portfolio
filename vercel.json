@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/souvenir", "destination": "/souvenir/", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/souvenir/:path*", "destination": "https://thaos-passport.vercel.app/souvenir/:path*" }
+  ]
+}
