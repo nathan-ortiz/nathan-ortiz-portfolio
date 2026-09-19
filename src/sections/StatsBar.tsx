@@ -5,7 +5,7 @@ const STATS = [
   { value: 3, suffix: "x", label: "Startup User Growth" },
   { value: 30, suffix: "+", label: "Students Mentored" },
   { value: 2, suffix: "x", label: "World Championships" },
-  { value: 5, suffix: "", label: "Products Shipped" },
+  { value: 6, suffix: "", label: "Products Shipped" },
   { value: 0, suffix: "", label: "Cofounders", displayAs: "0" },
 ];
 

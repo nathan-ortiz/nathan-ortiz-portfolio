@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { SectionLabel } from "@/components/SectionLabel";
+import { NowBuilding } from "@/components/NowBuilding";
 import { ProjectModal, type ProjectData } from "@/components/ProjectModal";
 
 type Project = {
@@ -11,14 +12,14 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    image: "/images/pebbly_portfolio.jpg", name: "Pebbly", tagline: "Autonomous AI employee that lives in your messages",
-    category: "Native AI Assistant", accentColor: "#4ADE80", bgColor: "#f5f5f4", objectFit: "cover", href: "https://getpebbly.com", live: true,
-    description: "Pebbly is an autonomous personal AI assistant that reads your emails, calendar, and conversations and does real work for you.",
+    image: "/images/pebbly_portfolio.jpg", name: "Pebbly", tagline: "Autonomous AI employee for physical therapists",
+    category: "Vertical AI Employee", accentColor: "#4ADE80", bgColor: "#f5f5f4", objectFit: "cover", href: "https://getpebbly.com", live: false,
+    description: "Pebbly is an autonomous AI employee for physical therapy practices. It works across the inbox, calendar, and messaging apps to handle scheduling, patient follow-up, and the admin work that pulls clinicians away from care.",
     tech: ["React", "TypeScript", "Node.js", "SQLite", "Docker", "Stripe", "WebSocket"],
     bullets: [
+      "Handles scheduling, intake, and patient follow-up across email, calendar, and messaging apps",
       "Routes across 6+ AI models with automatic failover and cost optimization",
-      "BYOK model — users bring their own API keys with full cost transparency",
-      "Isolated cloud instances with Docker-sandboxed code execution per user",
+      "Isolated cloud instances with sandboxed execution, keeping each practice's data separate",
     ],
   },
   {
@@ -27,7 +28,7 @@ const PROJECTS: Project[] = [
     description: "The first iOS app to put spaced-repetition flashcards on home and lock screen widgets.",
     tech: ["Swift", "SwiftUI", "WidgetKit", "Core Data", "Firebase"],
     bullets: [
-      "First app of its kind — created a new category on the App Store",
+      "First of its kind, creating a new category on the App Store",
       "AI-powered card generation from photos, PDFs, and Google Drive files",
       "Custom WidgetKit integration with spaced repetition across home and lock screen",
     ],
@@ -84,6 +85,9 @@ export const Projects = () => {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="mb-12 md:mb-16">
+          <NowBuilding />
+        </div>
         <SectionLabel color="green" text="PROJECTS" />
         <div ref={topRow.ref} className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-7 mt-10">
           {PROJECTS.slice(0, 2).map((p, i) => (
