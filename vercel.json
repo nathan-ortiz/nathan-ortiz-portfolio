@@ -1,11 +1,42 @@
 {
   "redirects": [
-    { "source": "/souvenir", "destination": "/souvenir/", "permanent": false },
-    { "source": "/build", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeHkfXvzJlnsZrG_8wLWHZO8Df0P9AgauGKAB2BXIvsEolZLQ/viewform?usp=header", "permanent": false },
-    { "source": "/build/", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeHkfXvzJlnsZrG_8wLWHZO8Df0P9AgauGKAB2BXIvsEolZLQ/viewform?usp=header", "permanent": false }
+    {
+      "source": "/souvenir",
+      "destination": "/souvenir/",
+      "permanent": false
+    },
+    {
+      "source": "/firuza",
+      "destination": "/firuza/",
+      "permanent": false
+    },
+    {
+      "source": "/build",
+      "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeHkfXvzJlnsZrG_8wLWHZO8Df0P9AgauGKAB2BXIvsEolZLQ/viewform?usp=header",
+      "permanent": false
+    },
+    {
+      "source": "/build/",
+      "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeHkfXvzJlnsZrG_8wLWHZO8Df0P9AgauGKAB2BXIvsEolZLQ/viewform?usp=header",
+      "permanent": false
+    }
   ],
   "rewrites": [
-    { "source": "/souvenir/", "destination": "https://thaos-passport.vercel.app/souvenir/" },
-    { "source": "/souvenir/:path*", "destination": "https://thaos-passport.vercel.app/souvenir/:path*" }
+    {
+      "source": "/souvenir/",
+      "destination": "https://thaos-passport.vercel.app/souvenir/"
+    },
+    {
+      "source": "/souvenir/:path*",
+      "destination": "https://thaos-passport.vercel.app/souvenir/:path*"
+    },
+    {
+      "source": "/firuza/",
+      "destination": "https://firuza-birthday.vercel.app/firuza/"
+    },
+    {
+      "source": "/firuza/:path*",
+      "destination": "https://firuza-birthday.vercel.app/firuza/:path*"
+    }
   ]
 }
