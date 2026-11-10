@@ -3,187 +3,194 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Three fixes for Loosie's</title>
+<title>Three quick fixes for Loosie's</title>
 <meta name="robots" content="noindex,nofollow">
-<meta name="description" content="A short, public-evidence review of Loosie's Nightclub on mobile, search and AI answers, with fixes ready to ship. Prepared by Nathan Ortiz.">
+<meta name="description" content="Three quick mobile fixes for Loosie's Nightclub, with before and after screenshots. By Nathan Ortiz.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nathan Ortiz">
-<meta property="og:title" content="Three fixes for Loosie's, before New Year's Eve">
-<meta property="og:description" content="The NYE VIP button, the mobile header, the table form. Before &amp; after, ready to ship.">
+<meta property="og:title" content="Three quick fixes for Loosie's, before this weekend">
+<meta property="og:description" content="The mobile header, the table form, and the NYE VIP button. Before &amp; after included.">
 <meta property="og:url" content="https://www.nathanortiz.com/loosies/">
 <meta property="og:image" content="https://www.nathanortiz.com/loosies/og-card.jpg">
 <meta property="og:image:width" content="2400">
 <meta property="og:image:height" content="1260">
-<meta property="og:image:alt" content="Three fixes for Loosie's, before New Year's Eve. A disco ball on a dark background.">
+<meta property="og:image:alt" content="Three quick fixes for Loosie's, before this weekend. A disco ball on a charcoal background.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Three fixes for Loosie's, before New Year's Eve">
-<meta name="twitter:description" content="The NYE VIP button, the mobile header, the table form. Before &amp; after, ready to ship.">
+<meta name="twitter:title" content="Three quick fixes for Loosie's, before this weekend">
+<meta name="twitter:description" content="The mobile header, the table form, and the NYE VIP button. Before &amp; after included.">
 <meta name="twitter:image" content="https://www.nathanortiz.com/loosies/og-card.jpg">
-<meta name="theme-color" content="#110c13">
+<meta name="theme-color" content="#282529">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AA%A9%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #110c13; --panel: #1c1a21; --edge: #2c2932; --ink: #e8e5e0; --soft: #a39fa8;
-    --amber: #FBBF24; --rose: #FB7185; --green: #4ADE80; --code: #0e0d11;
+    --bg: #282529; --bg2: #211e22; --line: #3d393f; --ink: #ffffff; --body: #c4c1c6; --soft: #8f8c91;
+    --pink: #f2a7c9; --gold: #e9c46a; --red: #ff8a8a; --green: #8fe3b0; --code: #1b191c;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
-  body { background: radial-gradient(60rem 34rem at 85% -6rem, rgba(251,113,133,.16), transparent 70%), radial-gradient(40rem 30rem at 100% 2rem, rgba(251,191,36,.12), transparent 70%), var(--bg); color: var(--ink); font: 17px/1.65 -apple-system, "SF Pro Text", "Helvetica Neue", "Segoe UI", sans-serif; }
-  .doc { max-width: 44rem; margin: 0 auto; padding: 3.2rem 1rem 4rem; }
-  .serif, h1, h2 { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-weight: 600; }
-  .kicker { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
-  h1 { font-size: clamp(2rem, 7vw, 2.9rem); line-height: 1.12; margin: .8rem 0 1.1rem; letter-spacing: -.01em; }
-  h1 em { font-style: normal; color: var(--amber); }
-  .lede { font-size: 1.12rem; color: #d6d2cc; }
-  .meta { margin-top: 1.2rem; font-size: .86rem; color: var(--soft); }
-  .tldr { margin: 2.2rem 0 0; border: 1px solid var(--edge); border-radius: 14px; background: var(--panel); padding: 1.1rem 1.2rem; }
+  body { background: var(--bg); color: var(--body); font: 400 17px/1.75 Lora, Georgia, serif; }
+  .doc { max-width: 42rem; margin: 0 auto; padding: 3.4rem 1.25rem 4rem; }
+  .mont, .kicker, h1, h2, .tag, summary, .facts th, figcaption, .urlbox span { font-family: Montserrat, "Helvetica Neue", sans-serif; }
+  .kicker { font-size: .68rem; font-weight: 500; letter-spacing: .32em; text-transform: uppercase; color: var(--soft); text-align: center; }
+  .kicker b { color: var(--ink); font-weight: 500; }
+  h1 { font-weight: 300; text-transform: uppercase; letter-spacing: .26em; color: var(--ink); font-size: clamp(1.45rem, 6.2vw, 2.1rem); line-height: 1.45; text-align: center; margin: 1.4rem 0 1.4rem; }
+  h1 em { font-style: normal; display: block; font-size: .62em; letter-spacing: .34em; color: var(--pink); margin-top: .5rem; }
+  .lede { text-align: center; color: var(--body); }
+  .meta { margin-top: 1rem; font-size: .82rem; color: var(--soft); text-align: center; font-style: italic; }
+  .rule { width: 3rem; height: 1px; background: var(--line); margin: 2.2rem auto 0; }
+  .tldr { margin: 2.2rem 0 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: .4rem 0; }
   .tldr ol { list-style: none; counter-reset: n; }
-  .tldr li { counter-increment: n; padding: .5rem 0 .5rem 2.2rem; position: relative; border-top: 1px solid var(--edge); }
+  .tldr li { counter-increment: n; padding: .8rem 0 .8rem 2.6rem; position: relative; border-top: 1px solid var(--line); }
   .tldr li:first-child { border-top: 0; }
-  .tldr li::before { content: "0" counter(n); position: absolute; left: 0; top: .52rem; font-weight: 700; color: var(--amber); font-variant-numeric: tabular-nums; }
-  .tldr b { color: #fff; }
-  section { margin-top: 3.6rem; }
-  h2 { font-size: 1.7rem; line-height: 1.2; margin: .5rem 0 .9rem; }
-  h3 { font-size: 1.02rem; margin: 1.6rem 0 .5rem; }
+  .tldr li::before { content: "0" counter(n); position: absolute; left: 0; top: .95rem; font: 300 .95rem/1.4 Montserrat, sans-serif; letter-spacing: .12em; color: var(--pink); }
+  .tldr b { color: var(--ink); font-weight: 500; }
+  section { margin-top: 4.2rem; }
+  .tag { display: inline-block; font-size: .64rem; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; padding: .42rem .95rem; border-radius: 999px; background: #fff; color: var(--bg); }
+  .tag.rose { background: var(--pink); }
+  .tag.green { background: transparent; color: var(--ink); border: 1px solid var(--soft); }
+  h2 { font-weight: 300; text-transform: uppercase; letter-spacing: .2em; color: var(--ink); font-size: 1.2rem; line-height: 1.5; margin: 1.1rem 0 1rem; }
+  h3 { font: 500 .78rem/1.4 Montserrat, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); margin: 1.8rem 0 .6rem; }
   p { margin: 0 0 1rem; }
-  a { color: var(--amber); text-underline-offset: 3px; }
-  .tag { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .22rem .55rem; border-radius: 999px; }
-  .tag.rose { background: rgba(251,113,133,.14); color: var(--rose); }
-  .tag.amber { background: rgba(251,191,36,.14); color: var(--amber); }
-  .tag.green { background: rgba(74,222,128,.14); color: var(--green); }
-  code { font: .86em/1.5 ui-monospace, "SF Mono", Menlo, monospace; background: var(--code); border: 1px solid var(--edge); border-radius: 6px; padding: .08em .35em; word-break: break-all; }
-  pre { background: var(--code); border: 1px solid var(--edge); border-radius: 10px; padding: .9rem 1rem; overflow-x: auto; font: .8rem/1.55 ui-monospace, "SF Mono", Menlo, monospace; color: #d9d5cf; margin: .6rem 0 1rem; }
-  .bad { color: var(--rose); } .good { color: var(--green); }
-  .urlbox { border-left: 3px solid var(--rose); padding: .6rem .9rem; background: var(--panel); border-radius: 0 10px 10px 0; margin: .4rem 0 1rem; font-size: .92rem; }
+  b { color: var(--ink); font-weight: 500; }
+  a { color: var(--ink); text-decoration-color: var(--pink); text-underline-offset: 3px; }
+  code { font: .82em/1.5 ui-monospace, "SF Mono", Menlo, monospace; background: var(--code); border: 1px solid var(--line); border-radius: 4px; padding: .08em .35em; white-space: nowrap; color: #e6e3e7; }
+  pre { background: var(--code); border: 1px solid var(--line); border-radius: 8px; padding: .9rem 1rem; overflow-x: auto; font: .78rem/1.55 ui-monospace, "SF Mono", Menlo, monospace; color: #dcd9dd; margin: .6rem 0 1rem; }
+  .bad { color: var(--red); } .good { color: var(--green); }
+  .urlbox { border-left: 2px solid var(--red); padding: .6rem .9rem; background: var(--bg2); margin: .5rem 0 1rem; font-size: .92rem; }
   .urlbox.ok { border-color: var(--green); }
-  .urlbox span { display: block; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--soft); margin-bottom: .2rem; }
-  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin: 1rem 0 .4rem; }
+  .urlbox span { display: block; font-size: .62rem; letter-spacing: .24em; text-transform: uppercase; color: var(--soft); margin-bottom: .3rem; }
+  .urlbox code { background: none; border: 0; padding: 0; white-space: normal; word-break: break-all; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin: 1.2rem 0 .4rem; }
   figure { margin: 0; }
-  figure img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--edge); }
-  figcaption { font-size: .78rem; color: var(--soft); margin-top: .45rem; text-align: center; }
-  figcaption b { color: var(--ink); }
-  .solo { max-width: 15rem; margin: 1rem auto; }
-  .note { font-size: .84rem; color: var(--soft); }
-  details { border: 1px solid var(--edge); border-radius: 12px; background: var(--panel); margin: .8rem 0; }
-  summary { cursor: pointer; padding: .85rem 1rem; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+  figure img { width: 100%; height: auto; display: block; border-radius: 6px; border: 1px solid var(--line); }
+  figcaption { font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--soft); margin-top: .6rem; text-align: center; line-height: 1.6; }
+  figcaption b { color: var(--ink); font-weight: 500; }
+  .solo { max-width: 14rem; margin: 1.2rem auto; }
+  .note { font-size: .86rem; color: var(--soft); }
+  details { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 1.2rem 0; }
+  details + details { border-top: 0; margin-top: -1.2rem; }
+  summary { cursor: pointer; padding: 1rem 0; font-size: .7rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--ink); list-style: none; display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
   summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; color: var(--amber); font-weight: 400; }
-  details[open] summary::after { content: "−"; }
-  details > div { padding: 0 1rem 1rem; }
-  .facts { width: 100%; border-collapse: collapse; font-size: .9rem; margin: .6rem 0 1rem; }
-  .facts th, .facts td { text-align: left; padding: .55rem .4rem; border-top: 1px solid var(--edge); vertical-align: top; }
-  .facts th { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--soft); font-weight: 600; border-top: 0; }
-  .list { padding-left: 1.1rem; } .list li { margin: .35rem 0; }
-  .divider { height: 1px; background: var(--edge); margin: 3.6rem 0 0; }
-  footer { margin-top: 2.4rem; font-size: .88rem; color: var(--soft); }
-  footer .sig { font-family: "Iowan Old Style", Palatino, Georgia, serif; font-size: 1.15rem; color: var(--ink); margin-bottom: .3rem; }
-  @media (max-width: 420px) { .pair { gap: .5rem; } figcaption { font-size: .72rem; } }
+  summary::after { content: "+"; font-size: 1.1rem; font-weight: 300; color: var(--pink); }
+  details[open] summary::after { content: "–"; }
+  details > div { padding: 0 0 1.2rem; }
+  .facts { width: 100%; border-collapse: collapse; font-size: .9rem; margin: .4rem 0 1rem; }
+  .facts th, .facts td { text-align: left; padding: .6rem .3rem; border-top: 1px solid var(--line); vertical-align: top; }
+  .facts td:last-child { color: var(--soft); font-size: .8rem; white-space: nowrap; }
+  .facts th { font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--soft); font-weight: 500; border-top: 0; }
+  .list { padding-left: 1.1rem; } .list li { margin: .45rem 0; } .list li::marker { color: var(--pink); }
+  .divider { height: 1px; background: var(--line); margin: 4rem 0 0; }
+  footer { margin-top: 2.6rem; text-align: center; font-size: .9rem; color: var(--soft); }
+  footer .sig { font: 300 1rem/1.4 Montserrat, sans-serif; letter-spacing: .32em; text-transform: uppercase; color: var(--ink); margin-bottom: .6rem; }
+  .pill { display: inline-block; margin: .4rem 0 1.2rem; background: #fff; color: var(--bg); text-decoration: none; padding: .55rem 1.3rem; border-radius: 999px; font-size: .9rem; }
+  @media (max-width: 420px) { .pair { gap: .5rem; } }
 </style>
 </head>
 <body>
 <main class="doc">
 
-  <div class="kicker">For the <span style="color:var(--amber)">Loosie's</span> team · 145 Bowery · Nov 9, 2026</div>
-  <h1>Three fixes for Loosie's, <em>before New Year's Eve.</em></h1>
-  <p class="lede">I looked at Loosie's the way a guest does: on a phone, and through what Google and AI assistants say about it. A few small things are getting between guests and a booking. Each fix below is ready for your web team.</p>
-  <p class="meta">Nathan Ortiz · public pages only, no logins, nothing submitted · checked Nov 9, 2026 (10pm ET)</p>
+  <div class="kicker">For the <b>Loosie's</b> team &nbsp;·&nbsp; 145 Bowery</div>
+  <h1>Three quick fixes<em>before this weekend</em></h1>
+  <p class="lede">I was checking out Loosie's on my phone and noticed a few things getting in the way of people booking. So I dug in and wrote up the fixes. Your web team can ship all three in an afternoon.</p>
+  <p class="meta">Nathan Ortiz · Nov 9, 2026 · public pages only, nothing logged into or submitted</p>
+  <div class="rule"></div>
 
   <div class="tldr">
     <ol>
-      <li><b>The New Year's Eve "VIP Reservations" button is broken.</b> It points to a malformed URL, both on the events page and on the NYE event page. It's a one-field fix.</li>
-      <li><b>On a phone, the header covers the page title</b> on the Events and Table Reservations pages.</li>
-      <li><b>The table-request form is squeezed to 248px</b> on a standard iPhone width.</li>
+      <li><b>On iPhones, the header sits on top of the page title</b> on the Events and Table Reservations pages.</li>
+      <li><b>The table request form is squeezed to 248px</b>, about two-thirds of the screen.</li>
+      <li><b>The New Year's Eve "VIP Reservations" button is broken.</b> The link is pasted in twice. One-field fix.</li>
     </ol>
   </div>
 
-  <section id="nye">
-    <span class="tag rose">Fix 01 · NYE bookings</span>
-    <h2>The NYE VIP button goes nowhere</h2>
-    <p>On the New Year's Eve card on the <a href="https://taogroup.com/venues/loosies-nightclub-new-york/events/">events page</a> and on the <a href="https://taogroup.com/event/12-31-2026-new-years-eve-loosies-nightclub/">NYE event page</a>, "VIP Reservations" links to two addresses pasted together:</p>
-    <div class="urlbox"><span>Current link</span><code class="bad">https://www.sevenrooms.com/events/loosies<b>https://www.sevenrooms.com/events/loosies</b></code></div>
-    <div class="urlbox ok"><span>Should be</span><code class="good">https://www.sevenrooms.com/events/loosies</code></div>
-    <figure class="solo"><img src="/loosies/nye-card.jpg" width="336" height="456" alt="Loosie's NYE 2027 event card on the events page"><figcaption>The affected card, as listed on the events page</figcaption></figure>
-    <p><b>Fix:</b> correct the VIP URL field on the NYE event entry in the CMS. It's the only event with this problem.</p>
-  </section>
-
   <section id="header">
-    <span class="tag amber">Fix 02 · Mobile</span>
+    <span class="tag amber">01 · Every weekend</span>
     <h2>The header covers the title on phones</h2>
-    <p>At 390px wide (iPhone 12–16), the venue nav wraps onto two rows. The fixed header becomes 194px tall, and the "VIP Reservations" pill lands on top of "Upcoming Events" and "Table Reservations." The "after" shots are the same live pages with a small CSS patch applied in my browser. Nothing on your site was changed.</p>
+    <p>On a standard iPhone (390px wide) the nav wraps onto two rows. The fixed header ends up 194px tall and the "VIP Reservations" button lands right on "Upcoming Events" and "Table Reservations." The "after" shots are your live pages with a small CSS patch I applied in my own browser. Nothing on your site was touched.</p>
     <div class="pair">
-      <figure><img src="/loosies/events-before.jpg" width="600" height="1077" alt="Events page on a 390px phone: VIP pill overlaps the Upcoming Events heading" loading="lazy"><figcaption><b>Now.</b> Header 194px, overlaps the title</figcaption></figure>
-      <figure><img src="/loosies/events-after.jpg" width="600" height="1077" alt="Same page with patch: logo, VIP pill and menu on one row, title clear" loading="lazy"><figcaption><b>With patch.</b> Header 130px, title clear</figcaption></figure>
+      <figure><img src="/loosies/events-before.jpg" width="600" height="1077" alt="Events page on a 390px phone: VIP button overlaps the Upcoming Events heading" loading="lazy"><figcaption><b>Now.</b> 194px header, covers the title</figcaption></figure>
+      <figure><img src="/loosies/events-after.jpg" width="600" height="1077" alt="Same page with the patch: logo, VIP button and menu on one row, title clear" loading="lazy"><figcaption><b>Patched.</b> 130px header, title clear</figcaption></figure>
     </div>
   </section>
 
   <section id="form">
-    <span class="tag amber">Fix 03 · Table requests</span>
+    <span class="tag amber">02 · Table requests</span>
     <h2>The table form is squeezed</h2>
-    <p>The SevenRooms form is embedded at <code>width="85%"</code> inside a card that's already padded. On a 390px phone, that leaves a 248px form, so name and email fields are cramped. The same patch makes it full-width (358px). It also adds an accessible <code>title</code> to the frame.</p>
+    <p>The SevenRooms form is embedded at <code>width="85%"</code> inside a card that's already padded, so on a phone it ends up 248px wide and the name and email fields get cramped. The same patch makes it full width (358px). This is the form your table bookings come through, so it's worth the five minutes.</p>
     <div class="pair">
       <figure><img src="/loosies/vip-before.jpg" width="600" height="1077" alt="Table reservations page on a 390px phone: narrow form, heading covered" loading="lazy"><figcaption><b>Now.</b> 248px form</figcaption></figure>
-      <figure><img src="/loosies/vip-after.jpg" width="600" height="1077" alt="Same page with patch: full-width form, heading clear" loading="lazy"><figcaption><b>With patch.</b> 358px form</figcaption></figure>
+      <figure><img src="/loosies/vip-after.jpg" width="600" height="1077" alt="Same page with the patch: full-width form, heading clear" loading="lazy"><figcaption><b>Patched.</b> 358px form</figcaption></figure>
     </div>
 
     <details>
-      <summary>The patch (CSS, ~15 lines, mobile only)</summary>
+      <summary>The patch (CSS, mobile only)</summary>
       <div>
 <pre>@media (max-width: 575.98px) {
-  /* Logo, VIP button and menu on one row */
+  /* logo, VIP button and menu on one row */
   .headroom .navbar &gt; .container { flex-wrap: nowrap; }
   .headroom .navbar-brand { max-width: 120px; }
   .headroom .navbar-brand img { max-height: 44px; width: auto; }
 
-  /* Start content below the fixed header */
+  /* start content below the fixed header */
   main#content &gt; .page-header &gt; .page-section:first-child { padding-top: 140px; }
 
-  /* Full-width table form */
+  /* full-width table form */
   .content-blocks:has(iframe.lounge-form) { padding-left: 0 !important; padding-right: 0 !important; }
   .page-section:has(iframe.lounge-form) &gt; .container { padding-left: 16px; padding-right: 16px; }
   iframe.lounge-form { width: 100% !important; }
 
-  /* Thumb-sized ticket and VIP buttons on event cards (now 25px tall) */
+  /* bigger ticket/VIP buttons on event cards (currently 25px tall) */
   .event-list-post__buttons .btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
 }</pre>
-        <p class="note">Plus on the iframe: <code>title="Loosie's table reservation request"</code>. Selectors came from the live pages on Nov 9, 2026. I tested in Chrome at 390×844 but not on real iOS Safari, so please QA before shipping. The shared header may be used across other Tao venues, so check them too.</p>
+        <p class="note">Also worth adding <code>title="Loosie's table reservation request"</code> to the iframe for screen readers. I pulled the selectors from your live pages tonight and tested in Chrome at iPhone size, but not on an actual iPhone, so give it a quick QA. The header looks shared across Tao venues, so check those too.</p>
       </div>
     </details>
   </section>
 
+  <section id="nye">
+    <span class="tag rose">03 · NYE</span>
+    <h2>The NYE VIP button doesn't go anywhere</h2>
+    <p>NYE tickets are already on sale, but the "VIP Reservations" button on the NYE card (<a href="https://taogroup.com/venues/loosies-nightclub-new-york/events/">events page</a>) and on the <a href="https://taogroup.com/event/12-31-2026-new-years-eve-loosies-nightclub/">NYE event page</a> has the link pasted twice:</p>
+    <div class="urlbox"><span>Current link</span><code class="bad">https://www.sevenrooms.com/events/loosies<b>https://www.sevenrooms.com/events/loosies</b></code></div>
+    <div class="urlbox ok"><span>Should be</span><code class="good">https://www.sevenrooms.com/events/loosies</code></div>
+    <figure class="solo"><img src="/loosies/nye-card.jpg" width="336" height="456" alt="Loosie's NYE 2027 event card on the events page" loading="lazy"><figcaption>The NYE card on the events page</figcaption></figure>
+    <p>Every other event's VIP link is fine, so it's just this one field in the CMS.</p>
+  </section>
+
   <section id="search">
-    <span class="tag green">Beyond this week</span>
+    <span class="tag green">Bonus</span>
     <h2>What Google and AI answers say about Loosie's</h2>
-    <p>When people ask search engines or AI assistants about LES clubs, the answers lean on third-party pages, not on taogroup.com. Those pages get some facts wrong:</p>
+    <p>I also checked how Loosie's shows up when people search or ask an AI for clubs in the LES. Most answers pull from third-party sites, not yours, and a few of those get things wrong:</p>
     <ul class="list">
-      <li><b>Clubbable</b> describes Loosie's as a speakeasy with exposed brick, jazz and indie rock.</li>
-      <li><b>Discotech's listing</b> shows a reservations email at another hospitality company's domain. Discotech also supplies most of Loosie's mentions in "best LES clubs" results.</li>
-      <li><b>Search snippets</b> still show <b>Thu–Sat</b> hours. Your page says <b>Thu–Sun, 11PM–4AM</b>.</li>
-      <li><b>Dress code, entry options and directions</b> aren't on the official page, so aggregators answer those questions instead.</li>
-      <li><b>The events list loads only via JavaScript.</b> The page's HTML contains no event links, so crawlers that don't run scripts see an empty calendar. Discotech's event pages outrank yours for "Friday club LES" searches.</li>
+      <li><b>Clubbable</b> calls Loosie's a speakeasy with exposed brick, jazz and indie rock.</li>
+      <li><b>Discotech's listing</b> has a reservations email from a different hospitality company. That matters because Discotech is behind most of Loosie's mentions in "best LES clubs" results.</li>
+      <li><b>Search snippets</b> still show Thu–Sat hours. Your page says Thu–Sun.</li>
+      <li><b>Dress code, how to get in and directions</b> aren't on your site, so aggregators answer those instead.</li>
+      <li><b>Your events list only loads with JavaScript,</b> so crawlers that don't run it see an empty calendar. Discotech's event pages outrank yours for stuff like "Friday club LES."</li>
     </ul>
-    <p>The fix here isn't tricks. Put the true answers in plain text on your own page (a short "Plan your night" block), make the event list readable without JavaScript, and ask the two listings to correct their facts. I'm happy to draft the copy for your approval.</p>
+    <p>No tricks needed here. Put the real answers on your own page (a short "plan your night" section), make the events list readable without JS, and ask those two sites to fix their info. Happy to draft the copy if that's useful.</p>
 
     <details>
-      <summary>Full list for the web team (14 more items)</summary>
+      <summary>Everything else I found (for the web team)</summary>
       <div>
         <table class="facts">
           <tr><th>Item</th><th>Effort</th></tr>
-          <tr><td>Server-render the upcoming-events list and add an ItemList of events</td><td>Medium</td></tr>
-          <tr><td>Event pages: add a meta description and og:description (none on the Nov 13 page)</td><td>Low · template</td></tr>
-          <tr><td>Event JSON-LD: add timezone offset, <code>offers</code>, <code>eventStatus</code>, <code>performer</code>, <code>organizer</code>, <code>url</code>; <code>addressRegion</code> is null</td><td>Low · template</td></tr>
-          <tr><td>NightClub JSON-LD: add opening hours, geo, Instagram <code>sameAs</code>; use <code>"US"</code> for country</td><td>Low</td></tr>
-          <tr><td>199 past Loosie's events still in the sitemap, indexable, with no past-event status</td><td>Medium · policy</td></tr>
-          <tr><td>Event pages: "View all events" links to the venue home, not the events page</td><td>Trivial</td></tr>
-          <tr><td>Venue page title typo: "New York CIty"</td><td>Trivial</td></tr>
-          <tr><td>Venue page copy still says "bound to become a neighborhood fixture." It's been one since 2022.</td><td>Copy</td></tr>
-          <tr><td>Mobile weight: venue page is ~27 MB (autoplay background videos). Lighthouse mobile performance 28, single lab run.</td><td>Medium–High</td></tr>
-          <tr><td>Accessibility: low-contrast text, icon links without names, small tap targets</td><td>Low</td></tr>
-          <tr><td>Fixed header + app banner take ~23% of the screen while scrolling</td><td>Low</td></tr>
-          <tr><td>Correction requests to Clubbable and Discotech (from an official address)</td><td>Low</td></tr>
-          <tr><td>Public phone, dress code and entry policy: confirm and publish</td><td>Venue decision</td></tr>
-          <tr><td>Optional: Search Console's AI-feature report and Bing's AI Performance report show how the site appears in AI answers. Owner access only.</td><td>Setup</td></tr>
+          <tr><td>Render the upcoming events list in the HTML and add an event list in structured data</td><td>Medium</td></tr>
+          <tr><td>Event pages have no meta description (the Nov 13 page doesn't)</td><td>Low · template</td></tr>
+          <tr><td>Event structured data is missing the timezone, <code>offers</code>, <code>eventStatus</code>, <code>performer</code>, <code>organizer</code> and <code>url</code>, and <code>addressRegion</code> is null</td><td>Low · template</td></tr>
+          <tr><td>Venue structured data has no hours, geo or Instagram link</td><td>Low</td></tr>
+          <tr><td>Google shows a phone number for Loosie's but your site doesn't list one</td><td>Trivial</td></tr>
+          <tr><td>199 past events are still in the sitemap and indexed</td><td>Medium</td></tr>
+          <tr><td>"View all events" on event pages goes to the venue home, not the events page</td><td>Trivial</td></tr>
+          <tr><td>Title typo: "New York CIty"</td><td>Trivial</td></tr>
+          <tr><td>Copy still says "bound to become a neighborhood fixture." It's been one since 2022.</td><td>Copy</td></tr>
+          <tr><td>The venue page is about 27 MB on mobile because of the autoplay background videos (Lighthouse mobile performance: 28)</td><td>Medium–High</td></tr>
+          <tr><td>Some low-contrast text, icon links with no labels, small tap targets</td><td>Low</td></tr>
         </table>
-        <h3>Example: Event markup for Fri Nov 13</h3>
+        <h3>Example event markup (Fri Nov 13)</h3>
 <pre>{
   "@context": "https://schema.org",
   "@type": "Event",
@@ -191,7 +198,6 @@
   "startDate": "2026-11-13T23:00:00-05:00",
   "endDate": "2026-11-14T04:00:00-05:00",
   "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "url": "https://taogroup.com/event/11-13-2026-fridays-loosies-nightclub/",
   "location": {
     "@type": "NightClub",
@@ -208,20 +214,20 @@
     "availability": "https://schema.org/InStock" },
   "typicalAgeRange": "21-"
 }</pre>
-        <p class="note">Series name and performer type are assumptions, so adjust them to match how you bill the night. Add price and currency to <code>offers</code> if you want them shown. Run the result through Google's Rich Results Test.</p>
+        <p class="note">I guessed the series name and performer, so tweak those to match how you bill the night. Run the final version through Google's Rich Results Test.</p>
       </div>
     </details>
   </section>
 
   <section id="method">
     <details>
-      <summary>How I checked, and what I couldn't</summary>
+      <summary>How I checked this</summary>
       <div>
         <ul class="list">
-          <li>I used public pages only: curl, headless Chrome at 390×844, 430×932 and desktop, Lighthouse 13.6, and about 20 search prompts. No logins, no forms, nothing submitted or changed.</li>
-          <li><b>Not checked:</b> real iPhone Safari, real-user speed data (Google's PageSpeed API was rate-limited), the ticketing pages (behind a bot check), Google Business Profile and Yelp, and consumer AI chat apps beyond one ChatGPT sample.</li>
-          <li>Lab scores are single runs and directional. None of this promises rankings or sales. The mobile fixes are the part your team can verify immediately.</li>
-          <li>I have a full evidence file (sources, timestamps, screenshots, issue register) and I'm glad to send it.</li>
+          <li>Public pages only: headless Chrome at iPhone sizes and desktop, Lighthouse, and about 20 search prompts. I didn't log into, submit or change anything.</li>
+          <li>Things I couldn't check: a real iPhone, real-user speed data, your ticketing pages (they're behind a bot check), and your Google or Bing dashboards.</li>
+          <li>No promises about rankings or sales here. The mobile fixes are the part you can verify right away.</li>
+          <li>I've got a full write-up with sources, timestamps and screenshots if your web team wants it.</li>
         </ul>
       </div>
     </details>
@@ -230,8 +236,9 @@
   <div class="divider"></div>
   <footer>
     <div class="sig">Nathan Ortiz</div>
-    <p>I design and build websites and apps. <a href="https://www.nathanortiz.com">nathanortiz.com</a></p>
-    <p class="note">Independent review, not affiliated with Loosie's or Tao Group Hospitality. Screenshots of public pages are used to illustrate the issues.</p>
+    <p>Columbia student. I build websites and apps.</p>
+    <a class="pill" href="https://www.nathanortiz.com">nathanortiz.com</a>
+    <p class="note">Not affiliated with Loosie's or Tao Group Hospitality. Screenshots are of public pages.</p>
   </footer>
 </main>
 </body>
