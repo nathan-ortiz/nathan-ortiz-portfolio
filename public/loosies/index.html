@@ -8,125 +8,162 @@
 <meta name="description" content="Three quick mobile fixes for Loosie's Nightclub, with before and after screenshots. By Nathan Ortiz.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nathan Ortiz">
-<meta property="og:title" content="Three quick fixes for Loosie's, before this weekend">
-<meta property="og:description" content="The mobile header, the table form, and the NYE VIP button. Before &amp; after included.">
+<meta property="og:title" content="Three quick fixes for Loosie's (before this weekend)">
+<meta property="og:description" content="The mobile header, the table form and the NYE VIP link. Before and after inside.">
 <meta property="og:url" content="https://www.nathanortiz.com/loosies/">
 <meta property="og:image" content="https://www.nathanortiz.com/loosies/og-card.jpg">
 <meta property="og:image:width" content="2400">
 <meta property="og:image:height" content="1260">
-<meta property="og:image:alt" content="Three quick fixes for Loosie's, before this weekend. A disco ball on a charcoal background.">
+<meta property="og:image:alt" content="Three quick fixes for Loosie's, before this weekend. A disco ball on a dark grainy background.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Three quick fixes for Loosie's, before this weekend">
-<meta name="twitter:description" content="The mobile header, the table form, and the NYE VIP button. Before &amp; after included.">
+<meta name="twitter:title" content="Three quick fixes for Loosie's (before this weekend)">
+<meta name="twitter:description" content="The mobile header, the table form and the NYE VIP link. Before and after inside.">
 <meta name="twitter:image" content="https://www.nathanortiz.com/loosies/og-card.jpg">
-<meta name="theme-color" content="#282529">
+<meta name="theme-color" content="#110f10">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AA%A9%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/loosies/events-now.jpg">
 <style>
   :root {
-    --bg: #282529; --bg2: #211e22; --line: #3d393f; --ink: #ffffff; --body: #c4c1c6; --soft: #8f8c91;
-    --pink: #f2a7c9; --gold: #e9c46a; --red: #ff8a8a; --green: #8fe3b0; --code: #1b191c;
+    --bg: #110f10; --line: #34302f; --ink: #f1ebe1; --body: #c2bab0; --soft: #8a827a;
+    --pink: #f47fc4; --orange: #f4714d; --teal: #37b7d6; --violet: #6f6ae0; --gold: #e3b95a; --rust: #7c3a22;
+    --red: #ff8f86; --green: #8fe3b0; --code: #0a0909;
+    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body { background: var(--bg); color: var(--body); font: 400 17px/1.75 Lora, Georgia, serif; }
-  .doc { max-width: 42rem; margin: 0 auto; padding: 3.4rem 1.25rem 4rem; }
-  .mont, .kicker, h1, h2, .tag, summary, .facts th, figcaption, .urlbox span { font-family: Montserrat, "Helvetica Neue", sans-serif; }
-  .kicker { font-size: .68rem; font-weight: 500; letter-spacing: .32em; text-transform: uppercase; color: var(--soft); text-align: center; }
+  html { -webkit-text-size-adjust: 100%; background: var(--bg); }
+  body { color: var(--body); font: 400 17px/1.7 Lora, Georgia, serif; position: relative; overflow-x: hidden;
+    background:
+      radial-gradient(34rem 26rem at -8rem 30rem, rgba(124,58,34,.55), transparent 70%),
+      radial-gradient(22rem 18rem at 105% 6rem, rgba(244,127,196,.16), transparent 70%),
+      var(--bg); }
+  body::before { content: ""; position: fixed; inset: 0; background: var(--grain); opacity: .22; mix-blend-mode: overlay; pointer-events: none; z-index: 5; }
+  .doc { max-width: 40rem; margin: 0 auto; padding: 2.6rem 1.25rem 3rem; position: relative; }
+  .caps { font: 500 .7rem/1.5 Lora, serif; letter-spacing: .16em; text-transform: uppercase; }
+
+  /* hero */
+  .ball { position: absolute; top: 0; right: 1.6rem; width: 92px; height: auto; overflow: visible; }
+  .ball .tw { animation: tw 2.6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+  .ball .tw:nth-of-type(2n) { animation-delay: 1.1s; }
+  @keyframes tw { 0%,100% { opacity: .15; transform: scale(.6); } 50% { opacity: 1; transform: scale(1); } }
+  .kicker { color: var(--soft); }
   .kicker b { color: var(--ink); font-weight: 500; }
-  h1 { font-weight: 300; text-transform: uppercase; letter-spacing: .26em; color: var(--ink); font-size: clamp(1.45rem, 6.2vw, 2.1rem); line-height: 1.45; text-align: center; margin: 1.4rem 0 1.4rem; }
-  h1 em { font-style: normal; display: block; font-size: .62em; letter-spacing: .34em; color: var(--pink); margin-top: .5rem; }
-  .lede { text-align: center; color: var(--body); }
-  .meta { margin-top: 1rem; font-size: .82rem; color: var(--soft); text-align: center; font-style: italic; }
-  .rule { width: 3rem; height: 1px; background: var(--line); margin: 2.2rem auto 0; }
-  .tldr { margin: 2.2rem 0 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: .4rem 0; }
-  .tldr ol { list-style: none; counter-reset: n; }
-  .tldr li { counter-increment: n; padding: .8rem 0 .8rem 2.6rem; position: relative; border-top: 1px solid var(--line); }
-  .tldr li:first-child { border-top: 0; }
-  .tldr li::before { content: "0" counter(n); position: absolute; left: 0; top: .95rem; font: 300 .95rem/1.4 Montserrat, sans-serif; letter-spacing: .12em; color: var(--pink); }
-  .tldr b { color: var(--ink); font-weight: 500; }
-  section { margin-top: 4.2rem; }
-  .tag { display: inline-block; font-size: .64rem; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; padding: .42rem .95rem; border-radius: 999px; background: #fff; color: var(--bg); }
-  .tag.rose { background: var(--pink); }
-  .tag.green { background: transparent; color: var(--ink); border: 1px solid var(--soft); }
-  h2 { font-weight: 300; text-transform: uppercase; letter-spacing: .2em; color: var(--ink); font-size: 1.2rem; line-height: 1.5; margin: 1.1rem 0 1rem; }
-  h3 { font: 500 .78rem/1.4 Montserrat, sans-serif; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); margin: 1.8rem 0 .6rem; }
+  h1, h2 { font-family: "Instrument Serif", "Bodoni 72", Didot, Georgia, serif; font-weight: 400; color: var(--ink); }
+  h1 { font-size: clamp(3.3rem, 15vw, 4.6rem); line-height: .92; letter-spacing: -.01em; margin: .9rem 0 .45rem; }
+  .paren { font: italic 400 1.45rem/1.2 "Instrument Serif", Georgia, serif; color: var(--pink); letter-spacing: .01em; }
+  .lede { margin-top: 1.1rem; color: var(--ink); opacity: .92; line-height: 1.6; }
+  .meta { margin-top: .7rem; font-size: .84rem; color: var(--soft); font-style: italic; }
+  .idx { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 1.6rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .idx a { display: block; padding: .7rem 0 .65rem; text-decoration: none; color: var(--body); font: 500 .66rem/1.4 Lora, serif; letter-spacing: .14em; text-transform: uppercase; }
+  .idx a + a { border-left: 1px solid var(--line); padding-left: .8rem; }
+  .idx b { display: block; font: 400 1.15rem/1 "Instrument Serif", serif; letter-spacing: 0; color: var(--ink); margin-bottom: .2rem; }
+
+  /* sections */
+  section { margin-top: 3.6rem; scroll-margin-top: 1rem; }
+  #header { margin-top: 2rem; }
+  .sec { display: flex; align-items: center; gap: .7rem; color: var(--soft); }
+  .oval { display: inline-flex; align-items: center; justify-content: center; min-width: 3rem; height: 1.7rem; padding: 0 .7rem; border: 1px solid var(--ink); border-radius: 50%; color: var(--ink); font: 500 .72rem/1 Lora, serif; letter-spacing: .1em; }
+  .sec::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .sec svg { width: 14px; height: 14px; fill: var(--ink); order: 3; margin-left: -.35rem; }
+  h2 { font-size: 2.05rem; line-height: 1.04; margin: .9rem 0 .8rem; }
+  h3 { font: 500 .7rem/1.5 Lora, serif; letter-spacing: .16em; text-transform: uppercase; color: var(--ink); margin: 1.8rem 0 .6rem; }
   p { margin: 0 0 1rem; }
   b { color: var(--ink); font-weight: 500; }
   a { color: var(--ink); text-decoration-color: var(--pink); text-underline-offset: 3px; }
-  code { font: .82em/1.5 ui-monospace, "SF Mono", Menlo, monospace; background: var(--code); border: 1px solid var(--line); border-radius: 4px; padding: .08em .35em; white-space: nowrap; color: #e6e3e7; }
-  pre { background: var(--code); border: 1px solid var(--line); border-radius: 8px; padding: .9rem 1rem; overflow-x: auto; font: .78rem/1.55 ui-monospace, "SF Mono", Menlo, monospace; color: #dcd9dd; margin: .6rem 0 1rem; }
-  .bad { color: var(--red); } .good { color: var(--green); }
-  .urlbox { border-left: 2px solid var(--red); padding: .6rem .9rem; background: var(--bg2); margin: .5rem 0 1rem; font-size: .92rem; }
+  code { font: .8em/1.5 ui-monospace, "SF Mono", Menlo, monospace; background: var(--code); border: 1px solid var(--line); border-radius: 4px; padding: .08em .35em; white-space: nowrap; color: #e8e2d9; }
+  pre { background: var(--code); border: 1px solid var(--line); border-radius: 10px; padding: .9rem 1rem; overflow-x: auto; font: .76rem/1.55 ui-monospace, "SF Mono", Menlo, monospace; color: #d9d2c8; margin: .6rem 0 1rem; position: relative; z-index: 6; }
+
+  /* before / after */
+  .cmp { --a: var(--pink); --b: var(--orange); margin: 1.4rem -.35rem 1.2rem; padding: .8rem .8rem .95rem; border-radius: 26px; position: relative; overflow: hidden;
+    background: linear-gradient(155deg, var(--a), var(--b)); color: #141011; }
+  .cmp.teal { --a: var(--teal); --b: var(--violet); }
+  .cmp::before { content: ""; position: absolute; inset: 0; background: var(--grain); opacity: .5; mix-blend-mode: soft-light; pointer-events: none; }
+  .seg { position: relative; display: flex; gap: .4rem; margin-bottom: .7rem; }
+  .seg button { flex: 1; appearance: none; cursor: pointer; border: 1.5px solid #141011; background: transparent; color: #141011; border-radius: 999px; padding: .5rem 0 .45rem; font: 600 .7rem/1 Lora, serif; letter-spacing: .16em; text-transform: uppercase; transition: background .2s, color .2s; -webkit-tap-highlight-color: transparent; }
+  .seg button[aria-pressed="true"] { background: #141011; color: var(--ink); }
+  .shots { position: relative; border-radius: 16px; overflow: hidden; border: 2px solid #141011; background: #141011; }
+  .shots img { display: block; width: 100%; height: auto; }
+  .shots img + img { position: absolute; inset: 0; opacity: 0; transition: opacity .28s ease; }
+  .cmp.on .shots img + img { opacity: 1; }
+  .cap { position: relative; margin: .75rem .2rem 0; font-size: .95rem; line-height: 1.4; font-weight: 500; min-height: 2.7em; }
+  .cap span + span, .cmp.on .cap span:first-child { display: none; }
+  .cmp.on .cap span + span { display: inline; }
+
+  /* nye */
+  .urlbox { border-left: 2px solid var(--red); padding: .55rem .9rem; background: rgba(0,0,0,.35); margin: .5rem 0 .8rem; }
   .urlbox.ok { border-color: var(--green); }
-  .urlbox span { display: block; font-size: .62rem; letter-spacing: .24em; text-transform: uppercase; color: var(--soft); margin-bottom: .3rem; }
-  .urlbox code { background: none; border: 0; padding: 0; white-space: normal; word-break: break-all; }
-  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin: 1.2rem 0 .4rem; }
-  figure { margin: 0; }
-  figure img { width: 100%; height: auto; display: block; border-radius: 6px; border: 1px solid var(--line); }
-  figcaption { font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--soft); margin-top: .6rem; text-align: center; line-height: 1.6; }
-  figcaption b { color: var(--ink); font-weight: 500; }
-  .solo { max-width: 14rem; margin: 1.2rem auto; }
+  .urlbox span { display: block; font: 500 .62rem/1.5 Lora, serif; letter-spacing: .16em; text-transform: uppercase; color: var(--soft); margin-bottom: .2rem; }
+  .urlbox code { background: none; border: 0; padding: 0; white-space: normal; word-break: break-all; font-size: .8rem; }
+  .bad { color: var(--red); } .bad b { color: #fff; background: rgba(255,143,134,.22); font-weight: 400; } .good { color: var(--green); }
+  .nye { display: grid; grid-template-columns: 6.6rem 1fr; gap: 1rem; align-items: center; margin: 1.2rem 0 0; }
+  .nye img { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid var(--line); }
+  .nye p { margin: 0; }
+  #nye .oval { border-color: var(--gold); color: var(--gold); }
+
   .note { font-size: .86rem; color: var(--soft); }
   details { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 1.2rem 0; }
   details + details { border-top: 0; margin-top: -1.2rem; }
-  summary { cursor: pointer; padding: 1rem 0; font-size: .7rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--ink); list-style: none; display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
+  summary { cursor: pointer; padding: .95rem 0; font: 500 .7rem/1.5 Lora, serif; letter-spacing: .16em; text-transform: uppercase; color: var(--ink); list-style: none; display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
   summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; font-size: 1.1rem; font-weight: 300; color: var(--pink); }
+  summary::after { content: "+"; font: 400 1.5rem/1 "Instrument Serif", serif; color: var(--pink); }
   details[open] summary::after { content: "–"; }
   details > div { padding: 0 0 1.2rem; }
-  .facts { width: 100%; border-collapse: collapse; font-size: .9rem; margin: .4rem 0 1rem; }
-  .facts th, .facts td { text-align: left; padding: .6rem .3rem; border-top: 1px solid var(--line); vertical-align: top; }
-  .facts td:last-child { color: var(--soft); font-size: .8rem; white-space: nowrap; }
-  .facts th { font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--soft); font-weight: 500; border-top: 0; }
-  .list { padding-left: 1.1rem; } .list li { margin: .45rem 0; } .list li::marker { color: var(--pink); }
-  .divider { height: 1px; background: var(--line); margin: 4rem 0 0; }
-  footer { margin-top: 2.6rem; text-align: center; font-size: .9rem; color: var(--soft); }
-  footer .sig { font: 300 1rem/1.4 Montserrat, sans-serif; letter-spacing: .32em; text-transform: uppercase; color: var(--ink); margin-bottom: .6rem; }
-  .pill { display: inline-block; margin: .4rem 0 1.2rem; background: #fff; color: var(--bg); text-decoration: none; padding: .55rem 1.3rem; border-radius: 999px; font-size: .9rem; }
-  @media (max-width: 420px) { .pair { gap: .5rem; } }
+  .facts { width: 100%; border-collapse: collapse; font-size: .9rem; margin: .2rem 0 1rem; }
+  .facts td { padding: .6rem .3rem .6rem 0; border-top: 1px solid var(--line); vertical-align: top; }
+  .facts tr:first-child td { border-top: 0; }
+  .facts td:last-child { color: var(--soft); font-size: .78rem; white-space: nowrap; text-align: right; padding-right: 0; }
+  .list { padding-left: 1.1rem; } .list li { margin: .5rem 0; } .list li::marker { color: var(--pink); }
+
+  footer { margin-top: 4rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
+  .foot { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; color: var(--body); }
+  .foot a { text-decoration: none; font: italic 400 1.5rem/1 "Instrument Serif", serif; color: var(--ink); }
+  footer .note { margin-top: 1rem; }
+  @media (prefers-reduced-motion: reduce) { .ball .tw { animation: none; } .shots img + img { transition: none; } }
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="spark" viewBox="0 0 20 20"><path d="M10 0 L11.6 8.4 L20 10 L11.6 11.6 L10 20 L8.4 11.6 L0 10 L8.4 8.4Z"/></symbol></svg>
 <main class="doc">
 
-  <div class="kicker">For the <b>Loosie's</b> team &nbsp;·&nbsp; 145 Bowery</div>
-  <h1>Three quick fixes<em>before this weekend</em></h1>
-  <p class="lede">I was checking out Loosie's on my phone and noticed a few things getting in the way of people booking. So I dug in and wrote up the fixes. Your web team can ship all three in an afternoon.</p>
-  <p class="meta">Nathan Ortiz · Nov 9, 2026 · public pages only, nothing logged into or submitted</p>
-  <div class="rule"></div>
+  <svg class="ball" id="ball" viewBox="0 0 120 250" aria-hidden="true"></svg>
 
-  <div class="tldr">
-    <ol>
-      <li><b>On iPhones, the header sits on top of the page title</b> on the Events and Table Reservations pages.</li>
-      <li><b>The table request form is squeezed to 248px</b>, about two-thirds of the screen.</li>
-      <li><b>The New Year's Eve "VIP Reservations" button is broken.</b> The link is pasted in twice. One-field fix.</li>
-    </ol>
-  </div>
+  <div class="kicker caps">For the <b>Loosie's</b> team</div>
+  <h1>Three quick<br>fixes</h1>
+  <div class="paren">(before this weekend)</div>
+  <p class="lede">I found a few things on your mobile site that get in the way of booking so I wrote up the fixes. Your web team could ship all three in an afternoon.</p>
 
   <section id="header">
-    <span class="tag amber">01 · Every weekend</span>
-    <h2>The header covers the title on phones</h2>
-    <p>On a standard iPhone (390px wide) the nav wraps onto two rows. The fixed header ends up 194px tall and the "VIP Reservations" button lands right on "Upcoming Events" and "Table Reservations." The "after" shots are your live pages with a small CSS patch I applied in my own browser. Nothing on your site was touched.</p>
-    <div class="pair">
-      <figure><img src="/loosies/events-before.jpg" width="600" height="1077" alt="Events page on a 390px phone: VIP button overlaps the Upcoming Events heading" loading="lazy"><figcaption><b>Now.</b> 194px header, covers the title</figcaption></figure>
-      <figure><img src="/loosies/events-after.jpg" width="600" height="1077" alt="Same page with the patch: logo, VIP button and menu on one row, title clear" loading="lazy"><figcaption><b>Patched.</b> 130px header, title clear</figcaption></figure>
+    <div class="sec caps"><span class="oval">01</span>Every weekend<svg><use href="#spark"/></svg></div>
+    <h2>The header covers your page titles</h2>
+    <div class="cmp" data-cmp>
+      <div class="seg" role="group" aria-label="Compare"><button type="button" aria-pressed="true">Now</button><button type="button" aria-pressed="false">Patched</button></div>
+      <div class="shots">
+        <img src="/loosies/events-now.jpg" width="780" height="1240" alt="Loosie's events page on an iPhone today: the VIP Reservations button sits on top of the Upcoming Events title" fetchpriority="high">
+        <img src="/loosies/events-fix.jpg" width="780" height="1240" alt="Same page with the patch: logo, VIP button and menu on one row and the title is clear">
+      </div>
+      <p class="cap"><span>Now: the VIP button sits on top of "Upcoming Events."</span><span>Patched: one row, title's clear. About 15 lines of CSS.</span></p>
     </div>
+    <p>On a regular iPhone the nav wraps onto two rows so the header ends up 194px tall and the VIP Reservations button lands right on the page title. Same thing happens on Table Reservations.</p>
+    <p>The patched version is your live page with a little CSS I applied in my own browser. Nothing on your site was touched.</p>
   </section>
 
   <section id="form">
-    <span class="tag amber">02 · Table requests</span>
+    <div class="sec caps"><span class="oval">02</span>Table requests<svg><use href="#spark"/></svg></div>
     <h2>The table form is squeezed</h2>
-    <p>The SevenRooms form is embedded at <code>width="85%"</code> inside a card that's already padded, so on a phone it ends up 248px wide and the name and email fields get cramped. The same patch makes it full width (358px). This is the form your table bookings come through, so it's worth the five minutes.</p>
-    <div class="pair">
-      <figure><img src="/loosies/vip-before.jpg" width="600" height="1077" alt="Table reservations page on a 390px phone: narrow form, heading covered" loading="lazy"><figcaption><b>Now.</b> 248px form</figcaption></figure>
-      <figure><img src="/loosies/vip-after.jpg" width="600" height="1077" alt="Same page with the patch: full-width form, heading clear" loading="lazy"><figcaption><b>Patched.</b> 358px form</figcaption></figure>
+    <div class="cmp teal" data-cmp>
+      <div class="seg" role="group" aria-label="Compare"><button type="button" aria-pressed="true">Now</button><button type="button" aria-pressed="false">Patched</button></div>
+      <div class="shots">
+        <img src="/loosies/vip-now.jpg" width="780" height="1480" alt="Table reservations page on an iPhone today: the form is narrow and the title is covered" loading="lazy">
+        <img src="/loosies/vip-fix.jpg" width="780" height="1480" alt="Same page with the patch: full-width form and a clear title" loading="lazy">
+      </div>
+      <p class="cap"><span>Now: the form is 248px wide, about 2/3 of the screen.</span><span>Patched: full width, 358px.</span></p>
     </div>
+    <p>The SevenRooms form is embedded at <code>width="85%"</code> inside a card that's already padded so on a phone it ends up tiny. This is where your table requests come in so it's worth the five minutes.</p>
 
     <details>
-      <summary>The patch (CSS, mobile only)</summary>
+      <summary>The patch (covers 01 and 02)</summary>
       <div>
 <pre>@media (max-width: 575.98px) {
   /* logo, VIP button and menu on one row */
@@ -142,53 +179,53 @@
   .page-section:has(iframe.lounge-form) &gt; .container { padding-left: 16px; padding-right: 16px; }
   iframe.lounge-form { width: 100% !important; }
 
-  /* bigger ticket/VIP buttons on event cards (currently 25px tall) */
+  /* bigger ticket/VIP buttons on event cards (25px tall right now) */
   .event-list-post__buttons .btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
 }</pre>
-        <p class="note">Also worth adding <code>title="Loosie's table reservation request"</code> to the iframe for screen readers. I pulled the selectors from your live pages tonight and tested in Chrome at iPhone size, but not on an actual iPhone, so give it a quick QA. The header looks shared across Tao venues, so check those too.</p>
+        <p class="note">I pulled the selectors from your live pages and tested in Chrome at iPhone size, not on an actual iPhone, so give it a quick QA. The header looks shared across Tao venues so check those too. Also worth adding <code>title="Table reservation request"</code> to the iframe for screen readers.</p>
       </div>
     </details>
   </section>
 
   <section id="nye">
-    <span class="tag rose">03 · NYE</span>
-    <h2>The NYE VIP button doesn't go anywhere</h2>
-    <p>NYE tickets are already on sale, but the "VIP Reservations" button on the NYE card (<a href="https://taogroup.com/venues/loosies-nightclub-new-york/events/">events page</a>) and on the <a href="https://taogroup.com/event/12-31-2026-new-years-eve-loosies-nightclub/">NYE event page</a> has the link pasted twice:</p>
-    <div class="urlbox"><span>Current link</span><code class="bad">https://www.sevenrooms.com/events/loosies<b>https://www.sevenrooms.com/events/loosies</b></code></div>
+    <div class="sec caps"><span class="oval">03</span>New Year's Eve<svg><use href="#spark"/></svg></div>
+    <h2>The NYE VIP button is broken</h2>
+    <p>NYE tickets are already on sale but the VIP Reservations button has the link pasted in twice. It's like that on the <a href="https://taogroup.com/venues/loosies-nightclub-new-york/events/">events page</a> and the <a href="https://taogroup.com/event/12-31-2026-new-years-eve-loosies-nightclub/">NYE page</a>.</p>
+    <div class="urlbox"><span>Right now</span><code class="bad">https://www.sevenrooms.com/events/loosies<b>https://www.sevenrooms.com/events/loosies</b></code></div>
     <div class="urlbox ok"><span>Should be</span><code class="good">https://www.sevenrooms.com/events/loosies</code></div>
-    <figure class="solo"><img src="/loosies/nye-card.jpg" width="336" height="456" alt="Loosie's NYE 2027 event card on the events page" loading="lazy"><figcaption>The NYE card on the events page</figcaption></figure>
-    <p>Every other event's VIP link is fine, so it's just this one field in the CMS.</p>
+    <div class="nye">
+      <img src="/loosies/nye-card.jpg" width="336" height="456" alt="The NYE 2027 card on Loosie's events page" loading="lazy">
+      <p>Every other event's VIP link works so it's just this one field in the CMS.</p>
+    </div>
   </section>
 
   <section id="search">
-    <span class="tag green">Bonus</span>
-    <h2>What Google and AI answers say about Loosie's</h2>
-    <p>I also checked how Loosie's shows up when people search or ask an AI for clubs in the LES. Most answers pull from third-party sites, not yours, and a few of those get things wrong:</p>
+    <div class="sec caps"><span class="oval">+</span>Bonus<svg><use href="#spark"/></svg></div>
+    <h2>What Google and AI say about you</h2>
+    <p>I also checked how Loosie's shows up when people search or ask an AI for clubs in the LES. Most answers pull from third-party sites instead of yours, and some of that info is off:</p>
     <ul class="list">
-      <li><b>Clubbable</b> calls Loosie's a speakeasy with exposed brick, jazz and indie rock.</li>
-      <li><b>Discotech's listing</b> has a reservations email from a different hospitality company. That matters because Discotech is behind most of Loosie's mentions in "best LES clubs" results.</li>
+      <li><b>Clubbable</b> describes Loosie's as a speakeasy with exposed brick, jazz and indie rock.</li>
       <li><b>Search snippets</b> still show Thu–Sat hours. Your page says Thu–Sun.</li>
-      <li><b>Dress code, how to get in and directions</b> aren't on your site, so aggregators answer those instead.</li>
-      <li><b>Your events list only loads with JavaScript,</b> so crawlers that don't run it see an empty calendar. Discotech's event pages outrank yours for stuff like "Friday club LES."</li>
+      <li><b>Dress code, how to get in and directions</b> aren't on your site so aggregators answer those for you.</li>
+      <li><b>Your events list only loads with JavaScript</b> so crawlers that don't run it see an empty calendar. Discotech's event pages outrank yours for stuff like "Friday club LES."</li>
     </ul>
-    <p>No tricks needed here. Put the real answers on your own page (a short "plan your night" section), make the events list readable without JS, and ask those two sites to fix their info. Happy to draft the copy if that's useful.</p>
+    <p>Nothing fancy needed. Put the real answers on your own page (a short "plan your night" section) and make the events list readable without JS. Happy to draft the copy if that's useful.</p>
 
     <details>
-      <summary>Everything else I found (for the web team)</summary>
+      <summary>Everything else I found</summary>
       <div>
         <table class="facts">
-          <tr><th>Item</th><th>Effort</th></tr>
-          <tr><td>Render the upcoming events list in the HTML and add an event list in structured data</td><td>Medium</td></tr>
-          <tr><td>Event pages have no meta description (the Nov 13 page doesn't)</td><td>Low · template</td></tr>
-          <tr><td>Event structured data is missing the timezone, <code>offers</code>, <code>eventStatus</code>, <code>performer</code>, <code>organizer</code> and <code>url</code>, and <code>addressRegion</code> is null</td><td>Low · template</td></tr>
+          <tr><td>Render the upcoming events list in the HTML and add it to structured data</td><td>Medium</td></tr>
+          <tr><td>Event pages have no meta description</td><td>Low</td></tr>
+          <tr><td>Event structured data is missing the timezone, <code>offers</code>, <code>eventStatus</code>, <code>performer</code> and <code>organizer</code></td><td>Low</td></tr>
           <tr><td>Venue structured data has no hours, geo or Instagram link</td><td>Low</td></tr>
           <tr><td>Google shows a phone number for Loosie's but your site doesn't list one</td><td>Trivial</td></tr>
-          <tr><td>199 past events are still in the sitemap and indexed</td><td>Medium</td></tr>
+          <tr><td>199 past events are still in the sitemap</td><td>Medium</td></tr>
           <tr><td>"View all events" on event pages goes to the venue home, not the events page</td><td>Trivial</td></tr>
           <tr><td>Title typo: "New York CIty"</td><td>Trivial</td></tr>
           <tr><td>Copy still says "bound to become a neighborhood fixture." It's been one since 2022.</td><td>Copy</td></tr>
-          <tr><td>The venue page is about 27 MB on mobile because of the autoplay background videos (Lighthouse mobile performance: 28)</td><td>Medium–High</td></tr>
-          <tr><td>Some low-contrast text, icon links with no labels, small tap targets</td><td>Low</td></tr>
+          <tr><td>The venue page is about 27 MB on mobile from the autoplay videos (Lighthouse mobile score: 28)</td><td>Bigger</td></tr>
+          <tr><td>Some low-contrast text, unlabeled icon links, small tap targets</td><td>Low</td></tr>
         </table>
         <h3>Example event markup (Fri Nov 13)</h3>
 <pre>{
@@ -214,32 +251,60 @@
     "availability": "https://schema.org/InStock" },
   "typicalAgeRange": "21-"
 }</pre>
-        <p class="note">I guessed the series name and performer, so tweak those to match how you bill the night. Run the final version through Google's Rich Results Test.</p>
+        <p class="note">I guessed the series name and performer so tweak those to match how you bill the night.</p>
       </div>
     </details>
-  </section>
-
-  <section id="method">
     <details>
       <summary>How I checked this</summary>
       <div>
         <ul class="list">
-          <li>Public pages only: headless Chrome at iPhone sizes and desktop, Lighthouse, and about 20 search prompts. I didn't log into, submit or change anything.</li>
-          <li>Things I couldn't check: a real iPhone, real-user speed data, your ticketing pages (they're behind a bot check), and your Google or Bing dashboards.</li>
-          <li>No promises about rankings or sales here. The mobile fixes are the part you can verify right away.</li>
-          <li>I've got a full write-up with sources, timestamps and screenshots if your web team wants it.</li>
+          <li>Public pages only. Headless Chrome at iPhone and desktop sizes, Lighthouse, and about 20 search prompts.</li>
+          <li>Couldn't check: a real iPhone, real-user speed data, your ticketing pages (bot check), or your Google and Bing dashboards.</li>
+          <li>No promises about rankings or sales. The mobile fixes are the part you can verify right now.</li>
+          <li>I've got the full write-up with sources and screenshots if your web team wants it.</li>
         </ul>
       </div>
     </details>
   </section>
 
-  <div class="divider"></div>
   <footer>
-    <div class="sig">Nathan Ortiz</div>
-    <p>Columbia student. I build websites and apps.</p>
-    <a class="pill" href="https://www.nathanortiz.com">nathanortiz.com</a>
-    <p class="note">Not affiliated with Loosie's or Tao Group Hospitality. Screenshots are of public pages.</p>
+    <div class="foot"><span class="caps">Nathan Ortiz<br>Columbia student. I build websites and apps.</span><a href="https://www.nathanortiz.com">nathanortiz.com</a></div>
+    <p class="note">Nov 9, 2026. Public pages only. I didn't log into or submit anything. Not affiliated with Loosie's or Tao Group Hospitality.</p>
   </footer>
 </main>
+<script>
+(function(){
+  // disco ball
+  var s=document.getElementById('ball'),NS='http://www.w3.org/2000/svg',cx=60,cy=188,R=54,seed=11;
+  function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647}
+  function add(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);(p||s).appendChild(e);return e}
+  add('line',{x1:cx,y1:0,x2:cx,y2:cy-R,stroke:'#6b645e','stroke-width':1});
+  var d=add('defs',{});d.innerHTML='<clipPath id="bc"><circle cx="'+cx+'" cy="'+cy+'" r="'+R+'"/></clipPath><radialGradient id="bg" cx="34%" cy="28%" r="80%"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".6"/></radialGradient>';
+  add('circle',{cx:cx,cy:cy,r:R,fill:'#262221'});
+  var g=add('g',{'clip-path':'url(#bc)'}),rows=15,dl=Math.PI/rows,L=[-.55,-.6,.58];
+  for(var i=0;i<rows;i++){var lat=-Math.PI/2+(i+.5)*dl,y=cy+R*Math.sin(lat),rr=R*Math.cos(lat),h=R*(Math.sin(lat+dl/2)-Math.sin(lat-dl/2))*.8,n=Math.max(5,Math.round(2*Math.PI*rr/8.5));
+    for(var j=0;j<n;j++){var lon=(j+.5)*2*Math.PI/n+i*.13,z=Math.cos(lon);if(z<=.03)continue;var x=cx+rr*Math.sin(lon),w=(2*Math.PI*rr/n)*z*.8,li=Math.max(0,Math.cos(lat)*Math.sin(lon)*L[0]+Math.sin(lat)*L[1]+Math.cos(lat)*z*L[2]),r=rnd(),b=Math.round(72+li*150+r*34),c='rgb('+b+','+(b-5)+','+(b-10)+')';
+      if(r>.965)c='#fff';else if(r>.93)c='#f47fc4';else if(r>.905)c='#f4714d';
+      add('rect',{x:x-w/2,y:y-h/2,width:Math.max(.6,w),height:h,rx:.6,fill:c},g);}}
+  add('circle',{cx:cx,cy:cy,r:R,fill:'url(#bg)'});
+  [[30,162,9],[96,214,7],[100,150,5]].forEach(function(p){add('path',{'class':'tw',d:'M'+(p[0]-p[2])+' '+p[1]+'L'+p[0]+' '+(p[1]-1.4)+'L'+(p[0]+p[2])+' '+p[1]+'L'+p[0]+' '+(p[1]+1.4)+'Z M'+p[0]+' '+(p[1]-p[2])+'L'+(p[0]+1.4)+' '+p[1]+'L'+p[0]+' '+(p[1]+p[2])+'L'+(p[0]-1.4)+' '+p[1]+'Z',fill:'#fff'})});
+
+  // before / after
+  var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  [].forEach.call(document.querySelectorAll('[data-cmp]'),function(c){
+    var bs=c.querySelectorAll('.seg button'),timer=null;
+    function set(on){c.classList.toggle('on',on);bs[0].setAttribute('aria-pressed',String(!on));bs[1].setAttribute('aria-pressed',String(on))}
+    function stop(){if(timer){clearInterval(timer);timer=null}}
+    bs[0].addEventListener('click',function(){stop();c.dataset.touched=1;set(false)});
+    bs[1].addEventListener('click',function(){stop();c.dataset.touched=1;set(true)});
+    c.querySelector('.shots').addEventListener('click',function(){stop();c.dataset.touched=1;set(!c.classList.contains('on'))});
+    if(still||!('IntersectionObserver' in window))return;
+    new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting&&!c.dataset.touched&&!timer)timer=setInterval(function(){set(!c.classList.contains('on'))},2200);
+      else if(!e.isIntersecting){stop();if(!c.dataset.touched)set(false)}
+    })},{threshold:.35}).observe(c);
+  });
+})();
+</script>
 </body>
 </html>
