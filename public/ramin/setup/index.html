@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#641319">
+<title>Next up · Book with Ramin</title>
+<meta name="description" content="Instant DM replies and a booking tracker for Ramin.">
+<meta property="og:title" content="Next up: your DMs on autopilot">
+<meta property="og:description" content="Every booking DM answered in seconds, every request in one sheet.">
+<meta property="og:image" content="https://www.nathanortiz.com/ramin/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23571016'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='Didot,Bodoni 72,Georgia,serif' font-style='italic' font-size='44' fill='%23f3e9d8'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Hanken+Grotesk:wght@400..800&display=swap" rel="stylesheet">
+<style>
+/* Pitch page for the next step. Same world as /ramin: oxblood room, cream paper. */
+:root{
+  color-scheme:dark;
+  --ox:#571016;--ox-top:#6a151c;--ox-deep:#3c0a0f;
+  --cream:#f3e9d8;--cream-dim:#d8c5b6;--rule:rgba(243,233,216,.22);
+  --ink:#1a0d0b;--ink-soft:#66504a;--ink-rule:rgba(26,13,11,.14);--red:#8c1620;
+  --serif:"Bodoni Moda","Bodoni 72",Didot,Georgia,serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;color:var(--cream);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased;
+  background:var(--ox-deep);
+  background-image:radial-gradient(620px 420px at 50% 90px,rgba(150,36,46,.55),transparent 70%),linear-gradient(180deg,var(--ox-top) 0,var(--ox) 520px,var(--ox-deep) 1500px);
+  background-repeat:no-repeat}
+body::after{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;opacity:.34;mix-blend-mode:overlay;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
+.wrap{width:min(100% - 32px,460px);margin-inline:auto}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:max(16px,env(safe-area-inset-top)) 0 0}
+.mark{font:600 1.14rem/1 var(--serif);font-variation-settings:"opsz" 11;text-decoration:none;padding:12px 0;margin:-12px 0}
+.mark i{font-weight:600}
+.chip{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--rule);padding:5px 8px 4px;color:var(--cream-dim);white-space:nowrap}
+
+.hero{padding:30px 0 6px}
+.eyebrow{margin:0 0 8px;font:italic 500 1.3rem/1.1 var(--serif);font-variation-settings:"opsz" 18}
+h1{margin:0;font:500 clamp(2.9rem,14vw,4.4rem)/.95 var(--serif);letter-spacing:-.03em}
+.lede{margin:16px 0 0;font-size:1.02rem;color:var(--cream-dim);max-width:30em}
+.lede b{color:var(--cream);font-weight:600}
+
+/* ---------- the phone ---------- */
+.phone{margin:30px auto 0;max-width:360px;background:var(--cream);color:var(--ink);border-radius:30px;padding:10px;
+  box-shadow:0 30px 50px rgba(20,2,4,.5),inset 0 0 0 1px rgba(26,13,11,.08)}
+.screen{border-radius:22px;background:#fffaf2;overflow:hidden;border:1px solid var(--ink-rule)}
+.bar{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--ink-rule)}
+.av{width:30px;height:30px;border-radius:50%;background:var(--ox);color:var(--cream);display:grid;place-items:center;font:600 .95rem/1 var(--serif);flex:none}
+.bar b{display:block;font-size:.86rem;line-height:1.15}
+.bar span{display:block;font-size:.72rem;color:var(--ink-soft)}
+.thread{display:flex;flex-direction:column;gap:7px;padding:14px 12px 16px;min-height:430px}
+.msg{margin:0;max-width:82%;padding:9px 13px;border-radius:18px;font-size:.88rem;line-height:1.35}
+.them{align-self:flex-end;background:var(--ox);color:var(--cream);border-bottom-right-radius:5px}
+.bot{align-self:flex-start;background:#efe5d6;border-bottom-left-radius:5px}
+.btns{align-self:flex-start;display:flex;flex-wrap:wrap;gap:6px;max-width:92%}
+.btns span{font-size:.8rem;font-weight:600;padding:7px 12px;border-radius:99px;border:1px solid rgba(26,13,11,.25);background:#fffaf2}
+.btns span.hit{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.tiny{margin:4px 0;align-self:center;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:4px 0}
+.ping{align-self:stretch;margin-top:6px;display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:14px;background:var(--ink);color:var(--cream);font-size:.8rem;line-height:1.3}
+.ping svg{flex:none}
+.ping b{display:block;font-size:.84rem}
+.step{opacity:1}
+.js .step{opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease}
+.js .step.on{opacity:1;transform:none}
+.replay{display:block;margin:14px auto 0;background:none;border:0;color:var(--cream-dim);font:600 .82rem var(--sans);cursor:pointer;padding:12px;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- sections ---------- */
+.section{margin-top:52px}
+h2{margin:0 0 6px;font:600 1.9rem/1.08 var(--serif);font-variation-settings:"opsz" 13;letter-spacing:-.015em}
+.sub{margin:0 0 18px;color:var(--cream-dim);font-size:.95rem}
+.gets{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.gets li{display:grid;grid-template-columns:44px 1fr;padding:15px 0 14px;border-bottom:1px solid var(--rule)}
+.gets li::before{content:attr(data-n);font:italic 500 1.9rem/1 var(--serif);font-variation-settings:"opsz" 24}
+.gets b{display:block;font-weight:600;font-size:1.02rem}
+.gets span{display:block;font-size:.92rem;color:var(--cream-dim)}
+
+/* tracker preview */
+.sheet{background:var(--cream);color:var(--ink);border-radius:5px;overflow:hidden;box-shadow:0 22px 28px rgba(20,2,4,.45)}
+.sheet-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px;border-bottom:2px dashed var(--ink-rule)}
+.sheet-h b{font:600 1.15rem/1.1 var(--serif);font-variation-settings:"opsz" 14}
+.ex{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--ink-rule);padding:3px 6px 2px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--ink-rule)}
+.stats div{padding:12px 14px}
+.stats div+div{border-left:1px solid var(--ink-rule)}
+.stats small{display:block;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.stats span{font:600 1.5rem/1.1 var(--serif)}
+.rows{width:100%;border-collapse:collapse;font-size:.8rem}
+.rows th{text-align:left;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);padding:9px 14px 6px}
+.rows td{padding:9px 14px;border-top:1px solid var(--ink-rule);white-space:nowrap}
+.rows td:first-child{white-space:normal}
+.st{display:inline-block;font-size:.7rem;font-weight:700;padding:3px 8px;border-radius:99px}
+.s-new{background:#fcebc5}.s-q{background:#dce8f7}.s-ok{background:#d9efd9}.s-due{background:#f6d5d5;color:#7a1218}
+.sheet-f{margin:0;padding:10px 16px 14px;font-size:.78rem;color:var(--ink-soft)}
+
+/* what I need */
+.need{list-style:none;margin:0;padding:0;counter-reset:n}
+.need li{counter-increment:n;display:grid;grid-template-columns:34px 1fr;gap:4px;padding:12px 0;border-top:1px solid var(--rule)}
+.need li::before{content:counter(n);width:26px;height:26px;border:1px solid var(--cream);border-radius:50%;display:grid;place-items:center;font-size:.78rem;font-weight:700;margin-top:1px}
+.need b{font-weight:600}
+.need span{display:block;font-size:.88rem;color:var(--cream-dim)}
+.time{display:inline-block;margin-top:14px;font-size:.84rem;color:var(--cream-dim);border-top:1px solid var(--rule);padding-top:12px}
+
+.ctrl{display:grid;gap:10px}
+.ctrl p{margin:0;padding:14px 16px;border:1px solid var(--rule);border-radius:3px;font-size:.92rem;color:var(--cream-dim)}
+.ctrl b{color:var(--cream);font-weight:600}
+
+.go{margin-top:28px;display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;border-radius:3px;background:var(--cream);color:var(--ink);font-weight:700;text-decoration:none}
+footer{margin:48px 0 0;padding:18px 0 calc(30px + env(safe-area-inset-bottom));border-top:1px solid var(--rule);color:var(--cream-dim);font-size:.8rem}
+footer a{font-weight:600;color:var(--cream)}
+
+@media (min-width:1000px){
+  .wrap{width:min(100% - 64px,1060px)}
+  .cols{display:grid;grid-template-columns:minmax(0,1fr) 380px;column-gap:80px;align-items:start}
+  .hero{padding-top:70px}
+  h1{font-size:5.4rem}
+  .phone{margin:56px 0 0;position:sticky;top:30px}
+  .cols>.left{grid-column:1}
+  .cols>.phone-col{grid-column:2;grid-row:1 / span 6}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .step{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="/ramin">Book with <i>Ramin</i></a>
+    <span class="chip">Next step</span>
+  </header>
+
+  <div class="cols">
+    <div class="left">
+      <section class="hero">
+        <p class="eyebrow">Next up</p>
+        <h1>Every DM answered in seconds.</h1>
+        <p class="lede">When someone hits you up about NYE, they get a reply <b>instantly</b>, even at 3 AM. Tickets get your link, tables get asked size and budget, and you jump in with everything already filled in.</p>
+      </section>
+    </div>
+
+    <div class="phone-col">
+      <div class="phone" aria-label="Example Instagram DM conversation">
+        <div class="screen">
+          <div class="bar"><span class="av" aria-hidden="true">R</span><div><b>nycpromoter_ramin</b><span>Instagram</span></div></div>
+          <div class="thread" id="thread">
+            <p class="msg them step">NYE</p>
+            <p class="msg bot step">Yo 🪩 NYE at Loosie's, Thu Dec 31 at 145 Bowery. What are you looking for?</p>
+            <div class="btns step" aria-label="Buttons"><span class="hit">Table</span><span>Tickets</span><span>Just a question</span></div>
+            <p class="msg bot step">Bet. How many in your group?</p>
+            <p class="msg them step">5 to 8</p>
+            <p class="msg bot step">And roughly what's your budget for the table?</p>
+            <p class="msg them step">$2K to $4K</p>
+            <p class="msg bot step">Got it. Let me check what's open and I'll get back to you myself 🤝</p>
+            <p class="tiny step">Sent to you</p>
+            <div class="ping step">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <div><b>New table request</b>NYE · 5 to 8 people · $2K to $4K · added to your sheet</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="replay" id="replay" type="button" hidden>Play it again</button>
+    </div>
+
+    <div class="left">
+      <section class="section" aria-labelledby="getTitle">
+        <h2 id="getTitle">What you get</h2>
+        <p class="sub">Built on Manychat, the tool Instagram approves for this.</p>
+        <ul class="gets">
+          <li data-n="1"><div><b>Instant replies, 24/7</b><span>DM "NYE", reply to your Story, or tap the button on your booking page. Nobody waits and goes somewhere else.</span></div></li>
+          <li data-n="2"><div><b>Your ticket link, sent for you</b><span>Ticket people get your credited link right away, so you get credit for every sale.</span></div></li>
+          <li data-n="3"><div><b>"Comment NYE" posts</b><span>People comment, they get a DM. More comments push the post further, and every one becomes a lead.</span></div></li>
+          <li data-n="4"><div><b>Every request in one sheet</b><span>Who asked, for what night, how many, what budget, where they found you, and who you still owe a reply.</span></div></li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="sheetTitle">
+        <h2 id="sheetTitle">Your bookings, in one place</h2>
+        <p class="sub">A Google Sheet you own. It fills itself in and tells you who to follow up with.</p>
+        <div class="sheet">
+          <div class="sheet-h"><b>This week</b><span class="ex">Example</span></div>
+          <div class="stats">
+            <div><small>Requests</small><span>12</span></div>
+            <div><small>Confirmed</small><span>3</span></div>
+            <div><small>Follow up</small><span>2</span></div>
+          </div>
+          <table class="rows">
+            <thead><tr><th>Request</th><th>From</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>NYE table · 8 · $2K to $4K</td><td>Story</td><td><span class="st s-new">New</span></td></tr>
+              <tr><td>Birthday · Amber Room · 10</td><td>Bio link</td><td><span class="st s-due">Follow up</span></td></tr>
+              <tr><td>NYE table · 6 · $4K+</td><td>Comment</td><td><span class="st s-q">Quoted</span></td></tr>
+              <tr><td>Guest list · Little Sister · 4</td><td>Broadcast</td><td><span class="st s-ok">Confirmed</span></td></tr>
+            </tbody>
+          </table>
+          <p class="sheet-f">Example data. Yours shows which posts actually bring in bookings.</p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="needTitle">
+        <h2 id="needTitle">What I need from you</h2>
+        <p class="sub">I build the whole thing. You just connect it.</p>
+        <ol class="need">
+          <li><div><b>Turn on message access</b><span>Instagram settings, Messages and story replies, Message controls, Allow access to messages.</span></div></li>
+          <li><div><b>Sign up for Manychat with your Instagram</b><span>Your login stays yours. I never need your password.</span></div></li>
+          <li><div><b>Add me to your team</b><span>In Manychat settings, so I can build the replies.</span></div></li>
+          <li><div><b>Copy the sheet I send you</b><span>So you own it, then share it back with me.</span></div></li>
+          <li><div><b>Send your ticket link and table ranges</b><span>And OK the wording. Then we test it with a fake account and turn it on.</span></div></li>
+        </ol>
+        <span class="time">About 10 minutes on your end.</span>
+      </section>
+
+      <section class="section" aria-labelledby="ctrlTitle">
+        <h2 id="ctrlTitle">You stay in control</h2>
+        <div class="ctrl">
+          <p><b>It never quotes or confirms.</b> Prices, availability and deposits always come from you.</p>
+          <p><b>It only answers people who reach out.</b> No cold DMs, no spam, nothing that gets your account flagged.</p>
+          <p><b>Off in one tap.</b> Pause any of it whenever you want.</p>
+        </div>
+        <a class="go" href="https://ig.me/m/nathan0rtiz">Let's set it up <span aria-hidden="true">→</span></a>
+      </section>
+    </div>
+  </div>
+
+  <footer>Built by <a href="https://www.nathanortiz.com">Nathan Ortiz</a> for <a href="/ramin">Book with Ramin</a>.</footer>
+</div>
+<script>
+// play the DM thread once when it scrolls into view. reduced motion: show it all.
+(() => {
+  const steps = [...document.querySelectorAll("#thread .step")];
+  const replay = document.getElementById("replay");
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("js");
+  let timers = [];
+  const play = () => {
+    timers.forEach(clearTimeout); timers = [];
+    steps.forEach(s => s.classList.remove("on"));
+    replay.hidden = true;
+    let t = 300;
+    steps.forEach((s, i) => {
+      t += s.classList.contains("bot") || s.classList.contains("btns") ? 650 : 900;
+      timers.push(setTimeout(() => { s.classList.add("on"); if (i === steps.length - 1) replay.hidden = false; }, t));
+    });
+  };
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { play(); io.disconnect(); } }, { threshold: .35 });
+  io.observe(document.getElementById("thread"));
+  replay.addEventListener("click", play);
+})();
+</script>
+</body>
+</html>
