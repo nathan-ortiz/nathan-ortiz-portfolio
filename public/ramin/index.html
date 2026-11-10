@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#641319">
-<title>Book with Ramin · NYE at Loosie's</title>
-<meta name="description" content="New Year's Eve at Loosie's, Dec 31, 2026 at 145 Bowery. Request a table or ask about tickets with Ramin.">
-<meta property="og:title" content="NYE at Loosie's · Book with Ramin">
-<meta property="og:description" content="Thu, Dec 31 · 145 Bowery. Request a table or grab tickets.">
+<title>Book with Ramin · All things NYC</title>
+<meta name="description" content="Tables, tickets and guest list in NYC with Ramin. Now booking New Year's Eve at Loosie's.">
+<meta property="og:title" content="Book with Ramin · All things NYC">
+<meta property="og:description" content="Tables, tickets and guest list. Now booking NYE at Loosie's, Dec 31.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.nathanortiz.com/ramin">
 <meta property="og:image" content="https://www.nathanortiz.com/ramin/og.jpg">
@@ -21,9 +21,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Hanken+Grotesk:wght@400..800&display=swap" rel="stylesheet">
 <style>
 /* ------------------------------------------------------------------
-   v2 · "the request card"
-   An oxblood room, one cream card. The guest edits a sentence, the
-   sentence is the DM. Everything launch-related lives in CONFIG below.
+   v3 · Ramin's booking hub
+   An oxblood room, one cream request card. The guest edits a sentence,
+   the sentence is the DM. A featured event sits on top, his venues sit
+   underneath. Everything launch-related lives in CONFIG below.
    ------------------------------------------------------------------ */
 :root{
   color-scheme:dark;
@@ -65,10 +66,12 @@ button,input,select{font:inherit;color:inherit}
 .top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:max(14px,env(safe-area-inset-top)) 0 0}
 .mark{font:600 1.14rem/1 var(--serif);font-variation-settings:"opsz" 11;letter-spacing:.005em;text-decoration:none;padding:12px 0;margin:-12px 0}
 .mark i{font-weight:600}
+.id{display:flex;flex-direction:column;align-items:flex-start;gap:9px}
+.tagline{margin:0;font-size:.6rem;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--cream-dim)}
 .draft{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--rule);padding:5px 8px 4px;white-space:nowrap;color:var(--cream-dim)}
 
 /* ---------- hero ---------- */
-.hero{padding:18px 0 16px}
+.hero{padding:14px 0 16px}
 h1{margin:0;font-weight:500;font-family:var(--serif)}
 h1 .pre{display:block;font-style:italic;font-size:1.36rem;line-height:1.1;font-variation-settings:"opsz" 18;letter-spacing:.005em}
 h1 .ap{margin:0 -.075em 0 -.06em}
@@ -94,6 +97,9 @@ h1 .big{display:block;font-size:clamp(4.2rem,22.4vw,6.4rem);line-height:.92;lett
   -webkit-mask-composite:source-in;mask-composite:intersect;
 }
 .card :focus-visible{outline-color:var(--ink)}
+.card.solo{-webkit-mask:none;mask:none}
+.card.solo .tabs{display:none}
+.card.solo .panel{border-top:0;padding-top:20px}
 .tabs{display:grid;grid-template-columns:repeat(3,1fr);height:var(--notch);padding:15px 14px}
 .tab{
   appearance:none;cursor:pointer;min-height:48px;padding:0 4px;border-radius:0;
@@ -119,12 +125,12 @@ h1 .big{display:block;font-size:clamp(4.2rem,22.4vw,6.4rem);line-height:.92;lett
   min-height:44px;padding:0 10px 0 11px;margin-top:-4px;border-radius:3px;white-space:nowrap;
   color:var(--red);font-weight:700;background:rgba(140,22,32,.08);box-shadow:inset 0 -2px 0 var(--red);
 }
+.tok{max-width:100%}
+.tok-v{overflow:hidden;text-overflow:ellipsis}
 .tok::after{content:"";flex:none;width:7px;height:7px;margin-top:-4px;border-right:2px solid;border-bottom:2px solid;transform:rotate(45deg);opacity:.75}
 .tok select,.tok input{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;opacity:0;cursor:pointer;font-size:16px;appearance:none;-webkit-appearance:none}
 .tok:focus-within{outline:2px solid var(--ink);outline-offset:2px}
 .tok.tick .tok-v{animation:tick .28s ease}
-.x-hint{margin:6px 0 14px;font-size:.84rem;color:var(--ink-soft)}
-.hint b{color:var(--red);font-weight:700}
 
 .cta{
   display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:56px;padding:0 16px;
@@ -144,6 +150,19 @@ h1 .big{display:block;font-size:clamp(4.2rem,22.4vw,6.4rem);line-height:.92;lett
 
 /* ---------- below the card ---------- */
 .section{margin-top:28px}
+.section.where{margin-top:44px}
+.cap{margin:-8px 0 14px;font-size:.92rem;color:var(--cream-dim)}
+.venues{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.venues li{display:flex;align-items:center;border-bottom:1px solid var(--rule)}
+.venue{
+  appearance:none;flex:1;min-width:0;display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:12px;
+  min-height:62px;padding:11px 2px 10px 0;background:none;border:0;color:var(--cream);text-align:left;cursor:pointer;
+}
+.v-name{font:600 1.5rem/1.15 var(--serif);font-variation-settings:"opsz" 14;letter-spacing:-.01em}
+.v-meta{grid-column:1;margin-top:2px;font-size:.84rem;color:var(--cream-dim)}
+.venue svg{grid-column:2;grid-row:1 / span 2;opacity:.8;transition:transform .2s ease,opacity .2s}
+.venue:hover svg{transform:translateX(4px);opacity:1}
+.v-tix{flex:none;margin-left:10px;padding:12px 14px;border:1px solid var(--rule);border-radius:3px;font-size:.84rem;font-weight:600;text-decoration:none}
 h2{margin:0 0 14px;font:600 1.72rem/1.1 var(--serif);font-variation-settings:"opsz" 13;letter-spacing:-.012em}
 .ghost{
   display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;cursor:pointer;
@@ -178,7 +197,7 @@ footer a{color:var(--cream);font-weight:600;display:inline-block;padding:10px 0;
   h1 .big{font-size:10.5rem}
   .facts{margin-top:30px;max-width:460px}
   .facts dd{font-size:1rem}
-  .card-shadow{grid-column:2;grid-row:1 / span 3;position:sticky;top:40px;margin-top:72px}
+  .card-shadow{grid-column:2;grid-row:1 / span 4;position:sticky;top:40px;margin-top:72px}
   .section{grid-column:1;max-width:460px}
 }
 @media (min-width:1240px){
@@ -204,45 +223,49 @@ footer a{color:var(--cream);font-weight:600;display:inline-block;padding:10px 0;
 <div class="wrap">
 
   <header class="top">
-    <a class="mark" href="https://www.instagram.com/nycpromoter_ramin/" aria-label="Book with Ramin, Instagram profile">Book with <i>Ramin</i></a>
+    <div class="id">
+      <a class="mark" href="https://www.instagram.com/nycpromoter_ramin/" aria-label="Book with Ramin, Instagram profile">Book with <i>Ramin</i></a>
+      <p class="tagline">DM for all things NYC</p>
+    </div>
     <span class="draft" id="draftBadge">Draft preview</span>
   </header>
 
   <main>
+    <!-- FEATURED EVENT · the markup below is the no-JS fallback, CONFIG.featured rewrites it -->
     <section class="hero" aria-labelledby="title">
       <h1 id="title">
-        <span class="pre rise">New Year’s Eve at</span>
-        <span class="big rise d1">Loosie<span class="ap">’</span>s</span>
+        <span class="pre rise" id="fPre">New Year’s Eve at</span>
+        <span class="big rise d1" id="fTitle">Loosie<span class="ap">’</span>s</span>
       </h1>
-      <dl class="facts rise d2">
+      <dl class="facts rise d2" id="fFacts">
         <div><dt>Date</dt><dd>Thu, Dec 31, 2026</dd></div>
         <div><dt>Address</dt><dd>145 Bowery, NYC</dd></div>
         <div><dt>Hours</dt><dd>9 PM till 4 AM</dd></div>
         <div><dt>Entry</dt><dd>21+ with photo ID</dd></div>
       </dl>
-      <svg class="seal rise d3" viewBox="0 0 230 230" aria-hidden="true">
+      <svg class="seal rise d3" id="fSeal" viewBox="0 0 230 230" aria-hidden="true">
         <defs><path id="ring" d="M115,115 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs>
         <circle cx="115" cy="115" r="112" fill="none" stroke="currentColor" stroke-width="2.5"/>
         <circle cx="115" cy="115" r="64" fill="none" stroke="currentColor" stroke-width="1.5"/>
-        <g class="ring"><text><textPath href="#ring" textLength="540">NEW YEAR'S EVE · 145 BOWERY · NYC ·</textPath></text></g>
-        <text class="n" x="115" y="147" text-anchor="middle">31</text>
+        <g class="ring"><text><textPath href="#ring" textLength="540" id="fRing">NEW YEAR'S EVE · 145 BOWERY · NYC ·</textPath></text></g>
+        <text class="n" x="115" y="147" text-anchor="middle" id="fNum">31</text>
       </svg>
     </section>
 
     <div class="card-shadow rise d3">
-    <section class="card" aria-label="Send Ramin a request">
+    <section class="card" id="card" aria-label="Send Ramin a request">
       <div class="tabs" role="tablist" aria-label="What do you need?">
-        <button class="tab" role="tab" id="tab-table" data-mode="table" aria-controls="panel-table" aria-selected="true">NYE table</button>
-        <button class="tab" role="tab" id="tab-tix" data-mode="tickets" aria-controls="panel-tix" aria-selected="false" tabindex="-1">NYE tickets</button>
+        <button class="tab" role="tab" id="tab-table" data-mode="table" aria-controls="panel-table" aria-selected="true"><span data-kw>NYE</span> table</button>
+        <button class="tab" role="tab" id="tab-tix" data-mode="tickets" aria-controls="panel-tix" aria-selected="false" tabindex="-1"><span data-kw>NYE</span> tickets</button>
         <button class="tab" role="tab" id="tab-other" data-mode="other" aria-controls="panel-other" aria-selected="false" tabindex="-1">Other night</button>
       </div>
 
-      <!-- TABLE -->
+      <!-- FEATURED TABLE -->
       <div class="panel" role="tabpanel" id="panel-table" aria-labelledby="tab-table">
         <p class="label">Your DM <span aria-hidden="true">·</span> tap red to edit</p>
-        <p class="say">NYE TABLE for
+        <p class="say"><span data-kw>NYE</span> TABLE for
           <span class="tok"><span class="tok-v" aria-hidden="true">6</span><select id="tSize" aria-label="Group size"></select></span>
-          at Loosie's. Budget
+          at <span data-fvenue>Loosie's</span>. Budget
           <span class="nb"><span class="tok"><span class="tok-v" aria-hidden="true">$2K to $4K</span><select id="tBudget" aria-label="Budget for the table"></select></span>.</span>
           <span class="via" data-via></span>
         </p>
@@ -252,13 +275,13 @@ footer a{color:var(--cream);font-weight:600;display:inline-block;padding:10px 0;
         <p class="fine" role="status" data-status></p>
       </div>
 
-      <!-- TICKETS -->
+      <!-- FEATURED TICKETS -->
       <div class="panel" role="tabpanel" id="panel-tix" aria-labelledby="tab-tix" hidden>
         <div id="tixAsk">
           <p class="label">Your DM <span aria-hidden="true">·</span> tap red to edit</p>
-          <p class="say">NYE TICKETS for
+          <p class="say"><span data-kw>NYE</span> TICKETS for
             <span class="tok"><span class="tok-v" aria-hidden="true">2</span><select id="kQty" aria-label="Number of tickets"></select></span>
-            at Loosie's.
+            at <span data-fvenue>Loosie's</span>.
             <span class="via" data-via></span>
           </p>
           <a class="cta" data-dm="tickets" href="https://ig.me/m/nycpromoter_ramin"><span>Copy and DM Ramin</span>
@@ -269,31 +292,39 @@ footer a{color:var(--cream);font-weight:600;display:inline-block;padding:10px 0;
         <div id="tixLive" hidden>
           <p class="label">Tickets</p>
           <p class="body">Straight to checkout, on Ramin's link.</p>
-          <a class="cta" id="tixLink" href="#" rel="noopener"><span>Get NYE tickets</span>
+          <a class="cta" id="tixLink" href="#" rel="noopener"><span>Get <span data-kw>NYE</span> tickets</span>
             <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
-          <p class="fine">21+ with photo ID. All sales final.</p>
+          <p class="fine" id="tixFine">21+ with photo ID. All sales final.</p>
         </div>
       </div>
 
-      <!-- OTHER NIGHT -->
+      <!-- ANY OTHER NIGHT -->
       <div class="panel" role="tabpanel" id="panel-other" aria-labelledby="tab-other" hidden>
         <p class="label">Your DM <span aria-hidden="true">·</span> tap red to edit</p>
         <p class="say">
           <span class="tok"><span class="tok-v" aria-hidden="true">BIRTHDAY</span><select id="oKind" aria-label="Occasion"></select></span>
+          at
+          <span class="tok"><span class="tok-v" aria-hidden="true">any venue</span><select id="oVenue" aria-label="Venue"></select></span>
           for
           <span class="tok"><span class="tok-v" aria-hidden="true">8</span><select id="oSize" aria-label="Group size"></select></span>
           on
-          <span class="nb"><span class="tok"><span class="tok-v" id="oDateV" aria-hidden="true">pick a date</span><input type="date" id="oDate" aria-label="Date"></span>.</span>
+          <span class="nb"><span class="tok"><span class="tok-v" aria-hidden="true">pick a date</span><input type="date" id="oDate" aria-label="Date"></span>.</span>
           <span class="via" data-via></span>
         </p>
         <a class="cta" data-dm="other" href="https://ig.me/m/nycpromoter_ramin"><span>Copy and DM Ramin</span>
           <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
-        <p class="fine" data-note>Any night, not just NYE. Guest list depends on the venue.</p>
+        <p class="fine" data-note>Copies this and opens his DMs. Nothing's booked till he confirms.</p>
         <p class="fine" role="status" data-status></p>
       </div>
     </section>
     </div>
 
+    <!-- VENUES · built from CONFIG.venues, hidden when empty or when JS is off -->
+    <section class="section where" id="where" aria-labelledby="whereTitle" hidden>
+      <h2 id="whereTitle">Any other night</h2>
+      <p class="cap" id="whereCap"></p>
+      <ul class="venues" id="venueList"></ul>
+    </section>
 
     <section class="section share" aria-label="Share">
       <button type="button" class="ghost" id="shareBtn">Not planning? Send this to your group</button>
@@ -302,7 +333,7 @@ footer a{color:var(--cream);font-weight:600;display:inline-block;padding:10px 0;
 
   <footer>
     <p><a href="https://www.instagram.com/nycpromoter_ramin/">@nycpromoter_ramin</a></p>
-    <p>Independent promoter, not affiliated with Loosie's or Tao Group. Availability, pricing and entry are confirmed by Ramin and subject to venue policy.</p>
+    <p>Independent promoter, not affiliated with the venues listed or their owners. Availability, pricing and entry are confirmed by Ramin and subject to venue policy.</p>
   </footer>
 </div>
 
@@ -315,13 +346,42 @@ footer a{color:var(--cream);font-weight:600;display:inline-block;padding:10px 0;
 const CONFIG = {
   draft: true,                       // shows the "Draft preview" tag. set false at launch.
   igHandle: "nycpromoter_ramin",
-  // Ramin's CREDITED ticket URL, pasted exactly as he sends it (keep every
-  // promoter/affiliate param). null = tickets route to DMs instead.
-  ticketUrl: null,
-  // PLACEHOLDER budget ranges. Not price claims, just buckets for the guest.
-  // Replace with ranges that match Ramin's real NYE minimums.
-  budgets: ["Under $2K", "$2K to $4K", "$4K+", "Not sure yet"],
-  defaultBudget: 1,
+
+  // The event on top of the page. Swap this object after Dec 31, or set it to
+  // null and the page becomes venues + any-night requests only.
+  featured: {
+    id: "nye",                       // deep link: ?e=nye
+    keyword: "NYE",                  // leads the DM ("NYE TABLE for 6..."), matches the Story
+    pre: "New Year’s Eve at",
+    title: "Loosie’s",
+    venue: "loosies",                // id from venues below, used for the name in the DM
+    // verified on the organizer listing 2026-11-10. Only confirmed facts go here.
+    facts: [["Date", "Thu, Dec 31, 2026"], ["Address", "145 Bowery, NYC"], ["Hours", "9 PM till 4 AM"], ["Entry", "21+ with photo ID"]],
+    seal: { ring: "NEW YEAR'S EVE · 145 BOWERY · NYC ·", n: "31" },
+    // Ramin's CREDITED ticket URL, pasted exactly as he sends it (keep every
+    // promoter/affiliate param). null = tickets route to DMs instead.
+    ticketUrl: null,
+    ticketFine: "21+ with photo ID. All sales final.",
+    // PLACEHOLDER budget ranges. Not price claims, just buckets for the guest.
+    // Replace with ranges that match Ramin's real minimums.
+    budgets: ["Under $2K", "$2K to $4K", "$4K+", "Not sure yet"],
+    defaultBudget: 1,
+  },
+
+  // Where he books. Deep link: ?v=<id>. Leave nights/offers null until Ramin
+  // confirms them. nights: e.g. "Fri and Sat". offers: any of "list", "table",
+  // "tickets". Optional ticketUrl adds a Tickets link on the row (passed through untouched).
+  // An empty array hides the whole section.
+  venues: [
+    { id: "loosies", name: "Loosie's", nights: null, offers: null },
+    { id: "little-sister", name: "Little Sister", nights: null, offers: null },
+    { id: "amber-room", name: "Amber Room", nights: null, offers: null },
+    { id: "highlight-room", name: "The Highlight Room", nights: null, offers: null },
+  ],
+
+  // First word of an any-night DM. Add "DINNER + CLUB" here if Ramin confirms he does it.
+  occasions: ["BIRTHDAY", "GROUP NIGHT", "GUEST LIST", "TABLE"],
+
   // Allowed ?src= values, appended to DMs so Ramin can see which post drove it.
   sources: ["bio", "story", "broadcast", "post", "partner", "share"],
 };
@@ -329,35 +389,69 @@ const CONFIG = {
 /* ---------- helpers ---------- */
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const F = CONFIG.featured;
+const venueById = id => CONFIG.venues.find(v => v.id === id);
 const dmUrl = `https://ig.me/m/${CONFIG.igHandle}`;
 const params = new URLSearchParams(location.search);
 const rawSrc = (params.get("src") || "").toLowerCase();
 const src = CONFIG.sources.includes(rawSrc) ? rawSrc : "";
 const tag = src ? ` (via ${src})` : "";
+const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (!CONFIG.draft) $("#draftBadge").remove();
 $$("[data-via]").forEach(el => (el.textContent = tag.trim()));
 
+/* ---------- featured event ---------- */
+const fVenueName = F ? (venueById(F.venue)?.name || F.title.replace("’", "'")) : "";
+if (F) {
+  $("#fPre").textContent = F.pre;
+  const t = $("#fTitle"); t.textContent = "";
+  F.title.split("’").forEach((part, i) => {
+    if (i) t.append(Object.assign(document.createElement("span"), { className: "ap", textContent: "’" }));
+    t.append(part);
+  });
+  const facts = $("#fFacts"); facts.textContent = "";
+  F.facts.forEach(([k, v]) => {
+    const d = document.createElement("div");
+    d.append(Object.assign(document.createElement("dt"), { textContent: k }), Object.assign(document.createElement("dd"), { textContent: v }));
+    facts.append(d);
+  });
+  if (F.seal) { $("#fRing").textContent = F.seal.ring; $("#fNum").textContent = F.seal.n; } else $("#fSeal").remove();
+  $$("[data-kw]").forEach(el => (el.textContent = F.keyword));
+  $$("[data-fvenue]").forEach(el => (el.textContent = fVenueName));
+  $("#tixFine").textContent = F.ticketFine || "";
+} else {
+  // no featured event: the card is the any-night request only
+  $("#fPre").textContent = "Book your night in";
+  $("#fTitle").textContent = "New York";
+  $("#fFacts").remove(); $("#fSeal").remove();
+  $("#card").classList.add("solo");
+  $("#whereTitle").textContent = "Pick a venue";
+}
+
 /* ---------- the editable words ---------- */
 const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => String(a + i));
 function fill(sel, values, initial) {
-  values.forEach(v => sel.add(new Option(v, v)));
+  values.forEach(v => sel.add(Array.isArray(v) ? new Option(v[1], v[0]) : new Option(v, v)));
   sel.value = initial;
 }
 fill($("#tSize"), [...range(2, 29), "30+"], "6");
 fill($("#kQty"), [...range(1, 9), "10+"], "2");
 fill($("#oSize"), [...range(2, 39), "40+"], "8");
-fill($("#oKind"), ["BIRTHDAY", "GROUP NIGHT"], "BIRTHDAY");
-fill($("#tBudget"), CONFIG.budgets, CONFIG.budgets[CONFIG.defaultBudget]);
+fill($("#oKind"), CONFIG.occasions, CONFIG.occasions[0]);
+fill($("#oVenue"), [["", "Any venue (not sure yet)"], ...CONFIG.venues.map(v => [v.id, v.name])], "");
+if (F) fill($("#tBudget"), F.budgets, F.budgets[F.defaultBudget]);
 
 // budgets without a dollar figure read better lowercase mid-sentence ("Budget not sure yet")
 const inline = v => (/\$/.test(v) ? v : v.toLowerCase());
+const venueText = () => venueById($("#oVenue").value)?.name || "any venue";
 function fmtDate(v) {
   if (!v) return "";
   return new Date(v + "T12:00:00").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
 }
 const shown = el =>
   el.id === "tBudget" ? inline(el.value) :
+  el.id === "oVenue" ? venueText() :
   el.id === "oDate" ? (fmtDate(el.value) || "pick a date") : el.value;
 
 $$(".tok").forEach(tok => {
@@ -374,20 +468,23 @@ $$(".tok").forEach(tok => {
 const oDate = $("#oDate");
 oDate.min = new Date(Date.now() - new Date().getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
 oDate.addEventListener("click", () => { try { oDate.showPicker(); } catch {} });
+// remember if the guest picked an occasion themselves, so a venue tap doesn't override it
+let kindTouched = false;
+$("#oKind").addEventListener("change", e => { if (e.isTrusted) kindTouched = true; });
 
 /* ---------- the message that gets copied (matches what's on the card) ---------- */
 const messages = {
-  table: () => `NYE TABLE for ${$("#tSize").value} at Loosie's. Budget ${inline($("#tBudget").value)}.${tag}`,
-  tickets: () => `NYE TICKETS for ${$("#kQty").value} at Loosie's.${tag}`,
+  table: () => `${F.keyword} TABLE for ${$("#tSize").value} at ${fVenueName}. Budget ${inline($("#tBudget").value)}.${tag}`,
+  tickets: () => `${F.keyword} TICKETS for ${$("#kQty").value} at ${fVenueName}.${tag}`,
   other: () => {
     const d = fmtDate(oDate.value);
-    return `${$("#oKind").value} for ${$("#oSize").value}${d ? ` on ${d}` : ", date not set yet"}.${tag}`;
+    return `${$("#oKind").value} at ${venueText()} for ${$("#oSize").value}${d ? ` on ${d}` : ", date not set yet"}.${tag}`;
   },
 };
 
 /* ---------- tickets: live link vs DM fallback ---------- */
-if (CONFIG.ticketUrl) {
-  $("#tixLink").href = CONFIG.ticketUrl;   // untouched so promoter credit survives
+if (F && F.ticketUrl) {
+  $("#tixLink").href = F.ticketUrl;        // untouched so promoter credit survives
   $("#tixLive").hidden = false;
   $("#tixAsk").hidden = true;
 }
@@ -411,8 +508,49 @@ tabs.forEach((t, i) => {
     select(next); next.focus(); e.preventDefault();
   });
 });
-const deep = tabs.find(t => t.dataset.mode === params.get("t"));
-if (deep) select(deep);
+const tabOther = $("#tab-other");
+
+/* ---------- venues ---------- */
+function pickVenue(id, { scroll = true } = {}) {
+  const sel = $("#oVenue");
+  sel.value = id;
+  if (!kindTouched && CONFIG.occasions.includes("GROUP NIGHT")) {
+    $("#oKind").value = "GROUP NIGHT"; $("#oKind").dispatchEvent(new Event("change"));
+  }
+  select(tabOther);
+  sel.dispatchEvent(new Event("change"));
+  if (scroll) {
+    $("#card").scrollIntoView({ behavior: calm ? "auto" : "smooth", block: "center" });
+    $('[data-dm="other"]').focus({ preventScroll: true });
+  }
+}
+if (CONFIG.venues.length) {
+  const offerWords = { list: "Guest list", table: "Tables", tickets: "Tickets" };
+  const anyDetail = CONFIG.venues.some(v => v.nights || v.offers);
+  $("#whereCap").textContent = anyDetail ? "Tap a venue to start your DM." : "Tap a venue and ask Ramin about nights.";
+  CONFIG.venues.forEach(v => {
+    const li = document.createElement("li");
+    const b = Object.assign(document.createElement("button"), { type: "button", className: "venue" });
+    const meta = [v.nights, ...(v.offers || []).map(o => offerWords[o])].filter(Boolean).join(" · ") || (anyDetail ? "Ask about nights" : "");
+    b.append(Object.assign(document.createElement("span"), { className: "v-name", textContent: v.name }));
+    if (meta) b.append(Object.assign(document.createElement("span"), { className: "v-meta", textContent: meta }));
+    b.insertAdjacentHTML("beforeend", '<svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>');
+    b.setAttribute("aria-label", `${v.name}${meta ? ", " + meta : ""}. Start a DM`);
+    b.addEventListener("click", () => pickVenue(v.id));
+    li.append(b);
+    if (v.ticketUrl) li.append(Object.assign(document.createElement("a"), { className: "v-tix", href: v.ticketUrl, rel: "noopener", textContent: "Tickets" }));
+    $("#venueList").append(li);
+  });
+  $("#where").hidden = false;
+}
+
+/* ---------- deep links: ?v=<venue id>  ?e=<featured id>  ?t=tickets|other ---------- */
+const wantVenue = venueById((params.get("v") || "").toLowerCase());
+const wantTab = tabs.find(t => t.dataset.mode === params.get("t"));
+if (!F) select(tabOther);
+if (wantVenue) pickVenue(wantVenue.id, { scroll: false });
+else if (wantTab && (F || wantTab === tabOther)) select(wantTab);
+// ?e=nye needs no handling while it is the featured event: the page already opens on it
 
 /* ---------- copy + open DMs ---------- */
 const toast = $("#toast");
@@ -463,7 +601,7 @@ $$("[data-dm]").forEach(a => {
 $("#shareBtn").addEventListener("click", async () => {
   const u = new URL(location.href);
   u.search = ""; u.searchParams.set("src", "share");
-  const data = { title: "NYE at Loosie's", text: "NYE at Loosie's, Dec 31. Tables and tickets through Ramin:", url: u.toString() };
+  const data = { title: "Book with Ramin", text: "Tables, tickets and guest list in NYC through Ramin:", url: u.toString() };
   if (navigator.share) { try { await navigator.share(data); return; } catch (err) { if (err.name === "AbortError") return; } }
   say((await copy(u.toString())) ? "Link copied. Send it to your group." : u.toString(), 4000);
 });
