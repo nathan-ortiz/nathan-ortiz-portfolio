@@ -102,7 +102,7 @@
     <p>On the New Year's Eve card on the <a href="https://taogroup.com/venues/loosies-nightclub-new-york/events/">events page</a> and on the <a href="https://taogroup.com/event/12-31-2026-new-years-eve-loosies-nightclub/">NYE event page</a>, "VIP Reservations" links to two addresses pasted together:</p>
     <div class="urlbox"><span>Current link</span><code class="bad">https://www.sevenrooms.com/events/loosies<b>https://www.sevenrooms.com/events/loosies</b></code></div>
     <div class="urlbox ok"><span>Should be</span><code class="good">https://www.sevenrooms.com/events/loosies</code></div>
-    <figure class="solo"><img src="nye-card.jpg" width="336" height="456" alt="Loosie's NYE 2027 event card on the events page"><figcaption>The affected card, as listed on the events page</figcaption></figure>
+    <figure class="solo"><img src="/loosies/nye-card.jpg" width="336" height="456" alt="Loosie's NYE 2027 event card on the events page"><figcaption>The affected card, as listed on the events page</figcaption></figure>
     <p><b>Fix:</b> correct the VIP URL field on the NYE event entry in the CMS. It's the only event with this problem.</p>
   </section>
 
@@ -111,8 +111,8 @@
     <h2>The header covers the title on phones</h2>
     <p>At 390px wide (iPhone 12–16), the venue nav wraps onto two rows. The fixed header becomes 194px tall, and the "VIP Reservations" pill lands on top of "Upcoming Events" and "Table Reservations." The "after" shots are the same live pages with a small CSS patch applied in my browser. Nothing on your site was changed.</p>
     <div class="pair">
-      <figure><img src="events-before.jpg" width="600" height="1077" alt="Events page on a 390px phone: VIP pill overlaps the Upcoming Events heading" loading="lazy"><figcaption><b>Now.</b> Header 194px, overlaps the title</figcaption></figure>
-      <figure><img src="events-after.jpg" width="600" height="1077" alt="Same page with patch: logo, VIP pill and menu on one row, title clear" loading="lazy"><figcaption><b>With patch.</b> Header 130px, title clear</figcaption></figure>
+      <figure><img src="/loosies/events-before.jpg" width="600" height="1077" alt="Events page on a 390px phone: VIP pill overlaps the Upcoming Events heading" loading="lazy"><figcaption><b>Now.</b> Header 194px, overlaps the title</figcaption></figure>
+      <figure><img src="/loosies/events-after.jpg" width="600" height="1077" alt="Same page with patch: logo, VIP pill and menu on one row, title clear" loading="lazy"><figcaption><b>With patch.</b> Header 130px, title clear</figcaption></figure>
     </div>
   </section>
 
@@ -121,8 +121,8 @@
     <h2>The table form is squeezed</h2>
     <p>The SevenRooms form is embedded at <code>width="85%"</code> inside a card that's already padded. On a 390px phone, that leaves a 248px form, so name and email fields are cramped. The same patch makes it full-width (358px). It also adds an accessible <code>title</code> to the frame.</p>
     <div class="pair">
-      <figure><img src="vip-before.jpg" width="600" height="1077" alt="Table reservations page on a 390px phone: narrow form, heading covered" loading="lazy"><figcaption><b>Now.</b> 248px form</figcaption></figure>
-      <figure><img src="vip-after.jpg" width="600" height="1077" alt="Same page with patch: full-width form, heading clear" loading="lazy"><figcaption><b>With patch.</b> 358px form</figcaption></figure>
+      <figure><img src="/loosies/vip-before.jpg" width="600" height="1077" alt="Table reservations page on a 390px phone: narrow form, heading covered" loading="lazy"><figcaption><b>Now.</b> 248px form</figcaption></figure>
+      <figure><img src="/loosies/vip-after.jpg" width="600" height="1077" alt="Same page with patch: full-width form, heading clear" loading="lazy"><figcaption><b>With patch.</b> 358px form</figcaption></figure>
     </div>
 
     <details>
