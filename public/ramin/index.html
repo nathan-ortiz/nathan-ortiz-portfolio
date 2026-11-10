@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#641319">
+<title>Book with Ramin · NYE at Loosie's</title>
+<meta name="description" content="New Year's Eve at Loosie's, Dec 31, 2026 at 145 Bowery. Request a table or ask about tickets with Ramin.">
+<meta property="og:title" content="NYE at Loosie's · Book with Ramin">
+<meta property="og:description" content="Thu, Dec 31 · 145 Bowery. Request a table or grab tickets.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nathanortiz.com/ramin">
+<meta property="og:image" content="https://nathanortiz.com/ramin/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23571016'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='Didot,Bodoni 72,Georgia,serif' font-style='italic' font-size='44' fill='%23f3e9d8'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Hanken+Grotesk:wght@400..800&display=swap" rel="stylesheet">
+<style>
+/* ------------------------------------------------------------------
+   v2 · "the request card"
+   An oxblood room, one cream card. The guest edits a sentence, the
+   sentence is the DM. Everything launch-related lives in CONFIG below.
+   ------------------------------------------------------------------ */
+:root{
+  color-scheme:dark;
+  --ox:#571016;            /* the room */
+  --ox-top:#6a151c;
+  --ox-deep:#3c0a0f;
+  --cream:#f3e9d8;         /* type on the room, paper of the card */
+  --cream-dim:#d8c5b6;     /* secondary type on the room, 7:1+ */
+  --rule:rgba(243,233,216,.22);
+  --ink:#1a0d0b;           /* type on the card */
+  --ink-soft:#66504a;      /* secondary type on the card, 5.9:1 */
+  --ink-rule:rgba(26,13,11,.16);
+  --red:#8c1620;           /* editable words on the card, 7.7:1 */
+  --serif:"Bodoni Moda","Bodoni 72",Didot,Georgia,serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;min-height:100vh;color:var(--cream);
+  font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased;
+  background:var(--ox-deep);
+  background-image:radial-gradient(620px 420px at 50% 90px,rgba(150,36,46,.55),transparent 70%),linear-gradient(180deg,var(--ox-top) 0,var(--ox) 460px,var(--ox-deep) 1300px);
+  background-repeat:no-repeat;
+}
+/* film grain over everything, gives the red some velvet and the card some tooth */
+body::after{
+  content:"";position:fixed;inset:0;z-index:9;pointer-events:none;opacity:.34;mix-blend-mode:overlay;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.wrap{width:min(100% - 32px,460px);margin-inline:auto}
+
+/* ---------- top bar ---------- */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:max(14px,env(safe-area-inset-top)) 0 0}
+.mark{font:600 1.14rem/1 var(--serif);font-variation-settings:"opsz" 11;letter-spacing:.005em;text-decoration:none;padding:12px 0;margin:-12px 0}
+.mark i{font-weight:600}
+.draft{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--rule);padding:5px 8px 4px;white-space:nowrap;color:var(--cream-dim)}
+
+/* ---------- hero ---------- */
+.hero{padding:18px 0 16px}
+h1{margin:0;font-weight:500;font-family:var(--serif)}
+h1 .pre{display:block;font-style:italic;font-size:1.36rem;line-height:1.1;font-variation-settings:"opsz" 18;letter-spacing:.005em}
+h1 .ap{margin:0 -.075em 0 -.06em}
+h1 .big{display:block;font-size:clamp(4.2rem,22.4vw,6.4rem);line-height:.92;letter-spacing:-.035em;margin:2px 0 0 -.04em;font-weight:500}
+.facts{margin:16px 0 0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule)}
+.facts div{padding:7px 0 6px;border-bottom:1px solid var(--rule);min-width:0}
+.facts div:nth-child(even){padding-left:14px;border-left:1px solid var(--rule)}
+.facts dt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.facts dd{margin:0;font-size:.9rem;font-weight:500;letter-spacing:.01em;white-space:nowrap}
+
+/* ---------- seal (wide screens only) ---------- */
+.seal{display:none}
+.seal text{font:700 21px var(--sans);letter-spacing:.2em;fill:var(--cream)}
+.seal .n{font:italic 500 92px var(--serif);letter-spacing:-.02em}
+.seal .ring{transform-origin:115px 115px}
+
+/* ---------- the card ---------- */
+.card-shadow{filter:drop-shadow(0 22px 28px rgba(20,2,4,.45))}
+.card{
+  --notch:78px;
+  position:relative;background:var(--cream);color:var(--ink);border-radius:5px;color-scheme:light;
+  -webkit-mask:radial-gradient(circle 9px at 0 var(--notch),#0000 97%,#000) ,radial-gradient(circle 9px at 100% var(--notch),#0000 97%,#000);
+  -webkit-mask-composite:source-in;mask-composite:intersect;
+}
+.card :focus-visible{outline-color:var(--ink)}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);height:var(--notch);padding:15px 14px}
+.tab{
+  appearance:none;cursor:pointer;min-height:48px;padding:0 4px;border-radius:0;
+  background:transparent;border:1px solid rgba(26,13,11,.3);color:var(--ink);
+  font-size:.86rem;font-weight:600;letter-spacing:.01em;white-space:nowrap;
+  transition:background .18s,color .18s,border-color .18s;
+}
+.tab+.tab{margin-left:-1px}
+.tab:first-child{border-radius:3px 0 0 3px}
+.tab:last-child{border-radius:0 3px 3px 0}
+.tab:focus-visible{position:relative;z-index:1}
+.tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+.panel{padding:16px 20px 20px;border-top:2px dashed var(--ink-rule)}
+.panel[hidden]{display:none}
+.label{margin:0 0 6px;font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* the sentence */
+.say{margin:0;font:500 1.72rem/3rem var(--serif);font-variation-settings:"opsz" 14;letter-spacing:-.005em}
+.nb{white-space:nowrap}
+.say .via{font-size:1rem;font-style:italic;color:var(--ink-soft);letter-spacing:0;white-space:nowrap}
+.tok{
+  position:relative;display:inline-flex;align-items:center;gap:7px;vertical-align:middle;
+  min-height:44px;padding:0 10px 0 11px;margin-top:-4px;border-radius:3px;white-space:nowrap;
+  color:var(--red);font-weight:700;background:rgba(140,22,32,.08);box-shadow:inset 0 -2px 0 var(--red);
+}
+.tok::after{content:"";flex:none;width:7px;height:7px;margin-top:-4px;border-right:2px solid;border-bottom:2px solid;transform:rotate(45deg);opacity:.75}
+.tok select,.tok input{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;opacity:0;cursor:pointer;font-size:16px;appearance:none;-webkit-appearance:none}
+.tok:focus-within{outline:2px solid var(--ink);outline-offset:2px}
+.tok.tick .tok-v{animation:tick .28s ease}
+.hint{margin:6px 0 14px;font-size:.84rem;color:var(--ink-soft)}
+.hint b{color:var(--red);font-weight:700}
+
+.cta{
+  display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:56px;padding:0 16px;
+  border:0;border-radius:3px;cursor:pointer;text-decoration:none;text-align:center;
+  font-size:1rem;font-weight:700;letter-spacing:.01em;background:var(--ink);color:var(--cream);
+  transition:transform .12s ease,background .18s;
+}
+.cta:hover{background:#34150f}
+.cta:active{transform:scale(.985)}
+.cta svg{flex:none;transition:transform .2s ease}
+.cta:hover svg{transform:translateX(3px)}
+.fine{margin:12px 0 0;font-size:.8rem;line-height:1.45;color:var(--ink-soft)}
+.fine a{color:var(--ink);font-weight:600}
+.fine[role=status]:not(:empty){color:var(--ink);font-weight:500;padding:10px 12px;background:rgba(26,13,11,.06);border-left:2px solid var(--red)}
+.fine[role=status]:empty{display:none}
+.panel p.body{margin:0 0 18px;font:500 1.5rem/1.3 var(--serif);font-variation-settings:"opsz" 14}
+
+/* ---------- below the card ---------- */
+.section{margin-top:44px}
+h2{margin:0 0 14px;font:600 1.72rem/1.1 var(--serif);font-variation-settings:"opsz" 13;letter-spacing:-.012em}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;border-top:1px solid var(--rule)}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;align-items:baseline;padding:14px 0 13px;border-bottom:1px solid var(--rule)}
+.steps li::before{content:counter(s);font:italic 500 1.9rem/1 var(--serif);font-variation-settings:"opsz" 24}
+.steps b{display:block;font-weight:600}
+.steps span{display:block;font-size:.92rem;color:var(--cream-dim)}
+.share p{margin:-6px 0 16px;color:var(--cream-dim);font-size:.95rem}
+.ghost{
+  display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;cursor:pointer;
+  background:transparent;border:1px solid var(--cream);border-radius:3px;color:var(--cream);font-weight:600;
+  transition:background .18s,color .18s;
+}
+.ghost:hover{background:var(--cream);color:var(--ink)}
+
+footer{margin:52px 0 0;padding:18px 0 calc(30px + env(safe-area-inset-bottom));border-top:1px solid var(--rule);color:var(--cream-dim);font-size:.8rem;line-height:1.5}
+footer p{margin:0 0 8px}
+footer a{color:var(--cream);font-weight:600;display:inline-block;padding:10px 0;margin:-10px 0}
+
+.toast{position:fixed;z-index:10;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translate(-50%,16px);opacity:0;pointer-events:none;background:var(--cream);color:var(--ink);padding:12px 16px;border-radius:3px;font-size:.9rem;font-weight:600;max-width:calc(100% - 32px);box-shadow:0 10px 30px rgba(20,2,4,.5);transition:.2s ease}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- small phones ---------- */
+@media (max-width:359px){
+  .say{font-size:1.5rem}
+  .tabs{padding-inline:10px}
+  .tab{font-size:.78rem}
+  .panel{padding-inline:16px}
+  .facts dd{font-size:.82rem}
+  .facts div:nth-child(even){padding-left:10px}
+}
+
+/* ---------- desktop: poster left, card right ---------- */
+@media (min-width:940px){
+  .wrap{width:min(100% - 96px,1060px)}
+  main{display:grid;grid-template-columns:1fr 440px;column-gap:88px;align-items:start}
+  .hero{grid-column:1;padding:72px 0 0}
+  h1 .pre{font-size:1.9rem}
+  h1 .big{font-size:10.5rem}
+  .facts{margin-top:30px;max-width:460px}
+  .facts dd{font-size:1rem}
+  .card-shadow{grid-column:2;grid-row:1 / span 3;position:sticky;top:40px;margin-top:72px}
+  .section{grid-column:1;max-width:460px}
+}
+@media (min-width:1240px){
+  .hero{position:relative}
+  .seal{display:block;position:absolute;left:468px;bottom:-22px;width:124px;height:124px;transform:rotate(10deg)}
+}
+
+/* ---------- motion ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes tick{from{opacity:.2;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .seal .ring{animation:spin 70s linear infinite}
+  .rise.d1{animation-delay:.08s}.rise.d2{animation-delay:.16s}.rise.d3{animation-delay:.26s}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <a class="mark" href="https://www.instagram.com/nycpromoter_ramin/" aria-label="Book with Ramin, Instagram profile">Book with <i>Ramin</i></a>
+    <span class="draft" id="draftBadge">Draft preview</span>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <h1 id="title">
+        <span class="pre rise">New Year’s Eve at</span>
+        <span class="big rise d1">Loosie<span class="ap">’</span>s</span>
+      </h1>
+      <dl class="facts rise d2">
+        <div><dt>Date</dt><dd>Thu, Dec 31, 2026</dd></div>
+        <div><dt>Address</dt><dd>145 Bowery, NYC</dd></div>
+        <div><dt>Hours</dt><dd>9 PM till 4 AM</dd></div>
+        <div><dt>Entry</dt><dd>21+ with photo ID</dd></div>
+      </dl>
+      <svg class="seal rise d3" viewBox="0 0 230 230" aria-hidden="true">
+        <defs><path id="ring" d="M115,115 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs>
+        <circle cx="115" cy="115" r="112" fill="none" stroke="currentColor" stroke-width="2.5"/>
+        <circle cx="115" cy="115" r="64" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <g class="ring"><text><textPath href="#ring" textLength="540">NEW YEAR'S EVE · 145 BOWERY · NYC ·</textPath></text></g>
+        <text class="n" x="115" y="147" text-anchor="middle">31</text>
+      </svg>
+    </section>
+
+    <div class="card-shadow rise d3">
+    <section class="card" aria-label="Send Ramin a request">
+      <div class="tabs" role="tablist" aria-label="What do you need?">
+        <button class="tab" role="tab" id="tab-table" data-mode="table" aria-controls="panel-table" aria-selected="true">NYE table</button>
+        <button class="tab" role="tab" id="tab-tix" data-mode="tickets" aria-controls="panel-tix" aria-selected="false" tabindex="-1">NYE tickets</button>
+        <button class="tab" role="tab" id="tab-other" data-mode="other" aria-controls="panel-other" aria-selected="false" tabindex="-1">Other night</button>
+      </div>
+
+      <!-- TABLE -->
+      <div class="panel" role="tabpanel" id="panel-table" aria-labelledby="tab-table">
+        <p class="label">Your message to Ramin</p>
+        <p class="say">NYE TABLE for
+          <span class="tok"><span class="tok-v" aria-hidden="true">6</span><select id="tSize" aria-label="Group size"></select></span>
+          at Loosie's. Budget
+          <span class="nb"><span class="tok"><span class="tok-v" aria-hidden="true">$2K to $4K</span><select id="tBudget" aria-label="Budget for the table"></select></span>.</span>
+          <span class="via" data-via></span>
+        </p>
+        <p class="hint">Tap the <b>red words</b> to make it yours.</p>
+        <a class="cta" data-dm="table" href="https://ig.me/m/nycpromoter_ramin"><span>Copy and DM Ramin</span>
+          <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+        <p class="fine" data-note>This is a request, not a booking. Ramin confirms what's open and the terms.</p>
+        <p class="fine" role="status" data-status></p>
+      </div>
+
+      <!-- TICKETS -->
+      <div class="panel" role="tabpanel" id="panel-tix" aria-labelledby="tab-tix" hidden>
+        <div id="tixAsk">
+          <p class="label">Your message to Ramin</p>
+          <p class="say">NYE TICKETS for
+            <span class="tok"><span class="tok-v" aria-hidden="true">2</span><select id="kQty" aria-label="Number of tickets"></select></span>
+            at Loosie's.
+            <span class="via" data-via></span>
+          </p>
+          <p class="hint">Tap the <b>red number</b> to change it.</p>
+          <a class="cta" data-dm="tickets" href="https://ig.me/m/nycpromoter_ramin"><span>Copy and DM Ramin</span>
+            <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+          <p class="fine" data-note>Ramin replies with his ticket link.</p>
+          <p class="fine" role="status" data-status></p>
+        </div>
+        <div id="tixLive" hidden>
+          <p class="label">Tickets</p>
+          <p class="body">Tickets go through the organizer's checkout. This is Ramin's link.</p>
+          <a class="cta" id="tixLink" href="#" rel="noopener"><span>Get NYE tickets</span>
+            <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+          <p class="fine">21+ with valid photo ID. All sales are final per the organizer.</p>
+        </div>
+      </div>
+
+      <!-- OTHER NIGHT -->
+      <div class="panel" role="tabpanel" id="panel-other" aria-labelledby="tab-other" hidden>
+        <p class="label">Your message to Ramin</p>
+        <p class="say">
+          <span class="tok"><span class="tok-v" aria-hidden="true">BIRTHDAY</span><select id="oKind" aria-label="Occasion"></select></span>
+          for
+          <span class="tok"><span class="tok-v" aria-hidden="true">8</span><select id="oSize" aria-label="Group size"></select></span>
+          on
+          <span class="nb"><span class="tok"><span class="tok-v" id="oDateV" aria-hidden="true">pick a date</span><input type="date" id="oDate" aria-label="Date"></span>.</span>
+          <span class="via" data-via></span>
+        </p>
+        <p class="hint">Tap the <b>red words</b> to make it yours.</p>
+        <a class="cta" data-dm="other" href="https://ig.me/m/nycpromoter_ramin"><span>Copy and DM Ramin</span>
+          <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+        <p class="fine" data-note>Any night, not only NYE. Guest list depends on the night and the venue.</p>
+        <p class="fine" role="status" data-status></p>
+      </div>
+    </section>
+    </div>
+
+    <section class="section" aria-labelledby="howTitle">
+      <h2 id="howTitle">How it works</h2>
+      <ol class="steps">
+        <li><div><b>Tap the button</b><span>Your message gets copied and Instagram opens to Ramin's DMs.</span></div></li>
+        <li><div><b>Paste and send</b><span>Hold the message box, tap paste, hit send.</span></div></li>
+        <li><div><b>Ramin gets back to you</b><span>He checks what's open and tells you the price. Nothing's booked until he confirms.</span></div></li>
+      </ol>
+    </section>
+
+    <section class="section share" aria-labelledby="shareTitle">
+      <h2 id="shareTitle">Not the one planning?</h2>
+      <p>Send this to whoever's putting the group together.</p>
+      <button type="button" class="ghost" id="shareBtn">Share this page</button>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="https://www.instagram.com/nycpromoter_ramin/">@nycpromoter_ramin</a></p>
+    <p>Ramin is an independent promoter. This page isn't run by Loosie's or Tao Group. Availability, pricing and entry are confirmed by Ramin and subject to venue policy.</p>
+  </footer>
+</div>
+
+<div class="toast" id="toast" aria-hidden="true"></div>
+
+<script>
+/* =================================================================
+   CONFIG · everything Ramin has to confirm lives here.
+   ================================================================= */
+const CONFIG = {
+  draft: true,                       // shows the "Draft preview" tag. set false at launch.
+  igHandle: "nycpromoter_ramin",
+  // Ramin's CREDITED ticket URL, pasted exactly as he sends it (keep every
+  // promoter/affiliate param). null = tickets route to DMs instead.
+  ticketUrl: null,
+  // PLACEHOLDER budget ranges. Not price claims, just buckets for the guest.
+  // Replace with ranges that match Ramin's real NYE minimums.
+  budgets: ["Under $2K", "$2K to $4K", "$4K+", "Not sure yet"],
+  defaultBudget: 1,
+  // Allowed ?src= values, appended to DMs so Ramin can see which post drove it.
+  sources: ["bio", "story", "broadcast", "post", "partner", "share"],
+};
+
+/* ---------- helpers ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const dmUrl = `https://ig.me/m/${CONFIG.igHandle}`;
+const params = new URLSearchParams(location.search);
+const rawSrc = (params.get("src") || "").toLowerCase();
+const src = CONFIG.sources.includes(rawSrc) ? rawSrc : "";
+const tag = src ? ` (via ${src})` : "";
+
+if (!CONFIG.draft) $("#draftBadge").remove();
+$$("[data-via]").forEach(el => (el.textContent = tag.trim()));
+
+/* ---------- the editable words ---------- */
+const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => String(a + i));
+function fill(sel, values, initial) {
+  values.forEach(v => sel.add(new Option(v, v)));
+  sel.value = initial;
+}
+fill($("#tSize"), [...range(2, 29), "30+"], "6");
+fill($("#kQty"), [...range(1, 9), "10+"], "2");
+fill($("#oSize"), [...range(2, 39), "40+"], "8");
+fill($("#oKind"), ["BIRTHDAY", "GROUP NIGHT"], "BIRTHDAY");
+fill($("#tBudget"), CONFIG.budgets, CONFIG.budgets[CONFIG.defaultBudget]);
+
+// budgets without a dollar figure read better lowercase mid-sentence ("Budget not sure yet")
+const inline = v => (/\$/.test(v) ? v : v.toLowerCase());
+function fmtDate(v) {
+  if (!v) return "";
+  return new Date(v + "T12:00:00").toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+}
+const shown = el =>
+  el.id === "tBudget" ? inline(el.value) :
+  el.id === "oDate" ? (fmtDate(el.value) || "pick a date") : el.value;
+
+$$(".tok").forEach(tok => {
+  const input = $("select,input", tok), out = $(".tok-v", tok);
+  const paint = animate => {
+    out.textContent = shown(input);
+    if (animate) { tok.classList.remove("tick"); void tok.offsetWidth; tok.classList.add("tick"); }
+  };
+  input.addEventListener("change", () => paint(true));
+  input.addEventListener("input", () => paint(false));
+  paint(false);
+});
+// date: open the native picker on click where the browser supports it, never allow the past
+const oDate = $("#oDate");
+oDate.min = new Date(Date.now() - new Date().getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+oDate.addEventListener("click", () => { try { oDate.showPicker(); } catch {} });
+
+/* ---------- the message that gets copied (matches what's on the card) ---------- */
+const messages = {
+  table: () => `NYE TABLE for ${$("#tSize").value} at Loosie's. Budget ${inline($("#tBudget").value)}.${tag}`,
+  tickets: () => `NYE TICKETS for ${$("#kQty").value} at Loosie's.${tag}`,
+  other: () => {
+    const d = fmtDate(oDate.value);
+    return `${$("#oKind").value} for ${$("#oSize").value}${d ? ` on ${d}` : ", date not set yet"}.${tag}`;
+  },
+};
+
+/* ---------- tickets: live link vs DM fallback ---------- */
+if (CONFIG.ticketUrl) {
+  $("#tixLink").href = CONFIG.ticketUrl;   // untouched so promoter credit survives
+  $("#tixLive").hidden = false;
+  $("#tixAsk").hidden = true;
+}
+
+/* ---------- tabs (ARIA tabs pattern) ---------- */
+const tabs = $$('[role="tab"]');
+function select(tab) {
+  tabs.forEach(t => {
+    const on = t === tab;
+    t.setAttribute("aria-selected", on);
+    t.tabIndex = on ? 0 : -1;
+    $("#" + t.getAttribute("aria-controls")).hidden = !on;
+  });
+}
+tabs.forEach((t, i) => {
+  t.addEventListener("click", () => select(t));
+  t.addEventListener("keydown", e => {
+    const to = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+    if (to === undefined) return;
+    const next = tabs[(to + tabs.length) % tabs.length];
+    select(next); next.focus(); e.preventDefault();
+  });
+});
+const deep = tabs.find(t => t.dataset.mode === params.get("t"));
+if (deep) select(deep);
+
+/* ---------- copy + open DMs ---------- */
+const toast = $("#toast");
+let toastTimer;
+function say(msg, ms = 2600) {
+  toast.textContent = msg; toast.classList.add("on");
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove("on"), ms);
+}
+async function copy(text) {
+  // 1) synchronous copy first: it runs inside the tap, which is what in-app browsers want
+  const ta = Object.assign(document.createElement("textarea"), { value: text, readOnly: true });
+  ta.style.cssText = "position:fixed;opacity:0;top:0;font-size:16px";
+  document.body.append(ta); ta.select(); ta.setSelectionRange(0, text.length);
+  let ok = false; try { ok = document.execCommand("copy"); } catch {}
+  ta.remove();
+  if (ok) return true;
+  // 2) async clipboard, but never wait on it for more than a beat
+  try {
+    await Promise.race([
+      navigator.clipboard.writeText(text),
+      new Promise((_, no) => setTimeout(no, 700)),
+    ]);
+    return true;
+  } catch { return false; }
+}
+$$("[data-dm]").forEach(a => {
+  a.href = dmUrl;
+  a.addEventListener("click", async e => {
+    e.preventDefault();
+    const scope = a.parentElement, text = messages[a.dataset.dm]();
+    const ok = await copy(text);
+    // the status stays on the card, so it's still there if they come back from Instagram
+    const status = $("[data-status]", scope);
+    status.textContent = "";
+    status.append(
+      ok ? "Copied. Paste it in Ramin's DMs and hit send. "
+         : `Couldn't copy on this phone. Type this in Ramin's DMs: "${text}" `,
+      Object.assign(document.createElement("a"), { href: dmUrl, textContent: "Open his DMs" })
+    );
+    $("[data-note]", scope).hidden = true;
+    $("span", a).textContent = "Copy again and DM Ramin";
+    say(ok ? "Copied. Opening Ramin's DMs" : "Opening Ramin's DMs");
+    setTimeout(() => { location.href = dmUrl; }, 900);
+  });
+});
+
+/* ---------- share ---------- */
+$("#shareBtn").addEventListener("click", async () => {
+  const u = new URL(location.href);
+  u.search = ""; u.searchParams.set("src", "share");
+  const data = { title: "NYE at Loosie's", text: "NYE at Loosie's, Dec 31. Tables and tickets through Ramin:", url: u.toString() };
+  if (navigator.share) { try { await navigator.share(data); return; } catch (err) { if (err.name === "AbortError") return; } }
+  say((await copy(u.toString())) ? "Link copied. Send it to your group." : u.toString(), 4000);
+});
+</script>
+</body>
+</html>
