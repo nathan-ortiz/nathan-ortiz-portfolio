@@ -111,7 +111,7 @@ h1 .big{display:block;font-size:clamp(4.2rem,22.4vw,6.4rem);line-height:.92;lett
 .label{margin:0 0 6px;font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
 
 /* the sentence */
-.say{margin:0;font:500 1.72rem/3rem var(--serif);font-variation-settings:"opsz" 14;letter-spacing:-.005em}
+.say{margin:0 0 18px;font:500 1.72rem/3rem var(--serif);font-variation-settings:"opsz" 14;letter-spacing:-.005em}
 .nb{white-space:nowrap}
 .say .via{font-size:1rem;font-style:italic;color:var(--ink-soft);letter-spacing:0;white-space:nowrap}
 .tok{
@@ -123,7 +123,7 @@ h1 .big{display:block;font-size:clamp(4.2rem,22.4vw,6.4rem);line-height:.92;lett
 .tok select,.tok input{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;opacity:0;cursor:pointer;font-size:16px;appearance:none;-webkit-appearance:none}
 .tok:focus-within{outline:2px solid var(--ink);outline-offset:2px}
 .tok.tick .tok-v{animation:tick .28s ease}
-.hint{margin:6px 0 14px;font-size:.84rem;color:var(--ink-soft)}
+.x-hint{margin:6px 0 14px;font-size:.84rem;color:var(--ink-soft)}
 .hint b{color:var(--red);font-weight:700}
 
 .cta{
@@ -143,14 +143,8 @@ h1 .big{display:block;font-size:clamp(4.2rem,22.4vw,6.4rem);line-height:.92;lett
 .panel p.body{margin:0 0 18px;font:500 1.5rem/1.3 var(--serif);font-variation-settings:"opsz" 14}
 
 /* ---------- below the card ---------- */
-.section{margin-top:44px}
+.section{margin-top:28px}
 h2{margin:0 0 14px;font:600 1.72rem/1.1 var(--serif);font-variation-settings:"opsz" 13;letter-spacing:-.012em}
-.steps{list-style:none;margin:0;padding:0;counter-reset:s;border-top:1px solid var(--rule)}
-.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;align-items:baseline;padding:14px 0 13px;border-bottom:1px solid var(--rule)}
-.steps li::before{content:counter(s);font:italic 500 1.9rem/1 var(--serif);font-variation-settings:"opsz" 24}
-.steps b{display:block;font-weight:600}
-.steps span{display:block;font-size:.92rem;color:var(--cream-dim)}
-.share p{margin:-6px 0 16px;color:var(--cream-dim);font-size:.95rem}
 .ghost{
   display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;cursor:pointer;
   background:transparent;border:1px solid var(--cream);border-radius:3px;color:var(--cream);font-weight:600;
@@ -158,7 +152,7 @@ h2{margin:0 0 14px;font:600 1.72rem/1.1 var(--serif);font-variation-settings:"op
 }
 .ghost:hover{background:var(--cream);color:var(--ink)}
 
-footer{margin:52px 0 0;padding:18px 0 calc(30px + env(safe-area-inset-bottom));border-top:1px solid var(--rule);color:var(--cream-dim);font-size:.8rem;line-height:1.5}
+footer{margin:40px 0 0;padding:18px 0 calc(30px + env(safe-area-inset-bottom));border-top:1px solid var(--rule);color:var(--cream-dim);font-size:.8rem;line-height:1.5}
 footer p{margin:0 0 8px}
 footer a{color:var(--cream);font-weight:600;display:inline-block;padding:10px 0;margin:-10px 0}
 
@@ -245,47 +239,45 @@ footer a{color:var(--cream);font-weight:600;display:inline-block;padding:10px 0;
 
       <!-- TABLE -->
       <div class="panel" role="tabpanel" id="panel-table" aria-labelledby="tab-table">
-        <p class="label">Your message to Ramin</p>
+        <p class="label">Your DM <span aria-hidden="true">·</span> tap red to edit</p>
         <p class="say">NYE TABLE for
           <span class="tok"><span class="tok-v" aria-hidden="true">6</span><select id="tSize" aria-label="Group size"></select></span>
           at Loosie's. Budget
           <span class="nb"><span class="tok"><span class="tok-v" aria-hidden="true">$2K to $4K</span><select id="tBudget" aria-label="Budget for the table"></select></span>.</span>
           <span class="via" data-via></span>
         </p>
-        <p class="hint">Tap the <b>red words</b> to make it yours.</p>
         <a class="cta" data-dm="table" href="https://ig.me/m/nycpromoter_ramin"><span>Copy and DM Ramin</span>
           <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
-        <p class="fine" data-note>This is a request, not a booking. Ramin confirms what's open and the terms.</p>
+        <p class="fine" data-note>Copies this and opens his DMs. Nothing's booked till he confirms.</p>
         <p class="fine" role="status" data-status></p>
       </div>
 
       <!-- TICKETS -->
       <div class="panel" role="tabpanel" id="panel-tix" aria-labelledby="tab-tix" hidden>
         <div id="tixAsk">
-          <p class="label">Your message to Ramin</p>
+          <p class="label">Your DM <span aria-hidden="true">·</span> tap red to edit</p>
           <p class="say">NYE TICKETS for
             <span class="tok"><span class="tok-v" aria-hidden="true">2</span><select id="kQty" aria-label="Number of tickets"></select></span>
             at Loosie's.
             <span class="via" data-via></span>
           </p>
-          <p class="hint">Tap the <b>red number</b> to change it.</p>
           <a class="cta" data-dm="tickets" href="https://ig.me/m/nycpromoter_ramin"><span>Copy and DM Ramin</span>
             <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
-          <p class="fine" data-note>Ramin replies with his ticket link.</p>
+          <p class="fine" data-note>Copies this and opens his DMs. He'll send his ticket link.</p>
           <p class="fine" role="status" data-status></p>
         </div>
         <div id="tixLive" hidden>
           <p class="label">Tickets</p>
-          <p class="body">Tickets go through the organizer's checkout. This is Ramin's link.</p>
+          <p class="body">Straight to checkout, on Ramin's link.</p>
           <a class="cta" id="tixLink" href="#" rel="noopener"><span>Get NYE tickets</span>
             <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
-          <p class="fine">21+ with valid photo ID. All sales are final per the organizer.</p>
+          <p class="fine">21+ with photo ID. All sales final.</p>
         </div>
       </div>
 
       <!-- OTHER NIGHT -->
       <div class="panel" role="tabpanel" id="panel-other" aria-labelledby="tab-other" hidden>
-        <p class="label">Your message to Ramin</p>
+        <p class="label">Your DM <span aria-hidden="true">·</span> tap red to edit</p>
         <p class="say">
           <span class="tok"><span class="tok-v" aria-hidden="true">BIRTHDAY</span><select id="oKind" aria-label="Occasion"></select></span>
           for
@@ -294,34 +286,23 @@ footer a{color:var(--cream);font-weight:600;display:inline-block;padding:10px 0;
           <span class="nb"><span class="tok"><span class="tok-v" id="oDateV" aria-hidden="true">pick a date</span><input type="date" id="oDate" aria-label="Date"></span>.</span>
           <span class="via" data-via></span>
         </p>
-        <p class="hint">Tap the <b>red words</b> to make it yours.</p>
         <a class="cta" data-dm="other" href="https://ig.me/m/nycpromoter_ramin"><span>Copy and DM Ramin</span>
           <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
-        <p class="fine" data-note>Any night, not only NYE. Guest list depends on the night and the venue.</p>
+        <p class="fine" data-note>Any night, not just NYE. Guest list depends on the venue.</p>
         <p class="fine" role="status" data-status></p>
       </div>
     </section>
     </div>
 
-    <section class="section" aria-labelledby="howTitle">
-      <h2 id="howTitle">How it works</h2>
-      <ol class="steps">
-        <li><div><b>Tap the button</b><span>Your message gets copied and Instagram opens to Ramin's DMs.</span></div></li>
-        <li><div><b>Paste and send</b><span>Hold the message box, tap paste, hit send.</span></div></li>
-        <li><div><b>Ramin gets back to you</b><span>He checks what's open and tells you the price. Nothing's booked until he confirms.</span></div></li>
-      </ol>
-    </section>
 
-    <section class="section share" aria-labelledby="shareTitle">
-      <h2 id="shareTitle">Not the one planning?</h2>
-      <p>Send this to whoever's putting the group together.</p>
-      <button type="button" class="ghost" id="shareBtn">Share this page</button>
+    <section class="section share" aria-label="Share">
+      <button type="button" class="ghost" id="shareBtn">Not planning? Send this to your group</button>
     </section>
   </main>
 
   <footer>
     <p><a href="https://www.instagram.com/nycpromoter_ramin/">@nycpromoter_ramin</a></p>
-    <p>Ramin is an independent promoter. This page isn't run by Loosie's or Tao Group. Availability, pricing and entry are confirmed by Ramin and subject to venue policy.</p>
+    <p>Independent promoter, not affiliated with Loosie's or Tao Group. Availability, pricing and entry are confirmed by Ramin and subject to venue policy.</p>
   </footer>
 </div>
 
