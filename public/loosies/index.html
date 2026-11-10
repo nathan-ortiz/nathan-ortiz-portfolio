@@ -116,6 +116,16 @@
   .facts td:last-child { color: var(--soft); font-size: .78rem; white-space: nowrap; text-align: right; padding-right: 0; }
   .list { padding-left: 1.1rem; } .list li { margin: .5rem 0; } .list li::marker { color: var(--pink); }
 
+  .gpt { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin: 1.3rem 0 .6rem; align-items: start; }
+  .gpt a { display: block; }
+  .gpt img { width: 100%; height: auto; display: block; border-radius: 14px; border: 1px solid var(--line); }
+  .gcap { text-align: center; color: var(--soft); margin: 0 0 1.4rem; }
+  .steps { list-style: none; counter-reset: s; margin: .4rem 0 1.2rem; }
+  .steps li { counter-increment: s; position: relative; padding: .75rem 0 .75rem 2.6rem; border-top: 1px solid var(--line); }
+  .steps li:last-child { border-bottom: 1px solid var(--line); }
+  .steps li::before { content: counter(s); position: absolute; left: 0; top: .78rem; width: 1.75rem; height: 1.75rem; border: 1px solid var(--pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font: 400 1rem/1 "Instrument Serif", serif; color: var(--pink); }
+  .foot .dim { color: var(--soft); letter-spacing: .12em; }
+  footer .note { margin-top: .8rem; font-size: .78rem; }
   footer { margin-top: 4rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
   .foot { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; color: var(--body); }
   .foot a { text-decoration: none; font: italic 400 1.5rem/1 "Instrument Serif", serif; color: var(--ink); }
@@ -200,16 +210,30 @@
   </section>
 
   <section id="search">
-    <div class="sec caps"><span class="oval">+</span>Bonus<svg><use href="#spark"/></svg></div>
-    <h2>What Google and AI say about you</h2>
-    <p>I also checked how Loosie's shows up when people search or ask an AI for clubs in the LES. Most answers pull from third-party sites instead of yours, and some of that info is off:</p>
+    <div class="sec caps"><span class="oval">04</span>AI search<svg><use href="#spark"/></svg></div>
+    <h2>ChatGPT doesn't mention you</h2>
+    <p>I asked ChatGPT "Best clubs in LES NYC?" It gave a top 8 and Loosie's wasn't on it.</p>
+    <div class="gpt">
+      <a href="/loosies/chatgpt-1.jpg"><img src="/loosies/chatgpt-1.jpg" width="600" height="871" alt="ChatGPT answer to Best clubs in LES NYC: a top 8 list starting with Home Sweet Home, with a Yelp rating card" loading="lazy"></a>
+      <a href="/loosies/chatgpt-2.jpg"><img src="/loosies/chatgpt-2.jpg" width="600" height="918" alt="ChatGPT rankings table: Home Sweet Home, Outer Heaven, Hotel Chantelle, Rumpus Room and others. No Loosie's" loading="lazy"></a>
+    </div>
+    <p class="gcap caps">ChatGPT, Nov 9 &nbsp;·&nbsp; No Loosie's</p>
+    <p>These answers pull from Yelp, listicles and aggregator sites way more than your own page, and some of what's out there about you is off:</p>
     <ul class="list">
       <li><b>Clubbable</b> describes Loosie's as a speakeasy with exposed brick, jazz and indie rock.</li>
       <li><b>Search snippets</b> still show Thu–Sat hours. Your page says Thu–Sun.</li>
       <li><b>Dress code, how to get in and directions</b> aren't on your site so aggregators answer those for you.</li>
       <li><b>Your events list only loads with JavaScript</b> so crawlers that don't run it see an empty calendar. Discotech's event pages outrank yours for stuff like "Friday club LES."</li>
     </ul>
-    <p>Nothing fancy needed. Put the real answers on your own page (a short "plan your night" section) and make the events list readable without JS. Happy to draft the copy if that's useful.</p>
+    <h3>How to show up more</h3>
+    <ol class="steps">
+      <li><b>Claim and fill out Yelp.</b> ChatGPT's place cards pull from it (that's the Yelp rating on Home Sweet Home above).</li>
+      <li><b>Say what you are on your own page in plain words.</b> Basement dance club under the Moxy, what music plays which night, Thu–Sun till 4, 21+, dress code, how to get in.</li>
+      <li><b>Make the events list readable without JavaScript</b> so every night has a page crawlers can actually see.</li>
+      <li><b>Get the wrong info fixed.</b> Ask Clubbable to update their description and make sure your Google hours say Thu–Sun.</li>
+      <li><b>Get on the lists these answers cite.</b> Discotech's LES list already has you. Time Out's LES nightlife page hasn't been updated since 2016.</li>
+    </ol>
+    <p>Happy to draft the "plan your night" copy if that's useful.</p>
 
     <details>
       <summary>Everything else I found</summary>
@@ -254,22 +278,11 @@
         <p class="note">I guessed the series name and performer so tweak those to match how you bill the night.</p>
       </div>
     </details>
-    <details>
-      <summary>How I checked this</summary>
-      <div>
-        <ul class="list">
-          <li>Public pages only. Headless Chrome at iPhone and desktop sizes, Lighthouse, and about 20 search prompts.</li>
-          <li>Couldn't check: a real iPhone, real-user speed data, your ticketing pages (bot check), or your Google and Bing dashboards.</li>
-          <li>No promises about rankings or sales. The mobile fixes are the part you can verify right now.</li>
-          <li>I've got the full write-up with sources and screenshots if your web team wants it.</li>
-        </ul>
-      </div>
-    </details>
   </section>
 
   <footer>
-    <div class="foot"><span class="caps">Nathan Ortiz<br>Columbia student. I build websites and apps.</span><a href="https://www.nathanortiz.com">nathanortiz.com</a></div>
-    <p class="note">Nov 9, 2026. Public pages only. I didn't log into or submit anything. Not affiliated with Loosie's or Tao Group Hospitality.</p>
+    <div class="foot"><span class="caps">Nathan Ortiz<br><span class="dim">Computer Science, Columbia University</span></span><a href="https://www.nathanortiz.com">nathanortiz.com</a></div>
+    <p class="note">Not affiliated with Loosie's or Tao Group.</p>
   </footer>
 </main>
 <script>
