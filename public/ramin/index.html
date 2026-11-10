@@ -178,6 +178,7 @@ footer a{color:var(--cream);font-weight:600;display:inline-block;padding:10px 0;
 .toast{position:fixed;z-index:10;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translate(-50%,16px);opacity:0;pointer-events:none;background:var(--cream);color:var(--ink);padding:12px 16px;border-radius:3px;font-size:.9rem;font-weight:600;max-width:calc(100% - 32px);box-shadow:0 10px 30px rgba(20,2,4,.5);transition:.2s ease}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 
+@media (max-width:364px){.say{font-size:1.56rem;line-height:2.9rem}}
 /* ---------- small phones ---------- */
 @media (max-width:359px){
   .say{font-size:1.5rem}
@@ -188,21 +189,50 @@ footer a{color:var(--cream);font-weight:600;display:inline-block;padding:10px 0;
   .facts div:nth-child(even){padding-left:10px}
 }
 
-/* ---------- desktop: poster left, card right ---------- */
-@media (min-width:940px){
-  .wrap{width:min(100% - 96px,1060px)}
-  main{display:grid;grid-template-columns:1fr 440px;column-gap:88px;align-items:start}
-  .hero{grid-column:1;padding:72px 0 0}
-  h1 .pre{font-size:1.9rem}
-  h1 .big{font-size:10.5rem}
+/* ---------- large phones and tablets: a little more room ---------- */
+@media (min-width:600px) and (max-width:999px){
+  .wrap{width:min(100% - 48px,520px)}
+  .top{padding-top:22px}
+  .hero{padding:22px 0 20px}
+  h1 .big{font-size:7.1rem}
+  h1 .pre{font-size:1.55rem}
+  .facts dd{font-size:.96rem}
+  .panel{padding:20px 26px 24px}
+  .tabs{padding-inline:20px}
+}
+
+/* ---------- desktop: poster left, card right. Everything sizes off the column, so it never collides ---------- */
+@media (min-width:1000px){
+  .wrap{width:min(100% - 64px,1100px)}
+  main{
+    --card:clamp(390px,38vw,440px);--gap:clamp(40px,6vw,88px);
+    display:grid;grid-template-columns:minmax(0,1fr) var(--card);column-gap:var(--gap);align-items:start;
+  }
+  .hero{grid-column:1;padding:64px 0 0}
+  h1 .pre{font-size:clamp(1.5rem,2.2vw,1.9rem)}
+  h1 .big{font-size:min(10.5rem,calc((min(100vw - 64px,1100px) - var(--card) - var(--gap)) / 3.4))}
   .facts{margin-top:30px;max-width:460px}
   .facts dd{font-size:1rem}
-  .card-shadow{grid-column:2;grid-row:1 / span 4;position:sticky;top:40px;margin-top:72px}
+  .card-shadow{grid-column:2;grid-row:1 / span 4;position:sticky;top:40px;margin-top:64px}
   .section{grid-column:1;max-width:460px}
 }
-@media (min-width:1240px){
+@media (min-width:1280px){
   .hero{position:relative}
   .seal{display:block;position:absolute;left:468px;bottom:-22px;width:124px;height:124px;transform:rotate(10deg)}
+}
+/* very large screens: scale the whole composition up a step */
+@media (min-width:1800px){
+  html{font-size:112.5%}
+  .wrap{width:min(100% - 64px,1240px)}
+  main{--card:500px;--gap:100px}
+  h1 .big{font-size:min(10.5rem,calc((1240px - var(--card) - var(--gap)) / 3.4))}
+  .facts,.section{max-width:520px}
+  .seal{left:528px}
+}
+/* short landscape phones: keep the card reachable, drop decorative height */
+@media (max-height:480px) and (max-width:999px){
+  .hero{padding:10px 0 12px}
+  h1 .big{font-size:3.6rem}
 }
 
 /* ---------- motion ---------- */
